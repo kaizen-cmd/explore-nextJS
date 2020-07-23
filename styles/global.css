@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lato&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+hr {
+  border-bottom: black 5px solid;
+  width: 25%;
+  border-radius: 1500px;
+}
+
+.navbar {
+  background-color: white;
+  padding: 15px 55px;
+  border-bottom: black 1px solid;
+  box-shadow: 0 -4px 14px 0 rgba(0, 0, 0, 0.39);
+}
+
+nav button {
+  border: none;
+  outline: none;
+}
+
+.navbar-brand img {
+  width: 100px;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+.active {
+  background-color: #0070f3;
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+  border-radius: 7px;
+}
+
+.active a {
+  color: white;
+}
+
+.nav-item {
+  margin-left: 3.5rem;
+}
+
+h5 {
+  color: black;
+  font-weight: 750;
+}
+
+.winner-card img {
+  max-width: 100%;
+  height: 200px;
+  transition: transform .5s;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.winner-card img:hover {
+  transform: scale(1.2);
+  transition-timing-function: ease-in-out;
+}
+
+.winner-card p {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card-img {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.winner-card p,
+h5 {
+  font-family: "Lato", sans-serif;
+}
+
+.winner-card .col-lg-12 {
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 0px;
+}
+
+.winner-card .col-lg-12:hover {
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Alfa Slab One", cursive;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-family: "Alfa Slab One", cursive;
+}
+
+.homepage-top img {
+  max-width: 100%;
+  padding: 0;
+}
+
+.head {
+  margin: 10% 0px;
+}
+
+.signup-btn {
+  margin-left: 40%;
+}
+
+.signup-btn button {
+  background-color: #0070f3;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: bolder;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.3);
+}
+
+.signup-btn button:hover {
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.6);
+}
+
+.top-container {
+  background-image: linear-gradient(#eeeeee, white);
+}
+
+.bio {
+  max-width: 100%;
+  word-wrap: break-word;
+  padding: 10px 25px;
+}
+
+.footer {
+  background-color: black;
+  box-shadow: 0 -5px 14px 0 rgba(0, 0, 0, 0.39);
+  color: white;
+}
+
+.footer h5 {
+  color: white;
+}
+
+.footer .col-lg-12 {
+  padding: 10px 0px 0px 0px;
+}
+
+.footer img {
+  max-width: 30%;
+}
+
+.cp-text {
+  margin-left: 120px;
+}
+
+.footer hr {
+  border-top: 1px white solid;
+  width: 200px;
+}
+
+.pl-5 {
+  padding-left: 100px !important;
+}
