@@ -15,7 +15,12 @@ const Index = () => {
       <SignUpContainer option="top" />
       <div className="mt-5 mb-3">
         <div className="container px-3">
-          <h3>Upcoming Tutorials</h3>
+          <div className="d-flex justify-content-start">
+            <div className="mr-2">
+            <h3>Upcoming Tutorials</h3>
+            </div>
+            <hr style={{width: "70%"}}/>
+          </div>
         </div>
       </div>
       <div className="mid-container">
@@ -39,10 +44,15 @@ const Index = () => {
           </div>
         </div>
       </div>
-
+      <br/>
       <div className="mt-5 mb-3">
         <div className="container px-3">
-          <h3>Upcoming Events</h3>
+          <div className="d-flex justify-content-start">
+            <div className="mr-2">
+            <h3>Upcoming Events</h3>
+            </div>
+            <hr style={{width: "74%"}}/>
+          </div>
         </div>
       </div>
       <div className="mid-container pb-5">

@@ -1,6 +1,18 @@
 import Link from "next/link";
+import { useEffect } from "react";
 
 const NavBar = (props) => {
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      var st = window.pageYOffset ||  document.documentElement.scrollTop;;
+      if (st > 300) {
+        document.getElementsByClassName("navbar")[0].classList.add("color-black");
+      }
+      if (st < 300) {
+        document.getElementsByClassName("navbar")[0].classList.remove("color-black");
+      }
+    });
+  });
   return (
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
@@ -39,6 +51,15 @@ const NavBar = (props) => {
             >
               <Link href="/problem-index">
                 <a className="nav-link">Problems</a>
+              </Link>
+            </li>
+            <li
+              className={
+                "nav-item " + `${props.active === "editor" ? "active" : ""}`
+              }
+            >
+              <Link href="/editor">
+                <a className="nav-link">Editor</a>
               </Link>
             </li>
             <li

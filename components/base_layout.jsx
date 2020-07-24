@@ -3,6 +3,7 @@ import NavBar from "./common/navbar";
 import Footer from "./common/footer";
 
 const BaseLayout = ({ children, navbarprop }) => {
+  
   return (
     <div>
       <Head>

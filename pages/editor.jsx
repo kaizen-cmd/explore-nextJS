@@ -1,7 +1,8 @@
 import Head from "next/head";
 import BaseLayout from "../components/base_layout";
+import Editor from "../components/editor/editor";
 
-const Editor = () => {
+const EditorPage = () => {
   return (
     <BaseLayout navbarprop="editor">
       <Head>
@@ -10,9 +11,9 @@ const Editor = () => {
           content="CodeStrike is an online community of coders."
         />
       </Head>
-      <h1>Hello World</h1>
+      <Editor />
     </BaseLayout>
   );
 };
 
-export default Editor;
+export default EditorPage;

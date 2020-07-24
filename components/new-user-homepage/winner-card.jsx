@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const WinnerCard = ({name, image, git_link, linked_link, bio}) => {
   return (
     <div className="col-lg-4 winner-card">
