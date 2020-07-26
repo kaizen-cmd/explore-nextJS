@@ -1,9 +1,9 @@
 import Head from "next/head";
 import NavBar from "./common/navbar";
 import Footer from "./common/footer";
+import Login from "./new-user-homepage/login";
 
 const BaseLayout = ({ children, navbarprop }) => {
-  
   return (
     <div>
       <Head>
@@ -35,6 +35,7 @@ const BaseLayout = ({ children, navbarprop }) => {
       </Head>
       <div>
         <NavBar active={navbarprop} />
+        <Login />
         {children}
         <Footer />
       </div>

@@ -4,7 +4,7 @@ import Editor from "../components/editor/editor";
 
 const EditorPage = () => {
   return (
-    <BaseLayout navbarprop="editor">
+    <BaseLayout>
       <Head>
         <meta
           name="description"

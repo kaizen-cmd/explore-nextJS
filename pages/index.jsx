@@ -2,6 +2,8 @@ import Head from "next/head";
 import BaseLayout from "../components/base_layout";
 import WinnerCard from "../components/new-user-homepage/winner-card";
 import SignUpContainer from "../components/new-user-homepage/sign-up-container";
+import Dashboard from "../components/new-user-homepage/dashboard";
+import Forum from "../components/new-user-homepage/forum";
 
 const Index = () => {
   return (
@@ -13,13 +15,14 @@ const Index = () => {
         />
       </Head>
       <SignUpContainer option="top" />
+      {/* <Dashboard /> */}
       <div className="mt-5 mb-3">
         <div className="container px-3">
           <div className="d-flex justify-content-start">
             <div className="mr-2">
-            <h3>Upcoming Tutorials</h3>
+              <h3>Upcoming Tutorials</h3>
             </div>
-            <hr style={{width: "70%"}}/>
+            <hr style={{ width: "70%" }} />
           </div>
         </div>
       </div>
@@ -44,14 +47,14 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <br/>
+      <br />
       <div className="mt-5 mb-3">
         <div className="container px-3">
           <div className="d-flex justify-content-start">
             <div className="mr-2">
-            <h3>Upcoming Events</h3>
+              <h3>Upcoming Events</h3>
             </div>
-            <hr style={{width: "74%"}}/>
+            <hr style={{ width: "74%" }} />
           </div>
         </div>
       </div>
@@ -77,6 +80,7 @@ const Index = () => {
         </div>
       </div>
       <SignUpContainer option="bottom" />
+      {/* <Forum /> */}
     </BaseLayout>
   );
 };

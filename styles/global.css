@@ -5,6 +5,26 @@
   padding: 0;
 }
 
+body {
+  font-family: "Lato", sans-serif;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #93b5e1;
+} 
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #221f3b;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #4a4577; 
+}
+
 .content::-webkit-scrollbar,
 .content-op::-webkit-scrollbar {
   width: 0.4rem;
@@ -97,7 +117,6 @@ h5 {
   font-weight: 750;
 }
 
-
 .winner-card img {
   max-width: 100%;
   height: 200px;
@@ -126,13 +145,18 @@ h5 {
 }
 
 .winner-card .col-lg-12 {
-  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 0px;
+  transition: transform 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 .winner-card .col-lg-12:hover {
-  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+  transition: transform 0.5s;
+  transition-timing-function: ease-in-out;
   cursor: pointer;
 }
 
@@ -336,6 +360,113 @@ h3 {
   overflow-y: scroll;
 }
 
+.ps-table {
+  box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.19);
+}
+
+.black {
+  background-color: black;
+  color: white;
+  font: "Lato";
+}
+
+tr:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.29);
+}
+
+.profile-container {
+  background-color: rgb(245, 245, 245);
+  margin: 50px auto;
+  width: 50%;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.29);
+}
+
+.profile-container img {
+  max-width: 100%;
+  padding: 30px;
+  border-radius: 50%;
+}
+a:hover {
+  cursor: pointer;
+}
+.login-container {
+  display: none;
+  background-color: rgb(255, 255, 255, 0.9);
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+.inner-main-login {
+  width: 30%;
+}
+.inner-login-container {
+  margin-top: 100px;
+  background-color: #ebecf1;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.4);
+  text-align: center; border-radius: 10px;
+}
+
+
+.login-container input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  border: none;
+  margin: 0px 0px 20px 0px;
+  padding: 0px 30px;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0px 0px 5px #0070f3 inset;
+  background-color: #bad0e9;
+  font-weight: bold;
+}
+
+.login-container input::placeholder {
+  font-weight: bold;
+}
+
+.login-container button {
+  background-color: #0070f3;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 3px 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.3);
+  border-radius: 7px;
+}
+
+.login-container button:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.login-header-container {
+  background-color: black;
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.login-header-container h4 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding: 7px 0;
+}
+
+.login-header-container button {
+  margin-bottom: 0;
+  background-color: red;
+  border-radius: 0px 10px 0px 0px;
+  padding: 6.5px 13px;
+  font-size: 1.4rem;
+}
+
+.login-heading {
+  margin-left: 25%;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
@@ -368,6 +499,21 @@ h3 {
   .signup-btn {
     margin: 0 auto;
   }
+  .ps-tab-div {
+    width: 90% !important;
+    margin: 10px auto 40px auto !important;
+  }
+
+  .profile-container {
+    margin: 10px auto;
+    width: 90%;
+  }
+  .inner-main-login {
+    width: 95%;
+  }
+  .login-heading {
+    margin-left: 15%;
+  }
 }
 
 @media screen and (max-width: 993px) {
@@ -378,7 +524,6 @@ h3 {
   .active a {
     color: #0070f3;
   }
-  
 }
 
 @media screen and (max-width: 475px) {
@@ -386,4 +531,4 @@ h3 {
   #l-selector-1 {
     display: none;
   }
-}
+} 

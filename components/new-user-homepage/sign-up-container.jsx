@@ -26,7 +26,7 @@ const SignUpContainer = ({option}) => {
     );
   } else {
     return (
-      <div className="top-container">
+      <div className="top-container mb-5">
         <div className="container pt-4 pb-5">
           <div className="row homepage-top">
             <div className="col-md-6">

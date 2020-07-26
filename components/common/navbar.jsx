@@ -4,12 +4,16 @@ import { useEffect } from "react";
 const NavBar = (props) => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      var st = window.pageYOffset ||  document.documentElement.scrollTop;;
+      var st = window.pageYOffset || document.documentElement.scrollTop;
       if (st > 300) {
-        document.getElementsByClassName("navbar")[0].classList.add("color-black");
+        document
+          .getElementsByClassName("navbar")[0]
+          .classList.add("color-black");
       }
       if (st < 300) {
-        document.getElementsByClassName("navbar")[0].classList.remove("color-black");
+        document
+          .getElementsByClassName("navbar")[0]
+          .classList.remove("color-black");
       }
     });
   });
@@ -50,16 +54,7 @@ const NavBar = (props) => {
               }
             >
               <Link href="/problem-index">
-                <a className="nav-link">Problems</a>
-              </Link>
-            </li>
-            <li
-              className={
-                "nav-item " + `${props.active === "editor" ? "active" : ""}`
-              }
-            >
-              <Link href="/editor">
-                <a className="nav-link">Editor</a>
+                <a className="nav-link">Past Problems</a>
               </Link>
             </li>
             <li
@@ -71,7 +66,7 @@ const NavBar = (props) => {
                 <a className="nav-link">Ranking</a>
               </Link>
             </li>
-            <li
+            {/* <li
               className={
                 "nav-item " + `${props.active === "profile" ? "active" : ""}`
               }
@@ -79,6 +74,19 @@ const NavBar = (props) => {
               <Link href="/profile">
                 <a className="nav-link">My Profile</a>
               </Link>
+            </li> */}
+            <li
+              className={
+                "nav-item " + `${props.active === "login" ? "active" : ""}`
+              }
+            >
+              <a className="nav-link" id="login-btn" onClick={() => {
+                window.scrollTo(0, 0);
+                document.querySelector("#login-container").classList.remove("animate__backOutUp");
+                document.querySelector("#login-container").style.display = "flex";
+                document.querySelector("#login-container").classList.add("animate__backInUp");
+                document.body.style.overflow = "hidden";
+              }}>Login</a>
             </li>
           </ul>
         </div>
