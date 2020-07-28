@@ -14,30 +14,30 @@ const PsIndex = () => {
         <table className="table ps-table">
           <thead className="black white-text">
             <tr>
-              <th scope="col">Sr.</th>
               <th scope="col">Problem</th>
               <th scope="col">Points</th>
-              <th scope="col">Submission</th>
+              <th scope="col">Total Subs</th>
+              <th scope="col">Correct %</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
+              <td>Mark sdfsdfsf</td>
               <td>Otto</td>
               <td>@mdo</td>
+              <td>53%</td>
             </tr>
             <tr>
-              <th scope="row">2</th>
               <td>Jacob</td>
               <td>Thornton</td>
               <td>@fat</td>
+              <td>53%</td>
             </tr>
             <tr>
-              <th scope="row">3</th>
               <td>Larry</td>
               <td>the Bird</td>
               <td>@twitter</td>
+              <td>53%</td>
             </tr>
           </tbody>
         </table>

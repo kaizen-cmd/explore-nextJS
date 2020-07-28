@@ -1,23 +1,25 @@
 import { setLogin } from "../base_layout";
-import Register from "./register";
+import Login from "./login";
 
-const Login = () => {
+const Register = () => {
   return (
     <div
       className="login-container h-100 justify-content-center animate__animated animate__bounceIn"
-      id="login-container"
+      id="register-container"
     >
       <div className="container inner-main-login">
         <div className="d-flex flex-column inner-login-container">
           <div className="d-flex flex-row login-header-container">
             <div className="mr-auto mb-0 login-heading">
-              <h4 className="mb-0">CodeStrike-Login</h4>
+              <h4 className="mb-0">CodeStrike-SignUp</h4>
             </div>
             <div className="mb-0">
               <button
                 className="mb-0"
                 onClick={() => {
-                  document.getElementById("login-container").classList.add("animate__bounceOut");
+                  document
+                    .getElementById("register-container")
+                    .classList.add("animate__bounceOut");
                   setTimeout(() => {
                     setLogin(<></>);
                   }, 500);
@@ -33,21 +35,24 @@ const Login = () => {
               <input type="text" placeholder="Username" />
             </div>
             <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
               <input type="password" placeholder="Password" />
             </div>
             <div>
-              <button>Login</button>
+              <button>Register</button>
             </div>
             <div className="mb-4">
               <a
                 onClick={() => {
-                  document.getElementById("login-container").classList.add("animate__bounceOut");
-                  setTimeout(() => {
-                    setLogin(<Register />);
-                  }, 500);
+                    document.getElementById("register-container").classList.add("animate__bounceOut");
+                    setTimeout(() => {
+                      setLogin(<Login />);
+                    }, 500);
                 }}
               >
-                New member? Register here.
+                Already a member? Login here.
               </a>
             </div>
           </div>
@@ -57,4 +62,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

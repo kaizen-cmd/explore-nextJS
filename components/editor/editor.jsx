@@ -71,7 +71,7 @@ const Editor = () => {
         </div>
 
         <div className="col-lg-6 p-0">
-          <div className="code-editor col-lg-12 mb-4 p-0">
+          <div className="code-editor p-0">
             <div className="d-flex">
               <div className="d-inline-block editor-head pl-2 py-2">
                 <h2 className="m-0">Editor</h2>

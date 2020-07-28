@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
+import { setLogin } from "../base_layout";
+import Login from "../new-user-homepage/login";
 
 const NavBar = (props) => {
   useEffect(() => {
@@ -66,7 +68,7 @@ const NavBar = (props) => {
                 <a className="nav-link">Ranking</a>
               </Link>
             </li>
-            {/* <li
+            <li
               className={
                 "nav-item " + `${props.active === "profile" ? "active" : ""}`
               }
@@ -74,19 +76,23 @@ const NavBar = (props) => {
               <Link href="/profile">
                 <a className="nav-link">My Profile</a>
               </Link>
-            </li> */}
+            </li>
             <li
               className={
                 "nav-item " + `${props.active === "login" ? "active" : ""}`
               }
             >
-              <a className="nav-link" id="login-btn" onClick={() => {
-                window.scrollTo(0, 0);
-                document.querySelector("#login-container").classList.remove("animate__backOutUp");
-                document.querySelector("#login-container").style.display = "flex";
-                document.querySelector("#login-container").classList.add("animate__backInUp");
-                document.body.style.overflow = "hidden";
-              }}>Login</a>
+              <a
+                className="nav-link"
+                id="login-btn"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  setLogin(<Login />);
+                  document.body.style.overflow = "hidden";
+                }}
+              >
+                Login
+              </a>
             </li>
           </ul>
         </div>

@@ -1,9 +1,12 @@
 import Head from "next/head";
 import NavBar from "./common/navbar";
 import Footer from "./common/footer";
-import Login from "./new-user-homepage/login";
+import { useState } from "react";
 
+var login;
+var setLogin;
 const BaseLayout = ({ children, navbarprop }) => {
+  [login, setLogin] = useState(<></>)
   return (
     <div>
       <Head>
@@ -35,7 +38,7 @@ const BaseLayout = ({ children, navbarprop }) => {
       </Head>
       <div>
         <NavBar active={navbarprop} />
-        <Login />
+        {login}
         {children}
         <Footer />
       </div>
@@ -43,4 +46,5 @@ const BaseLayout = ({ children, navbarprop }) => {
   );
 };
 
+export {setLogin};
 export default BaseLayout;

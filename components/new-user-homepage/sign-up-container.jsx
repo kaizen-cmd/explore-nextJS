@@ -1,4 +1,7 @@
-const SignUpContainer = ({option}) => {
+import { setLogin } from "../base_layout";
+import Login from "./login";
+
+const SignUpContainer = ({ option }) => {
   if (option === "top") {
     return (
       <div className="top-container">
@@ -14,7 +17,14 @@ const SignUpContainer = ({option}) => {
                   amazing prizes.
                 </h1>
                 <div className="w-50 signup-btn">
-                  <button className="animate__animated animate__pulse animate__slow animate__infinite">
+                  <button
+                    className="animate__animated animate__pulse animate__slow animate__infinite"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      setLogin(<Login />);
+                      document.body.style.overflow = "hidden";
+                    }}
+                  >
                     Signup →
                   </button>
                 </div>
@@ -36,7 +46,14 @@ const SignUpContainer = ({option}) => {
                   fail!
                 </h1>
                 <div className="w-50 signup-btn ml-0">
-                  <button className="animate__animated animate__pulse animate__slow animate__infinite">
+                  <button
+                    className="animate__animated animate__pulse animate__slow animate__infinite"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      setLogin(<Login />);
+                      document.body.style.overflow = "hidden";
+                    }}
+                  >
                     Signup →
                   </button>
                 </div>

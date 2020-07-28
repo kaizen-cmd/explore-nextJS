@@ -15,7 +15,7 @@ const Index = () => {
         />
       </Head>
       <SignUpContainer option="top" />
-      {/* <Dashboard /> */}
+      <Dashboard />
       <div className="mt-5 mb-3">
         <div className="container px-3">
           <div className="d-flex justify-content-start">
@@ -80,7 +80,7 @@ const Index = () => {
         </div>
       </div>
       <SignUpContainer option="bottom" />
-      {/* <Forum /> */}
+      <Forum />
     </BaseLayout>
   );
 };
