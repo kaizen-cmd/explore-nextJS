@@ -1,6 +1,6 @@
 import Head from "next/head";
 import BaseLayout from "../components/base_layout";
-import Editor from "../components/editor/editor";
+import Re from "../components/editor/re";
 
 const EditorPage = () => {
   return (
@@ -11,7 +11,7 @@ const EditorPage = () => {
           content="CodeStrike is an online community of coders."
         />
       </Head>
-      <Editor />
+      <Re />
     </BaseLayout>
   );
 };

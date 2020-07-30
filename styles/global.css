@@ -25,13 +25,15 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #4a4577;
 }
 
-.content::-webkit-scrollbar,
-.content-op::-webkit-scrollbar {
+
+.inner-prob-container::-webkit-scrollbar,
+.inner-op-div::-webkit-scrollbar {
   width: 0.4rem;
 }
 
-.content::-webkit-scrollbar-thumb,
-.content-op::-webkit-scrollbar-thumb {
+
+.inner-prob-container::-webkit-scrollbar-thumb,
+.inner-op-div::-webkit-scrollbar-thumb{
   background-color: white;
   outline: 1px solid #0f4c75;
 }
@@ -496,13 +498,48 @@ textarea {
   flex-direction: column;
 }
 .gutter {
-  background: red;
+  background: #0e3244;
 }
 
-.main-edit-page-div {
+.gutter:hover {
+  cursor: move;
+}
+
+.main-editpage-div {
   width: 100%;
   height: 630px;
+  background-color: #0e3244;
 }
+
+.main-editpage-div h2 {
+  font-size: 1.5rem;
+}
+
+.prob-container {
+  height: 598px;
+}
+
+.op-container, .prob-container {
+  background-color: #0f4c75;
+  color: white;
+}
+
+.op-container, .prob-container, .editor-container {
+  border-radius: 10px;
+}
+
+.inner-prob-container {
+  height: 555px;
+  overflow-y: scroll;
+}
+
+.header {
+  background-color: black;
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+}
+
+
 
 @media screen and (max-width: 900px) {
   .resp {
