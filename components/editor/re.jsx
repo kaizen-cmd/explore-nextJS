@@ -223,7 +223,7 @@ const Re = () => {
           >
             <div className="d-flex pl-2 header">
               <h2 className="mb-0 py-2 mr-auto">Output</h2>
-              <button id="run-btn">Run</button>
+              <button id="sub-btn">Submit</button>
             </div>
             <div
               className="px-2 inner-op-div"

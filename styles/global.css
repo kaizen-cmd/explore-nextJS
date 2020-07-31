@@ -298,7 +298,7 @@ h3 {
 }
 
 #sub-btn {
-  background-color: #09db1a;
+  background-color: #0070f3;
 }
 
 #l-selector {
@@ -503,6 +503,7 @@ textarea {
 
 .gutter:hover {
   cursor: move;
+  background: #3c708a;
 }
 
 .main-editpage-div {
