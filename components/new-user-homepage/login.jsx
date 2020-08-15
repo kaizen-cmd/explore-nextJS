@@ -17,7 +17,9 @@ const Login = () => {
               <button
                 className="mb-0"
                 onClick={() => {
-                  document.getElementById("login-container").classList.add("animate__bounceOut");
+                  document
+                    .getElementById("login-container")
+                    .classList.add("animate__bounceOut");
                   setTimeout(() => {
                     setLogin(<></>);
                   }, 500);
@@ -38,10 +40,17 @@ const Login = () => {
             <div>
               <button>Login</button>
             </div>
+            <div>
+              <a href="#">
+                <p>Forgot Password ?</p>
+              </a>
+            </div>
             <div className="mb-4">
               <a
                 onClick={() => {
-                  document.getElementById("login-container").classList.add("animate__bounceOut");
+                  document
+                    .getElementById("login-container")
+                    .classList.add("animate__bounceOut");
                   setTimeout(() => {
                     setLogin(<Register />);
                   }, 500);

@@ -1,14 +1,15 @@
-import BaseLayout from "../base_layout";
 import Split from "split.js";
 import { useEffect, useState } from "react";
 import { ControlledEditor } from "@monaco-editor/react";
+import Loader from "../common/loader";
+import TestCase from "../editor/testcasebox";
 
 const Re = () => {
   const [lang, setLang] = useState("python");
   const [theme, setTheme] = useState("dark");
   const [fontSize, setFontSize] = useState(14);
   const [code, setCode] = useState("");
-  const [disabled, setDisabled] = useState("");
+  const [loader, setLoader] = useState("");
   const [height1, setHeight1] = useState("250px");
   const [width1, setWidth1] = useState("");
   const [height2, setHeight2] = useState("243px");
@@ -184,7 +185,14 @@ const Re = () => {
                   <option value="20">20px</option>
                 </select>
 
-                <button id="run-btn">Run</button>
+                <button
+                  id="run-btn"
+                  onClick={() => {
+                    setLoader(<Loader />);
+                  }}
+                >
+                  Run
+                </button>
               </div>
             </div>
             <div>
@@ -223,7 +231,14 @@ const Re = () => {
           >
             <div className="d-flex pl-2 header">
               <h2 className="mb-0 py-2 mr-auto">Output</h2>
-              <button id="sub-btn">Submit</button>
+              <button
+                id="sub-btn"
+                onClick={() => {
+                  setLoader();
+                }}
+              >
+                Submit
+              </button>
             </div>
             <div
               className="px-2 inner-op-div"
@@ -232,42 +247,12 @@ const Re = () => {
                 overflowY: "scroll",
               }}
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              earum suscipit mollitia enim accusantium nulla tenetur numquam
-              facere neque accusamus, dicta dolorem consectetur impedit veniam
-              alias repellat odio facilis iure. Rerum repellat rem voluptatem
-              recusandae suscipit, dolorem facilis voluptatibus ducimus. Debitis
-              accusamus alias repellendus dolorem dignissimos laudantium fugiat
-              ipsa quam quisquam, harum nesciunt ea quaerat illo? Cupiditate
-              libero blanditiis ex. Eveniet porro nesciunt blanditiis vel, quam
-              unde reiciendis inventore adipisci. Fuga quas omnis perspiciatis
-              voluptatem quam aperiam distinctio. Tempora fugit alias nihil
-              ipsam temporibus, sed nobis culpa impedit minus debitis!
-              Necessitatibus quos adipisci voluptatum quod laudantium nulla
-              veniam, odit quo reprehenderit, architecto tempore officiis esse
-              soluta. Esse inventore accusamus, odio, nulla suscipit eum
-              consequatur animi quidem, consequuntur unde iste odit? Itaque
-              porro consequatur omnis et, totam eaque. Deserunt expedita labore
-              facilis excepturi mollitia ex iusto nulla necessitatibus animi,
-              culpa cum minus reiciendis a cumque illo optio magni provident
-              fugit deleniti. Corporis velit placeat minus vitae laboriosam,
-              maiores necessitatibus dolor at sit voluptatum animi molestias
-              error dolores incidunt explicabo, nulla cupiditate eum vel nihil
-              labore est assumenda inventore non! Vel, dolore. Voluptatum sint
-              nostrum temporibus harum laboriosam molestiae corrupti? Officiis
-              provident nam quo deserunt? Velit incidunt obcaecati aut, alias
-              perspiciatis voluptatibus, provident aperiam magnam sit porro,
-              cumque rem iste quo hic. Quos, sed! Praesentium quas quam nesciunt
-              ut! Dolore numquam a ducimus dolor suscipit, blanditiis
-              consequatur alias itaque facere totam animi possimus ea molestiae
-              fuga quia repellat inventore aliquid mollitia iure! Quae
-              laboriosam accusamus quod adipisci odit iusto atque tempore
-              necessitatibus fugiat eaque, sapiente iste optio, voluptates harum
-              quia vel, corrupti libero autem totam commodi ipsa nulla
-              doloribus! Eum, recusandae. Magni? Facilis, veniam quidem
-              molestias deleniti unde nam aperiam error ab nisi minus quasi
-              laborum dicta odio? Sint adipisci voluptatem accusantium impedit
-              aliquid. Laboriosam ipsam fuga nulla, ratione eos enim. Debitis.
+              {loader}
+              <div className="row pl-4 py-2" style={{width: "100%"}}>
+                <TestCase is_correct={true} />
+                <TestCase is_correct={false} />
+                <TestCase is_correct={false} />
+              </div>
             </div>
           </div>
         </div>

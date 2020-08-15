@@ -1,5 +1,6 @@
 import { ControlledEditor } from "@monaco-editor/react";
 import { useState } from "react";
+import Loader from "../common/loader";
 
 const Editor = () => {
   const [lang, setLang] = useState("python");
@@ -7,7 +8,8 @@ const Editor = () => {
   const [fontSize, setFontSize] = useState(14);
   const [code, setCode] = useState("");
   const [disabled, setDisabled] = useState("");
-  
+  const [loader, setLoader] = useState("");
+
   return (
     <div className="editor p-4">
       <div className="row p-0 m-0">
@@ -116,7 +118,14 @@ const Editor = () => {
                   <option value="20">20px</option>
                 </select>
 
-                <button id="run-btn">Run</button>
+                <button
+                  id="run-btn"
+                  onClick={() => {
+                    setLoader(<Loader />);
+                  }}
+                >
+                  Run
+                </button>
               </div>
             </div>
             <div>
@@ -151,10 +160,15 @@ const Editor = () => {
                 <h2 className="m-0">Output</h2>
               </div>
               <div className="d-flex justify-content-end w-100 editor-head-editor">
-                <button id="sub-btn"disabled={disabled}>Submit</button>
+                <button id="sub-btn" disabled={disabled} onClick={() => {
+                  setLoader(<Loader />);
+                }}>
+                  Submit
+                </button>
               </div>
             </div>
             <div className="content-op px-2 pt-1 pb-0">
+              {loader}
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Exercitationem odio officia quo, ea facere ex tenetur odit
               molestiae vitae aspernatur quaerat impedit natus nostrum commodi

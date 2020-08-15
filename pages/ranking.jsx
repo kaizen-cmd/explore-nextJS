@@ -16,20 +16,29 @@ const Ranking = () => {
             <tr>
               <th scope="col">Rank</th>
               <th scope="col">Name</th>
+              <th scope="col">Score</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">1</th>
               <td>Radhapalli Krishnan</td>
+              <td>50</td>
             </tr>
             <tr>
               <th scope="row">2</th>
               <td>Jacob</td>
+              <td>30</td>
             </tr>
             <tr>
               <th scope="row">3</th>
               <td>Larry</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>20</td>
             </tr>
           </tbody>
         </table>
