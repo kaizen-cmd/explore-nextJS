@@ -13,7 +13,7 @@ const Profile = () => {
       <div className="container profile-container">
         <div className="row">
           <div className="col-lg-4 d-flex flex-column align-items-center mb-0">
-            <img src="/images/avatar.svg" alt="" className="mb-0" />
+            <img src="/images/avatar.svg" alt="" className="mb-0 rounded-circle" />
             <div>
               <h4 className="mb-0 mt-0">Tejas Mandre</h4>
               <p>@tmandre</p>

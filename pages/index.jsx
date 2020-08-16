@@ -3,9 +3,14 @@ import BaseLayout from "../components/base_layout";
 import WinnerCard from "../components/new-user-homepage/winner-card";
 import SignUpContainer from "../components/new-user-homepage/sign-up-container";
 import Dashboard from "../components/new-user-homepage/dashboard";
-import Forum from "../components/new-user-homepage/forum";
+import { useEffect, useState } from "react";
 
+var dashboard, setDashboard;
 const Index = () => {
+  [dashboard, setDashboard] = useState(false)
+  useEffect(() => {
+    window.localStorage.getItem("token") && setDashboard(true);
+  }, [])
   return (
     <BaseLayout navbarprop="home">
       <Head>
@@ -14,8 +19,7 @@ const Index = () => {
           content="CodeStrike is an online community of coders."
         />
       </Head>
-      <SignUpContainer option="top" />
-      <Dashboard />
+      {dashboard ? <Dashboard /> : <SignUpContainer option="top" />}
       <div className="mt-5 mb-3">
         <div className="container px-3">
           <div className="d-flex justify-content-start">
@@ -79,10 +83,10 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <SignUpContainer option="bottom" />
-      <Forum />
+      {!dashboard && <SignUpContainer option="bottom" />}
     </BaseLayout>
   );
 };
 
 export default Index;
+export { setDashboard };

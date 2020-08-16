@@ -1,9 +1,30 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setLogin } from "../base_layout";
 import Login from "../new-user-homepage/login";
+import axios from "axios";
+import URL from "../url";
+import { setDashboard } from "../../pages";
 
+var loggedIn, setLoggedIn;
 const NavBar = (props) => {
+  [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      axios
+        .post(`${URL}/accounts/validate-token/`, {
+          token: localStorage.getItem("token"),
+        })
+        .then((response) => {
+          response["data"]["res"] === true && setLoggedIn(true);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, []);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       var st = window.pageYOffset || document.documentElement.scrollTop;
@@ -18,7 +39,7 @@ const NavBar = (props) => {
           .classList.remove("color-black");
       }
     });
-  });
+  }, []);
   return (
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
@@ -68,32 +89,43 @@ const NavBar = (props) => {
                 <a className="nav-link">Ranking</a>
               </Link>
             </li>
-            <li
-              className={
-                "nav-item " + `${props.active === "profile" ? "active" : ""}`
-              }
-            >
-              <Link href="/profile">
-                <a className="nav-link">My Profile</a>
-              </Link>
-            </li>
-            <li
-              className={
-                "nav-item " + `${props.active === "login" ? "active" : ""}`
-              }
-            >
-              <a
-                className="nav-link"
-                id="login-btn"
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                  setLogin(<Login />);
-                  document.body.style.overflow = "hidden";
-                }}
-              >
-                Login
-              </a>
-            </li>
+            {loggedIn ? (
+              <>
+                <li
+                  className={
+                    "nav-item " +
+                    `${props.active === "profile" ? "active" : ""}`
+                  }
+                >
+                  <Link href="/profile">
+                    <a className="nav-link">My Profile</a>
+                  </Link>
+                </li>
+                <li className="nav-item bg-primary rounded">
+                  <Link href="/">
+                    <a className="nav-link text-light" onClick={() => {
+                      localStorage.removeItem("token");
+                      setLoggedIn(false);
+                      setDashboard(false);
+                    }}>Logout</a>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <li className="nav-item bg-primary rounded">
+                <a
+                  className="nav-link text-light"
+                  id="login-btn"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    setLogin(<Login />);
+                    document.body.style.overflow = "hidden";
+                  }}
+                >
+                  Login
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </nav>
@@ -102,3 +134,4 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
+export { setLoggedIn, loggedIn };

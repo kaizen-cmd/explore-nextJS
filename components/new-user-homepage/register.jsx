@@ -1,7 +1,13 @@
 import { setLogin } from "../base_layout";
 import Login from "./login";
+import { useState } from "react";
+import axios from "axios";
+import URL from "../url";
 
 const Register = () => {
+  const [message, setMessage] = useState("");
+  const [uExists, setUExists] = useState("");
+  const [eExists, setEExists] = useState("");
   return (
     <div
       className="login-container h-100 justify-content-center animate__animated animate__bounceIn"
@@ -15,6 +21,7 @@ const Register = () => {
             </div>
             <div className="mb-0">
               <button
+                id="close-btn"
                 className="mb-0"
                 onClick={() => {
                   document
@@ -32,24 +39,116 @@ const Register = () => {
           </div>
           <div className="d-flex flex-column align-items-center">
             <div>
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                placeholder="Username(> 4 chars)"
+                id="username"
+                onBlur={() => {
+                  axios
+                    .post(`${URL}/accounts/validate/`, {
+                      username: document.getElementById("username").value,
+                    })
+                    .then((response) => {
+                      setUExists(response["data"]["username"]);
+                    });
+                }}
+              />
+              <p
+                style={{
+                  color: "red",
+                  fontWeight: "bold",
+                }}
+              >
+                {uExists}
+              </p>
             </div>
             <div>
-              <input type="email" placeholder="Email" />
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                onBlur={() => {
+                  axios
+                    .post(`${URL}/accounts/validate/`, {
+                      email: document.getElementById("email").value,
+                    })
+                    .then((response) => {
+                      setEExists(response["data"]["email"]);
+                    });
+                }}
+              />
+              <p
+                style={{
+                  color: "red",
+                  fontWeight: "bold",
+                }}
+              >
+                {eExists}
+              </p>
             </div>
             <div>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                placeholder="Password (> 8 chars)"
+                id="password"
+              />
             </div>
             <div>
-              <button>Register</button>
+              <p
+                style={{
+                  color: "red",
+                  fontWeight: "bold",
+                }}
+              >
+                {message}
+              </p>
+            </div>
+            <div>
+              <button
+                onClick={() => {
+                  const username = document.getElementById("username").value;
+                  const password = document.getElementById("password").value;
+                  const email = document.getElementById("email").value;
+                  var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                  if (
+                    username !== "" &&
+                    password !== "" &&
+                    emailPattern.test(email) &&
+                    username.length >= 4 &&
+                    password.length >= 8 &&
+                    uExists === "" &&
+                    eExists === ""
+                  ) {
+                    setMessage("Loading...")
+                    axios
+                      .post(`${URL}/accounts/register/`, {
+                        username: username,
+                        password: password,
+                        email: email,
+                      })
+                      .then(function (response) {
+                        setMessage(response["data"]["res"]);
+                        setTimeout(() => {
+                          document.getElementById("close-btn").click();
+                        }, 2500);
+                      });
+                  } else {
+                    setMessage("Information Invalid");
+                  }
+                }}
+              >
+                Register
+              </button>
             </div>
             <div className="mb-4">
               <a
                 onClick={() => {
-                    document.getElementById("register-container").classList.add("animate__bounceOut");
-                    setTimeout(() => {
-                      setLogin(<Login />);
-                    }, 500);
+                  document
+                    .getElementById("register-container")
+                    .classList.add("animate__bounceOut");
+                  setTimeout(() => {
+                    setLogin(<Login />);
+                  }, 500);
                 }}
               >
                 Already a member? Login here.
