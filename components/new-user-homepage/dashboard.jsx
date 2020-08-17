@@ -1,6 +1,33 @@
-import { loggedIn } from "../new-user-homepage/login";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import URL from "../url";
 
 const Dashboard = () => {
+  const [liveps, setLiveps] = useState([]);
+  const [user, setUser] = useState({
+    username: "",
+    attempts: "",
+    c_attempts: "",
+  });
+
+  useEffect(() => {
+    axios.get(URL + "/codeportal/live-ps/").then((response) => {
+      setLiveps(response["data"]);
+    });
+
+    axios
+      .get(`${URL}/accounts/user/`, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((response) => {
+        setUser(response["data"]);
+        console.log(response["data"]);
+      });
+  }, []);
+
   return (
     <div className="top-container">
       <div className="container pt-3 pb-0">
@@ -11,7 +38,7 @@ const Dashboard = () => {
                 <h4>
                   Hi,{" "}
                   <span>
-                    <strong>Tejas</strong>
+                    <strong>{user.username}</strong>
                   </span>{" "}
                   choose anyone problem and try solving it.
                 </h4>
@@ -21,7 +48,7 @@ const Dashboard = () => {
                 <p>
                   Total Attempts:{" "}
                   <span>
-                    <strong>12</strong>
+                    <strong>{user.attempts}</strong>
                   </span>
                 </p>
               </div>
@@ -29,7 +56,7 @@ const Dashboard = () => {
                 <p>
                   Correct Percentage:{" "}
                   <span>
-                    <strong>12</strong>
+                    <strong>{user.c_percentage}</strong>
                   </span>
                 </p>
               </div>
@@ -37,7 +64,7 @@ const Dashboard = () => {
                 <p>
                   Total Correct Attempts:{" "}
                   <span>
-                    <strong>12</strong>
+                    <strong>{user.c_attempts}</strong>
                   </span>
                 </p>
               </div>
@@ -48,8 +75,8 @@ const Dashboard = () => {
               <div className="mb-2 text-center">
                 <h4 className="mb-0">Live Problems</h4>
               </div>
-              <table class="table ps-table">
-                <thead class="black white-text">
+              <table className="table ps-table">
+                <thead className="black white-text">
                   <tr>
                     <th scope="col">Points</th>
                     <th scope="col">Title</th>
@@ -57,31 +84,22 @@ const Dashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">10</th>
-                    <td>Mark</td>
-                    <td>tmandre</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">20</th>
-                    <td>Jacob</td>
-                    <td>tmandre</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">30</th>
-                    <td>Larry</td>
-                    <td>tmandre</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">30</th>
-                    <td>Larry</td>
-                    <td>tmandre</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">10</th>
-                    <td>Larry</td>
-                    <td>tmandre</td>
-                  </tr>
+                  {liveps.map((ps) => {
+                    return (
+                      <tr>
+                        <th scope="row">{ps[2]}</th>
+                        <td>{ps[0]}</td>
+                        <Link
+                          href="/profile/[profile]/"
+                          as={`profile/${ps[1]}/`}
+                        >
+                          <a>
+                            <td>{ps[1]}</td>
+                          </a>
+                        </Link>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

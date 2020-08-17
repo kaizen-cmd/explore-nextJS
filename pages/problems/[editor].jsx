@@ -1,7 +1,7 @@
 import Head from "next/head";
-import BaseLayout from "../components/base_layout";
-import Re from "../components/editor/re";
-import Editor from "../components/editor/editor";
+import BaseLayout from "../../components/base_layout";
+import Re from "../../components/editor/re";
+import Editor from "../../components/editor/editor";
 import { useState, useEffect } from "react";
 
 const EditorPage = () => {

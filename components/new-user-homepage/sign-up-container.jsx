@@ -8,11 +8,13 @@ const SignUpContainer = ({ option }) => {
         <div className="container pt-4 pb-5">
           <div className="row homepage-top">
             <div className="col-md-6">
-              <img src="/images/homepage.svg" alt="" />
+              <img src="/images/rocket.gif" alt="" />
             </div>
             <div className="col-md-6">
               <div className="col-lg-12 p-5 h-50 head">
-                <h1>
+                <h1 style={{
+                  marginTop: 54
+                }}>
                   Signup to participate in exciting coding contests and win
                   amazing prizes.
                 </h1>

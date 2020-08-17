@@ -8,8 +8,9 @@ import { setDashboard } from "../../pages";
 
 var loggedIn, setLoggedIn;
 const NavBar = (props) => {
+  const [user, setUser] = useState("");
   [loggedIn, setLoggedIn] = useState(false);
-
+  const [dot, setDot] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       axios
@@ -18,6 +19,22 @@ const NavBar = (props) => {
         })
         .then((response) => {
           response["data"]["res"] === true && setLoggedIn(true);
+          axios
+            .get(`${URL}/accounts/user/`, {
+              headers: {
+                Authorization: localStorage.getItem("token"),
+              },
+            })
+            .then((response) => {
+              const profile = response["data"];
+              setUser(profile.username);
+              profile.first_name !== "" &&
+              profile.last_name !== "" &&
+              profile.github_link !== "" &&
+              profile.linkedin_link !== ""
+                ? setDot(false)
+                : setDot(true);
+            });
         })
         .catch((error) => {
           console.log(error);
@@ -97,17 +114,40 @@ const NavBar = (props) => {
                     `${props.active === "profile" ? "active" : ""}`
                   }
                 >
-                  <Link href="/profile">
-                    <a className="nav-link">My Profile</a>
+                  <Link
+                    href="/accounts/edit/[user]/"
+                    as={`/accounts/edit/${user}/`}
+                  >
+                    <a className="nav-link">
+                      My Profile{" "}
+                      {dot ? (
+                        <div
+                          style={{
+                            width: "7px",
+                            height: "7px",
+                          }}
+                          className="bg-success rounded-circle d-inline"
+                        >
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                    </a>
                   </Link>
                 </li>
                 <li className="nav-item bg-primary rounded">
                   <Link href="/">
-                    <a className="nav-link text-light" onClick={() => {
-                      localStorage.removeItem("token");
-                      setLoggedIn(false);
-                      setDashboard(false);
-                    }}>Logout</a>
+                    <a
+                      className="nav-link text-light"
+                      onClick={() => {
+                        localStorage.removeItem("token");
+                        setLoggedIn(false);
+                        setDashboard(false);
+                      }}
+                    >
+                      Logout
+                    </a>
                   </Link>
                 </li>
               </>
