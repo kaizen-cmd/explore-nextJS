@@ -4,9 +4,6 @@ import WinnerCard from "../components/new-user-homepage/winner-card";
 import SignUpContainer from "../components/new-user-homepage/sign-up-container";
 import Dashboard from "../components/new-user-homepage/dashboard";
 import { useEffect, useState } from "react";
-import fetch from "isomorphic-unfetch";
-import URL from "../components/url";
-import axios from "axios";
 
 var dashboard, setDashboard;
 const Index = (props) => {

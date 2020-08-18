@@ -61,11 +61,11 @@ const Login = () => {
                           response["data"]["token"] !== "Incorrect credentials"
                         ) {
                           setLoggedIn(true);
-                          document.getElementById("close-btn").click();
                           localStorage.setItem(
                             "token",
                             `${response["data"]["token"]}`
                           );
+                          document.getElementById("close-btn").click();
                           setDashboard(true);
                         } else {
                           setMessage("Incorrect credentials");

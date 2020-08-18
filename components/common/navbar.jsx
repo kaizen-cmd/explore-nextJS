@@ -64,6 +64,7 @@ const NavBar = (props) => {
           <a className="navbar-brand">CodeStrike</a>
         </Link>
         <button
+          id="navbar-btn"
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -144,6 +145,7 @@ const NavBar = (props) => {
                         localStorage.removeItem("token");
                         setLoggedIn(false);
                         setDashboard(false);
+                        setTok("");
                       }}
                     >
                       Logout
@@ -160,6 +162,7 @@ const NavBar = (props) => {
                     window.scrollTo(0, 0);
                     setLogin(<Login />);
                     document.body.style.overflow = "hidden";
+                    document.getElementById("navbar-btn").click();
                   }}
                 >
                   Login

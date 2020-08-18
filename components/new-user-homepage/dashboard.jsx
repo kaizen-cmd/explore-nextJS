@@ -24,7 +24,6 @@ const Dashboard = () => {
       })
       .then((response) => {
         setUser(response["data"]);
-        console.log(response["data"]);
       });
   }, []);
 
@@ -88,7 +87,14 @@ const Dashboard = () => {
                     return (
                       <tr>
                         <th scope="row">{ps[2]}</th>
-                        <td>{ps[0]}</td>
+                        <td>
+                          <Link
+                            href="/problem/[editor]/"
+                            as={`problem/${ps[3]}/`}
+                          >
+                            <a>{ps[0]}</a>
+                          </Link>
+                        </td>
                         <Link
                           href="/profile/[profile]/"
                           as={`profile/${ps[1]}/`}

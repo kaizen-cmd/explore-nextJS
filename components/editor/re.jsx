@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import { ControlledEditor } from "@monaco-editor/react";
 import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
+import axios from "axios";
+import URL from "../url";
+import { loggedIn } from "../common/navbar";
 
-const Re = () => {
+const Re = (props) => {
   const [lang, setLang] = useState("python");
   const [theme, setTheme] = useState("dark");
   const [fontSize, setFontSize] = useState(14);
@@ -13,7 +16,28 @@ const Re = () => {
   const [height1, setHeight1] = useState("250px");
   const [width1, setWidth1] = useState("");
   const [height2, setHeight2] = useState("243px");
-
+  const [disabled, setDisabled] = useState("");
+  const [tc, setTc] = useState("You can only submit once! Be careful");
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      axios
+        .get(
+          URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response['data']);
+          const ps_obj = response["data"];
+          ps_obj.lang === "" ? setLang("python") : setLang(ps_obj.lang);
+          setCode(ps_obj.partial_sol);
+          ps_obj.disable === "" ? "" : setDisabled("disabled");
+        });
+    }
+  }, [loggedIn]);
   const logger = () => {
     var ed = window.document.getElementById("ed-div");
     var op = window.document.getElementById("op-div");
@@ -57,78 +81,28 @@ const Re = () => {
               <h2 className="mr-auto mb-0 py-2">Problem</h2>
               <button id="pt-btn">10 points</button>
             </div>
-            <div className="px-2 inner-prob-container">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-              pariatur cupiditate nisi, quia animi maxime unde laboriosam eaque
-              soluta minima ad hic inventore doloribus ratione fugiat assumenda
-              ullam est fugit! Deserunt praesentium ratione amet! Voluptatem
-              illo, aut doloremque accusantium nesciunt qui error vel esse animi
-              sed aspernatur libero cupiditate ullam, maxime ea molestiae
-              inventore consequatur quibusdam. Iusto quo non labore. Harum
-              voluptatibus ad minima? Odio eligendi perspiciatis animi porro et
-              rem similique maiores dolorem! Numquam ea cumque, ipsa, a saepe
-              blanditiis recusandae cum consequuntur deleniti doloribus
-              temporibus corporis alias labore! Sed molestias ullam voluptatum
-              nisi velit, ab esse. Sit soluta, rem rerum debitis sed ratione
-              adipisci doloremque consequuntur. Autem porro omnis dolore vero
-              aspernatur incidunt voluptates voluptatibus labore dignissimos
-              dolorum. Blanditiis recusandae, in facilis, debitis laudantium
-              minima minus asperiores dolorum ullam corrupti iure aut dicta sunt
-              vero eveniet officiis ex culpa hic harum quidem reprehenderit est
-              inventore ratione. Incidunt, minus? Amet, saepe quas. Cupiditate
-              necessitatibus, cum tempora numquam aut similique tenetur
-              consequuntur ipsam quaerat est error animi eligendi adipisci sit
-              fugiat minus corrupti accusantium obcaecati natus dignissimos
-              deleniti nemo quo! Officia libero a dicta odio tempora autem ad!
-              Autem, aspernatur. Praesentium, sunt maiores explicabo quibusdam
-              reiciendis facilis. Modi culpa deleniti ipsam laudantium debitis
-              enim iusto et unde, suscipit omnis provident. Quidem, deleniti
-              aperiam qui in sed ipsa quo fugit a aut aliquid. Facilis at ad
-              eaque optio quae tempora illo dicta dolorum? Repudiandae
-              laudantium fugiat sint nesciunt earum expedita voluptate?
-              Reprehenderit molestiae corporis, quam atque perspiciatis qui
-              assumenda dolorem, sapiente tempora iste, veniam error quasi?
-              Pariatur, non? Velit non quos minus excepturi, esse animi
-              architecto recusandae obcaecati perspiciatis inventore eum.
-              Voluptas quam eos nisi cum rerum. Voluptas exercitationem
-              repellendus sequi iste asperiores beatae fugiat, ex libero
-              blanditiis nam autem voluptates? Esse recusandae nisi ad delectus
-              cum? Consequatur vitae fugit eligendi. Corrupti hic quos facere
-              voluptates qui atque placeat vitae debitis ducimus, cupiditate,
-              error eius aut quaerat corporis facilis modi illum impedit sed!
-              Ad, quod debitis. Dolore quae officiis cum excepturi. At libero, a
-              magnam nemo animi optio? Nihil, consequatur ad et delectus illo
-              facilis architecto non at nesciunt quidem rem laboriosam quis
-              velit fugiat aperiam expedita quam eaque cupiditate dolorem. Nihil
-              eum libero consectetur. Nam, eveniet labore. Ad ex sapiente
-              assumenda dolores deleniti possimus provident eos nisi maxime
-              consectetur, illum dignissimos id minus autem, velit quaerat esse
-              quis quas adipisci. Corrupti, ullam! Recusandae tenetur in magnam
-              nostrum exercitationem ullam nulla aperiam quo. Itaque, laudantium
-              rerum! Vero, temporibus ipsum omnis neque consectetur reiciendis!
-              Sit placeat totam, ullam vitae soluta esse aliquam? Libero
-              explicabo similique sequi excepturi? Deleniti alias distinctio
-              nostrum dolorum ratione eum quibusdam animi dicta, vel sunt ipsa
-              aperiam atque autem eaque architecto adipisci, ullam accusantium
-              aliquid tempora excepturi pariatur. Magnam repellendus odit
-              laborum sed officia nam reiciendis cumque, illum ipsa hic quasi ea
-              distinctio dolores quos a placeat ratione eaque provident
-              excepturi quod nostrum quis? Veniam eos dicta dolorem? Impedit
-              commodi cupiditate sit velit ipsa minima quae totam vel natus enim
-              quam, repellat alias. Quis distinctio laudantium, perferendis
-              voluptatem labore eveniet cumque! Ut non facilis deleniti vel?
-              Earum, tempora! Tenetur optio accusamus ad, quaerat voluptate
-              deleniti similique quas nemo iusto, incidunt repudiandae, illum
-              qui! Deserunt consectetur voluptatum esse quidem, tempora
-              necessitatibus cum a sapiente dolorem consequatur soluta tenetur
-              error? Cupiditate voluptate sequi aliquam suscipit dolores nisi
-              odio nemo fuga. Necessitatibus quod officiis veniam incidunt
-              suscipit aspernatur, impedit, eaque, repudiandae assumenda velit
-              dolor cupiditate cumque ratione odio reiciendis! Id, laudantium?
-              Ullam dolores hic, pariatur porro voluptas necessitatibus? Nulla
-              quidem mollitia quo a sapiente suscipit aliquam omnis! Voluptate,
-              laudantium, culpa tempora molestiae adipisci saepe eligendi,
-              debitis optio nobis dolores quos asperiores?
+            <div
+              className="px-2 inner-prob-container"
+              style={{
+                wordBreak: "break-word",
+              }}
+            >
+              <h1
+                style={{
+                  fontSize: "1.7rem",
+                  marginTop: "10px",
+                  marginBottom: "0px",
+                }}
+              >
+                {props.ps.title}
+              </h1>
+              {props.ps.statement}
+              <div style={{ visibility: "hidden" }}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
+                facere praesentium, saepe cumque similique dignissimos officia
+                perferendis voluptas quo nobis cupiditate. Sunt expedita ullam
+                labore at
+              </div>
             </div>
           </div>
         </div>
@@ -184,11 +158,40 @@ const Re = () => {
                   <option value="18">18px</option>
                   <option value="20">20px</option>
                 </select>
-
                 <button
                   id="run-btn"
                   onClick={() => {
                     setLoader(<Loader />);
+                    var sendcode = {
+                      lang: lang,
+                      is_partial: true,
+                      partial_sol: code,
+                      cmd: "Run Code",
+                      code: code,
+                    };
+                    axios
+                      .post(
+                        URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
+                        sendcode
+                      )
+                      .then((response) => {
+                        var res = response["data"];
+                        setLoader(<></>);
+                        var tc_no = 0;
+                        var tcs = res.map((tc) => {
+                          tc_no++;
+                          return (
+                            <TestCase
+                              is_correct={tc[1]}
+                              sr_no={tc_no}
+                              op={tc[0]}
+                              ip={tc[2]}
+                              exip={tc[3]}
+                            ></TestCase>
+                          );
+                        });
+                        setTc(tcs);
+                      });
                   }}
                 >
                   Run
@@ -234,8 +237,35 @@ const Re = () => {
               <button
                 id="sub-btn"
                 onClick={() => {
-                  setLoader();
+                  if (localStorage.getItem("token")) {
+                    setLoader(<Loader />);
+                    axios
+                      .post(
+                        URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
+                        {
+                          lang: lang,
+                          is_partial: false,
+                          partial_sol: code,
+                          cmd: "Submit Code",
+                          code: code,
+                        },
+                        {
+                          headers: {
+                            Authorization: localStorage.getItem("token"),
+                          },
+                        }
+                      )
+                      .then((response) => {
+                        var res = response["data"];
+                        setLoader(<></>);
+                        setTc(res.res);
+                        setDisabled("disabled");
+                      });
+                  } else {
+                    document.getElementById("login-btn").click();
+                  }
                 }}
+                disabled={disabled}
               >
                 Submit
               </button>
@@ -248,10 +278,11 @@ const Re = () => {
               }}
             >
               {loader}
-              <div className="row pl-4 py-2" style={{width: "100%"}}>
-                <TestCase is_correct={true} />
-                <TestCase is_correct={false} />
-                <TestCase is_correct={false} />
+              <div
+                className="row pl-4 py-2"
+                style={{ width: "100%", wordBreak: "break-word" }}
+              >
+                {tc}
               </div>
             </div>
           </div>
