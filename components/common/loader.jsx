@@ -1,4 +1,4 @@
-export default function Loader() {
+export default function Loader(props) {
   return (
     <div className="loading text-center">
       <img src="/images/loader.gif" alt="loader" style={{

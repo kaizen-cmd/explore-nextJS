@@ -4,7 +4,7 @@ import axios from "axios";
 import URL from "../../../components/url";
 import { useRouter } from "next/router";
 
-const Verified = () => {
+const Verified = (props) => {
   const router = useRouter();
   const [message, setMessage] = useState("Loading...");
   useEffect(() => {

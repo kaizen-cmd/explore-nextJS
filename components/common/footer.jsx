@@ -1,6 +1,6 @@
 import FooterCol from "./footer-col";
 
-const Footer = () => {
+const Footer = (props) => {
   var year = new Date().getFullYear();
   return (
     <div className="footer">

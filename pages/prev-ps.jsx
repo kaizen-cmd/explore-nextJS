@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BaseLayout from "../components/base_layout";
 
-const PsIndex = () => {
+const PsIndex = (props) => {
   return (
     <BaseLayout navbarprop="psindex">
       <Head>

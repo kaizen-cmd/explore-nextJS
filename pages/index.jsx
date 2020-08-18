@@ -5,6 +5,7 @@ import SignUpContainer from "../components/new-user-homepage/sign-up-container";
 import Dashboard from "../components/new-user-homepage/dashboard";
 import { useEffect, useState } from "react";
 
+
 var dashboard, setDashboard;
 const Index = (props) => {
   [dashboard, setDashboard] = useState(false)

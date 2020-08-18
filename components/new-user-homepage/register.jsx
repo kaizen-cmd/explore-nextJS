@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import URL from "../url";
 
-const Register = () => {
+const Register = (props) => {
   const [message, setMessage] = useState("");
   const [uExists, setUExists] = useState("");
   const [eExists, setEExists] = useState("");

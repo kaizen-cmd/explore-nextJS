@@ -4,7 +4,7 @@ import axios from "axios";
 import URL from "../url";
 import { useState } from "react";
 
-const ForgotPass = () => {
+const ForgotPass = (props) => {
   const [message, setMessage] = useState("");
   return (
     <div

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import URL from "../url";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const [liveps, setLiveps] = useState([]);
   const [user, setUser] = useState({
     username: "",
@@ -28,7 +28,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="top-container">
+    <div className="top-container" id="db-user">
       <div className="container pt-3 pb-0">
         <div className="row homepage-top">
           <div className="col-md-6">

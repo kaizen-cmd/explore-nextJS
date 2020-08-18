@@ -4,7 +4,7 @@ import axios from "axios";
 import URL from "../../../../components/url";
 import { useRouter } from "next/router";
 
-const ResetPass = () => {
+const ResetPass = (props) => {
   const [message, setMessage] = useState("");
   const router = useRouter();
   return (

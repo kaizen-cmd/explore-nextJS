@@ -36,9 +36,6 @@ const NavBar = (props) => {
                 : setDot(true);
             });
         })
-        .catch((error) => {
-          console.log(error);
-        });
     }
   }, []);
 
@@ -145,7 +142,6 @@ const NavBar = (props) => {
                         localStorage.removeItem("token");
                         setLoggedIn(false);
                         setDashboard(false);
-                        setTok("");
                       }}
                     >
                       Logout

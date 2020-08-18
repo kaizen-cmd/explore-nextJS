@@ -31,7 +31,6 @@ EditorPage.getInitialProps = async ({ query }) => {
   const url = URL + "/codeportal/ps-detail/" + query.editor + "/";
   const ps = await axios.get(url);
   const ps_obj = ps['data'];
-  console.log(ps_obj);
   return {
     ps: ps_obj
   }

@@ -7,7 +7,7 @@ import { useState } from "react";
 import ForgotPass from "./forgot-pass";
 import { setDashboard } from "../../pages/index";
 
-const Login = () => {
+const Login = (props) => {
   const [message, setMessage] = useState("");
   return (
     <div
@@ -60,13 +60,13 @@ const Login = () => {
                         if (
                           response["data"]["token"] !== "Incorrect credentials"
                         ) {
-                          setLoggedIn(true);
                           localStorage.setItem(
                             "token",
                             `${response["data"]["token"]}`
                           );
                           document.getElementById("close-btn").click();
-                          setDashboard(true);
+                          document.getElementById("db-user") ? setDashboard(true) : "";
+                          setLoggedIn(true);
                         } else {
                           setMessage("Incorrect credentials");
                         }

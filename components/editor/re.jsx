@@ -21,20 +21,19 @@ const Re = (props) => {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       axios
-        .get(
-          URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
-          {
-            headers: {
-              Authorization: localStorage.getItem("token"),
-            },
-          }
-        )
+        .get(URL + "/codeportal/ps-detail/" + props.ps.pk + "/", {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        })
         .then((response) => {
-          console.log(response['data']);
           const ps_obj = response["data"];
           ps_obj.lang === "" ? setLang("python") : setLang(ps_obj.lang);
           setCode(ps_obj.partial_sol);
-          ps_obj.disable === "" ? "" : setDisabled("disabled");
+          if (ps_obj.disable !== "") {
+            setDisabled("disabled");
+            setTc("You have already submitted the solution for this question.");
+          }
         });
     }
   }, [loggedIn]);
@@ -182,6 +181,7 @@ const Re = (props) => {
                           tc_no++;
                           return (
                             <TestCase
+                              key={tc_no}
                               is_correct={tc[1]}
                               sr_no={tc_no}
                               op={tc[0]}

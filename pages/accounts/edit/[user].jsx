@@ -6,7 +6,7 @@ import URL from "../../../components/url";
 import FormData from "form-data";
 import { useRouter } from "next/router";
 
-const Profile = () => {
+const Profile = (props) => {
   const [bio, setBio] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -88,7 +88,6 @@ const Profile = () => {
                     .then((response) => {
                       setProfilePic(response["data"].profile_pic);
                       setMessage("Saved Successfully");
-                      console.log(response["data"]);
                     });
                 }}
               />
@@ -219,7 +218,6 @@ const Profile = () => {
                         : formData.append("linkedin_link", linlink);
 
                       formData.append("username", username);
-                      console.log(formData);
                       axios
                         .put(`${URL}/accounts/user/`, formData, {
                           headers: {
@@ -228,7 +226,6 @@ const Profile = () => {
                           },
                         })
                         .then((response) => {
-                          console.log(response['data']);
                           setMessage("Saved Successfully");
                           setGhlink(response["data"].github_link);
                           setLinlink(response["data"].linkedin_link);

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BaseLayout from "../components/base_layout";
 
-const Ranking = () => {
+const Ranking = (props) => {
   return (
     <BaseLayout navbarprop="ranking">
       <Head>
