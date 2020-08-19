@@ -4,14 +4,16 @@ import WinnerCard from "../components/new-user-homepage/winner-card";
 import SignUpContainer from "../components/new-user-homepage/sign-up-container";
 import Dashboard from "../components/new-user-homepage/dashboard";
 import { useEffect, useState } from "react";
-
+import axios from "axios";
+import URL from "../components/url";
 
 var dashboard, setDashboard;
 const Index = (props) => {
-  [dashboard, setDashboard] = useState(false)
+  [dashboard, setDashboard] = useState(false);
   useEffect(() => {
     window.localStorage.getItem("token") && setDashboard(true);
-  }, [])
+  }, []);
+  var key = 0;
   return (
     <BaseLayout navbarprop="home">
       <Head>
@@ -34,24 +36,18 @@ const Index = (props) => {
       <div className="mid-container">
         <div className="container">
           <div className="row">
-            <WinnerCard
-            key="1"
-              name="Construct Angular"
-              image="/images/angular.png"
-              bio="Aniruddh Chakravarty"
-            />
-            <WinnerCard
-            key="2"
-              name="React to React"
-              image="/images/react.png"
-              bio="Viral Sangani"
-            />
-            <WinnerCard
-            key="3"
-              name="Get to Know Android"
-              image="/images/android.jpg"
-              bio="Gaurav Thakkar"
-            />
+            {props.dict.winners.map((winner) => {
+              key++;
+              return (
+                <WinnerCard
+                  key={key}
+                  is_win={true}
+                  name={winner.username}
+                  image={winner.profile_pic}
+                  bio={`Points: ${winner.points}`}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -69,24 +65,18 @@ const Index = (props) => {
       <div className="mid-container pb-5">
         <div className="container">
           <div className="row">
-            <WinnerCard
-            key="4"
-              name="Robotics MIT"
-              image="/images/event-1.jpg"
-              bio="MIT SOE"
-            />
-            <WinnerCard
-            key="5"
-              name="Tech Talks"
-              image="/images/event-2.jpg"
-              bio="Nandan Nilekani"
-            />
-            <WinnerCard
-            key="6"
-              name="Contest Launch"
-              image="/images/event-3.jpg"
-              bio="Infosys Ltd."
-            />
+            {props.dict.projects.map((winner) => {
+              key++;
+              return (
+                <WinnerCard
+                  key={key}
+                  name={winner.username}
+                  image={winner.pic}
+                  bio={winner.desc}
+                  link={winner.link}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -98,3 +88,10 @@ const Index = (props) => {
 export default Index;
 export { setDashboard };
 
+Index.getInitialProps = async () => {
+  const data = await axios.get(URL + "/home/");
+  const dict = data["data"];
+  return {
+    dict: dict,
+  };
+};

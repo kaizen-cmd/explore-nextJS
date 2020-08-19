@@ -2,13 +2,23 @@ import { setLogin } from "../base_layout";
 import Register from "./register";
 import URL from "../url";
 import axios from "axios";
-import { setLoggedIn, setPp } from "../common/navbar";
 import { useState } from "react";
 import ForgotPass from "./forgot-pass";
 import { setDashboard } from "../../pages/index";
+import {
+  loggedIn,
+  setLoggedIn,
+  user,
+  setUser,
+  pp,
+  setPp,
+  dot,
+  setDot,
+} from "../../pages/_app";
 
 const Login = (props) => {
   const [message, setMessage] = useState("");
+
   return (
     <div
       className="login-container h-100 justify-content-center animate__animated animate__bounceIn"
@@ -72,6 +82,34 @@ const Login = (props) => {
                             })
                             .then((response) => {
                               setPp(response["data"].profile_pic);
+                            });
+                          axios
+                            .post(`${URL}/accounts/validate-token/`, {
+                              token: localStorage.getItem("token"),
+                            })
+                            .then((response) => {
+                              response["data"]["res"] === true &&
+                                setLoggedIn(true);
+                              axios
+                                .get(`${URL}/accounts/user/`, {
+                                  headers: {
+                                    Authorization: localStorage.getItem(
+                                      "token"
+                                    ),
+                                  },
+                                })
+                                .then((response) => {
+                                  console.log(response['data']);
+                                  const profile = response["data"];
+                                  setUser(profile.username);
+                                  profile.first_name !== "" &&
+                                  profile.last_name !== "" &&
+                                  profile.github_link !== "" &&
+                                  profile.linkedin_link !== ""
+                                    ? setDot(false)
+                                    : setDot(true);
+                                  setPp(profile.profile_pic);
+                                });
                             });
                           document.getElementById("close-btn").click();
                           setLoggedIn(true);

@@ -4,7 +4,7 @@ import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
 import URL from "../url";
-import { loggedIn } from "../common/navbar";
+import { loggedIn } from "../../pages/_app";
 
 const Editor = (props) => {
   const [lang, setLang] = useState("python");

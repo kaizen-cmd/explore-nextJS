@@ -1,47 +1,11 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { setLogin } from "../base_layout";
 import Login from "../new-user-homepage/login";
-import axios from "axios";
-import URL from "../url";
 import { setDashboard } from "../../pages";
+import { loggedIn, setLoggedIn, user, pp, dot } from "../../pages/_app";
 
-var loggedIn, setLoggedIn;
-var pp, setPp;
 const NavBar = (props) => {
-  const [user, setUser] = useState("");
-  [loggedIn, setLoggedIn] = useState(false);
-  [pp, setPp] = useState("Profile");
-  const [dot, setDot] = useState(false);
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      axios
-        .post(`${URL}/accounts/validate-token/`, {
-          token: localStorage.getItem("token"),
-        })
-        .then((response) => {
-          response["data"]["res"] === true && setLoggedIn(true);
-          axios
-            .get(`${URL}/accounts/user/`, {
-              headers: {
-                Authorization: localStorage.getItem("token"),
-              },
-            })
-            .then((response) => {
-              const profile = response["data"];
-              setUser(profile.username);
-              profile.first_name !== "" &&
-              profile.last_name !== "" &&
-              profile.github_link !== "" &&
-              profile.linkedin_link !== ""
-                ? setDot(false)
-                : setDot(true);
-              setPp(profile.profile_pic);
-            });
-        });
-    }
-  }, [loggedIn]);
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       var st = window.pageYOffset || document.documentElement.scrollTop;
@@ -65,6 +29,14 @@ const NavBar = (props) => {
       }
     });
   }, []);
+
+  const activator = (id) => {
+    var elems = document.getElementsByClassName("nav-item");
+    Array.prototype.forEach.call(elems, function (el) {
+      el.classList.contains("active") && el.classList.remove("active");
+    });
+    id.classList.add("active");
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
@@ -87,8 +59,9 @@ const NavBar = (props) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li
-              className={
-                "nav-item " + `${props.active === "home" ? "active" : ""}`
+              className="nav-item"
+              onClick={() =>
+                activator(document.getElementsByClassName("nav-item")[0])
               }
             >
               <Link href="/">
@@ -98,29 +71,43 @@ const NavBar = (props) => {
               </Link>
             </li>
             <li
-              className={
-                "nav-item " + `${props.active === "psindex" ? "active" : ""}`
+              className="nav-item"
+              onClick={() =>
+                activator(document.getElementsByClassName("nav-item")[1])
               }
             >
               <Link href="/codeportal/records">
                 <a className="nav-link">
                   <div
                     style={{
-                      display: "inline-block",
                       position: "relative",
-                      left: 15,
-                      bottom: 5
                     }}
-                  ><img src="/images/new.png/" alt="" style={{
-                    width: 30,
-                  }}/></div>
-                  Practice
+                  >
+                    <div
+                      style={{
+                        display: "inline-block",
+                        position: "absolute",
+                        left: -12,
+                        bottom: 1,
+                      }}
+                    >
+                      <img
+                        src="/images/new.png/"
+                        alt=""
+                        style={{
+                          width: 30,
+                        }}
+                      />
+                    </div>
+                    Practice
+                  </div>
                 </a>
               </Link>
             </li>
             <li
-              className={
-                "nav-item " + `${props.active === "ranking" ? "active" : ""}`
+              className="nav-item"
+              onClick={() =>
+                activator(document.getElementsByClassName("nav-item")[2])
               }
             >
               <Link href="/codeportal/leaderboard">
@@ -253,4 +240,3 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
-export { setLoggedIn, loggedIn, setPp };

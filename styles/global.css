@@ -25,15 +25,13 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #4a4577;
 }
 
-
 .inner-prob-container::-webkit-scrollbar,
 .inner-op-div::-webkit-scrollbar {
   width: 0.4rem;
 }
 
-
 .inner-prob-container::-webkit-scrollbar-thumb,
-.inner-op-div::-webkit-scrollbar-thumb{
+.inner-op-div::-webkit-scrollbar-thumb {
   background-color: white;
   outline: 1px solid #0f4c75;
 }
@@ -119,14 +117,21 @@ h5 {
   font-weight: 750;
 }
 
-.winner-card img {
+.win {
+  max-width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 18px;
+}
+
+.proj {
   max-width: 100%;
   height: 200px;
   transition: transform 0.5s;
   border-radius: 10px 10px 0px 0px;
 }
 
-.winner-card img:hover {
+.proj:hover {
   transform: scale(1.2);
   transition-timing-function: ease-in-out;
 }
@@ -153,8 +158,6 @@ h5 {
   transition: transform 0.2s;
   transition-timing-function: ease-in-out;
 }
-
-
 
 .winner-card .col-lg-12:hover {
   box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.4);
@@ -527,12 +530,15 @@ textarea {
   height: 598px;
 }
 
-.op-container, .prob-container {
+.op-container,
+.prob-container {
   background-color: #0f4c75;
   color: white;
 }
 
-.op-container, .prob-container, .editor-container {
+.op-container,
+.prob-container,
+.editor-container {
   border-radius: 10px;
 }
 
