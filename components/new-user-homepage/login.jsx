@@ -2,7 +2,7 @@ import { setLogin } from "../base_layout";
 import Register from "./register";
 import URL from "../url";
 import axios from "axios";
-import { setLoggedIn } from "../common/navbar";
+import { setLoggedIn, setPp } from "../common/navbar";
 import { useState } from "react";
 import ForgotPass from "./forgot-pass";
 import { setDashboard } from "../../pages/index";
@@ -64,9 +64,20 @@ const Login = (props) => {
                             "token",
                             `${response["data"]["token"]}`
                           );
+                          axios
+                            .get(`${URL}/accounts/user/`, {
+                              headers: {
+                                Authorization: localStorage.getItem("token"),
+                              },
+                            })
+                            .then((response) => {
+                              setPp(response["data"].profile_pic);
+                            });
                           document.getElementById("close-btn").click();
-                          document.getElementById("db-user") ? setDashboard(true) : "";
                           setLoggedIn(true);
+                          document.getElementById("db-user")
+                            ? setDashboard(true)
+                            : "";
                         } else {
                           setMessage("Incorrect credentials");
                         }

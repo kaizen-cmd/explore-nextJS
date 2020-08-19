@@ -28,7 +28,7 @@ const Dashboard = (props) => {
   }, []);
 
   return (
-    <div className="top-container" id="db-user">
+    <div className="top-container">
       <div className="container pt-3 pb-0">
         <div className="row homepage-top">
           <div className="col-md-6">
@@ -90,14 +90,14 @@ const Dashboard = (props) => {
                         <td>
                           <Link
                             href="/problem/[editor]/"
-                            as={`problem/${ps[3]}/`}
+                            as={`/problem/${ps[3]}/`}
                           >
                             <a>{ps[0]}</a>
                           </Link>
                         </td>
                         <Link
                           href="/profile/[profile]/"
-                          as={`profile/${ps[1]}/`}
+                          as={`/profile/${ps[1]}/`}
                         >
                           <a>
                             <td>{ps[1]}</td>
