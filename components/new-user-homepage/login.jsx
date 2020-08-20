@@ -65,6 +65,10 @@ const Login = (props) => {
                       .post(`${URL}/accounts/login/`, {
                         username: username,
                         password: password,
+                      }, {
+                        headers: {
+                          'Referer': 'https://codestrike.vercel.app/'
+                        }
                       })
                       .then(function (response) {
                         if (
