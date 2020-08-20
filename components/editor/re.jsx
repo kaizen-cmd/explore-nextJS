@@ -18,7 +18,6 @@ const Re = (props) => {
   const [height2, setHeight2] = useState("243px");
   const [disabled, setDisabled] = useState("");
   const [tc, setTc] = useState("You can only submit once! Be careful");
-  const [renderEditor, setRenderEditor] = useState(<Loader />);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       axios
@@ -40,29 +39,6 @@ const Re = (props) => {
           }
         });
     }
-    setRenderEditor(
-      <ControlledEditor
-        onChange={(e, v) => {
-          setCode(v);
-        }}
-        height={height1}
-        theme={theme}
-        language={lang}
-        loading="Loading..."
-        value={code}
-        width={width1}
-        options={{
-          fontSize: fontSize,
-          automaticLayout: true,
-          wordWrap: "on",
-          lineNumbersMinChars: 3,
-          glyphMargin: false,
-          minimap: {
-            enabled: false,
-          },
-        }}
-      />
-    );
   }, [loggedIn]);
   const logger = () => {
     var ed = window.document.getElementById("ed-div");
@@ -231,7 +207,29 @@ const Re = (props) => {
               </div>
             </div>
             <div>
-              <div className="content-editor">{renderEditor}</div>
+              <div className="content-editor">
+                <ControlledEditor
+                  onChange={(e, v) => {
+                    setCode(v);
+                  }}
+                  height={height1}
+                  theme={theme}
+                  language={lang}
+                  loading="Loading..."
+                  value={code}
+                  width={width1}
+                  options={{
+                    fontSize: fontSize,
+                    automaticLayout: true,
+                    wordWrap: "on",
+                    lineNumbersMinChars: 3,
+                    glyphMargin: false,
+                    minimap: {
+                      enabled: false,
+                    },
+                  }}
+                />
+              </div>
             </div>
           </div>
 
