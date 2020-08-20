@@ -61,6 +61,7 @@ const Login = (props) => {
                   const username = document.getElementById("username").value;
                   const password = document.getElementById("password").value;
                   if (username !== "" && password !== "") {
+                    setMessage("Loading...")
                     axios
                       .post(`${URL}/accounts/login/`, {
                         username: username,
@@ -103,7 +104,6 @@ const Login = (props) => {
                                   },
                                 })
                                 .then((response) => {
-                                  console.log(response['data']);
                                   const profile = response["data"];
                                   setUser(profile.username);
                                   profile.first_name !== "" &&

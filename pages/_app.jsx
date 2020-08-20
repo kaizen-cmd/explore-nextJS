@@ -19,7 +19,6 @@ export default function MyApp({ Component, pageProps }) {
   [pp, setPp] = useState("Profile");
   [dot, setDot] = useState(false);
   useEffect(() => {
-    console.log(user, "*************************");
     if (user === "") {
       if (localStorage.getItem("token")) {
         axios

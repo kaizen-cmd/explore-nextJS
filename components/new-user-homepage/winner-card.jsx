@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const WinnerCard = ({ name, image, bio, is_win, link }) => {
-  console.log(image);
   return (
     <>
       {is_win ? (
