@@ -27,7 +27,7 @@ const WinnerCard = ({ name, image, bio, is_win, link }) => {
               <div className="card-img w-100">
                 <img src={image} alt={name} className="proj" />
               </div>
-              <a href={link}>
+              <a href={link} target="_blank">
                 <h5 className="mt-3">{name}</h5>
                 <div className="bio">
                   <p>{bio}</p>

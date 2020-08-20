@@ -18,8 +18,13 @@ const Profile = (props) => {
             <div className="pt-5">
               <img
                 src={`${props.user.profile_pic}`}
-                alt=""
-                className="mb-0 rounded-circle"
+                alt={props.user.username}
+                className="mb-0 p-3"
+                style={{
+                  width: 225,
+                  height: 225,
+                  borderRadius: "50%"
+                }}
               />
             </div>
 

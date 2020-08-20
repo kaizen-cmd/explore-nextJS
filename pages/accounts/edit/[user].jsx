@@ -55,7 +55,12 @@ const Profile = (props) => {
               <img
                 src={profilePic}
                 alt={firstname + " " + lastname}
-                className="mb-0"
+                className="mb-0 p-3"
+                style={{
+                  width: 225,
+                  height: 225,
+                  borderRadius: "50%"
+                }}
               />
               <label htmlFor="profile_pic">Upload new picture</label>
               <input
