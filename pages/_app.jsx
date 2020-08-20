@@ -1,6 +1,6 @@
 import "../styles/global.css";
 import axios from "axios";
-import URL from "../components/url";
+import URL, { referer } from "../components/url";
 import Footer from "../components/common/footer";
 import Head from "next/head";
 import NavBar from "../components/common/navbar";
@@ -22,15 +22,24 @@ export default function MyApp({ Component, pageProps }) {
     if (user === "") {
       if (localStorage.getItem("token")) {
         axios
-          .post(`${URL}/accounts/validate-token/`, {
-            token: localStorage.getItem("token"),
-          })
+          .post(
+            `${URL}/accounts/validate-token/`,
+            {
+              token: localStorage.getItem("token"),
+            },
+            {
+              headers: {
+                Referer: referer,
+              },
+            }
+          )
           .then((response) => {
             response["data"]["res"] === true && setLoggedIn(true);
             axios
               .get(`${URL}/accounts/user/`, {
                 headers: {
                   Authorization: localStorage.getItem("token"),
+                  Referer: referer,
                 },
               })
               .then((response) => {

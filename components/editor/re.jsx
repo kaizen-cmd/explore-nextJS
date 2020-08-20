@@ -4,7 +4,7 @@ import { ControlledEditor } from "@monaco-editor/react";
 import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
-import URL from "../url";
+import URL, { referer } from "../url";
 import { loggedIn } from "../../pages/_app";
 
 const Re = (props) => {
@@ -25,6 +25,7 @@ const Re = (props) => {
         .get(URL + "/codeportal/ps-detail/" + props.ps.pk + "/", {
           headers: {
             Authorization: localStorage.getItem("token"),
+            Referer: referer,
           },
         })
         .then((response) => {
@@ -197,7 +198,12 @@ const Re = (props) => {
                     axios
                       .post(
                         URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
-                        sendcode
+                        sendcode,
+                        {
+                          headers: {
+                            Referer: referer,
+                          },
+                        }
                       )
                       .then((response) => {
                         var res = response["data"];
@@ -256,6 +262,7 @@ const Re = (props) => {
                         {
                           headers: {
                             Authorization: localStorage.getItem("token"),
+                            Referer: referer,
                           },
                         }
                       )

@@ -1,6 +1,6 @@
 import { setLogin } from "../base_layout";
 import Register from "./register";
-import URL from "../url";
+import URL, { referer } from "../url";
 import axios from "axios";
 import { useState } from "react";
 import ForgotPass from "./forgot-pass";
@@ -61,16 +61,20 @@ const Login = (props) => {
                   const username = document.getElementById("username").value;
                   const password = document.getElementById("password").value;
                   if (username !== "" && password !== "") {
-                    setMessage("Loading...")
+                    setMessage("Loading...");
                     axios
-                      .post(`${URL}/accounts/login/`, {
-                        username: username,
-                        password: password,
-                      }, {
-                        headers: {
-                          'Referer': 'https://codestrike.vercel.app/'
+                      .post(
+                        `${URL}/accounts/login/`,
+                        {
+                          username: username,
+                          password: password,
+                        },
+                        {
+                          headers: {
+                            Referer: "https://codestrike.vercel.app/",
+                          },
                         }
-                      })
+                      )
                       .then(function (response) {
                         if (
                           response["data"]["token"] !== "Incorrect credentials"
@@ -83,15 +87,24 @@ const Login = (props) => {
                             .get(`${URL}/accounts/user/`, {
                               headers: {
                                 Authorization: localStorage.getItem("token"),
+                                Referer: referer,
                               },
                             })
                             .then((response) => {
                               setPp(response["data"].profile_pic);
                             });
                           axios
-                            .post(`${URL}/accounts/validate-token/`, {
-                              token: localStorage.getItem("token"),
-                            })
+                            .post(
+                              `${URL}/accounts/validate-token/`,
+                              {
+                                token: localStorage.getItem("token"),
+                              },
+                              {
+                                headers: {
+                                  Referer: referer,
+                                },
+                              }
+                            )
                             .then((response) => {
                               response["data"]["res"] === true &&
                                 setLoggedIn(true);
@@ -101,6 +114,7 @@ const Login = (props) => {
                                     Authorization: localStorage.getItem(
                                       "token"
                                     ),
+                                    Referer: referer,
                                   },
                                 })
                                 .then((response) => {

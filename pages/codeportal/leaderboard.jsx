@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BaseLayout from "../../components/base_layout";
 import axios from "axios";
-import URL from "../../components/url";
+import URL, { referer } from "../../components/url";
 import Link from "next/link";
 
 const Ranking = (props) => {
@@ -49,7 +49,11 @@ const Ranking = (props) => {
 export default Ranking;
 
 Ranking.getInitialProps = async () => {
-  const res = await axios.get(URL + "/codeportal/ranking/");
+  const res = await axios.get(URL + "/codeportal/ranking/", {
+    headers: {
+      Referer: referer,
+    },
+  });
   const data = res["data"];
   return {
     leader_objs: data,

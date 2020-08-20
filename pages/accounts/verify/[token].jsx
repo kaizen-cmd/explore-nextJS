@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import BaseLayout from "../../../components/base_layout";
 import axios from "axios";
-import URL from "../../../components/url";
+import URL, { referer } from "../../../components/url";
 import { useRouter } from "next/router";
 
 const Verified = (props) => {
@@ -9,12 +9,18 @@ const Verified = (props) => {
   const [message, setMessage] = useState("Loading...");
   useEffect(() => {
     var url = `${URL}${window.location["pathname"]}`;
-    axios.get(url).then((response) => {
-      setMessage(response["data"]["res"] + "You can now login.");
-      setTimeout(() => {
-        router.push("/");
-      }, 2500);
-    });
+    axios
+      .get(url, {
+        headers: {
+          Referer: referer,
+        },
+      })
+      .then((response) => {
+        setMessage(response["data"]["res"] + "You can now login.");
+        setTimeout(() => {
+          router.push("/");
+        }, 2500);
+      });
   }, []);
   return (
     <BaseLayout>

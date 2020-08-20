@@ -2,7 +2,7 @@ import Head from "next/head";
 import BaseLayout from "../../../components/base_layout";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import URL from "../../../components/url";
+import URL, { referer } from "../../../components/url";
 import FormData from "form-data";
 import { useRouter } from "next/router";
 
@@ -23,6 +23,7 @@ const Profile = (props) => {
         .get(`${URL}/accounts/user/`, {
           headers: {
             Authorization: localStorage.getItem("token"),
+            Referer: referer,
           },
         })
         .then((response) => {
@@ -59,7 +60,7 @@ const Profile = (props) => {
                 style={{
                   width: 225,
                   height: 225,
-                  borderRadius: "50%"
+                  borderRadius: "50%",
                 }}
               />
               <label htmlFor="profile_pic">Upload new picture</label>
@@ -88,6 +89,7 @@ const Profile = (props) => {
                       headers: {
                         Authorization: localStorage.getItem("token"),
                         "Content-Type": "multipart/form-data",
+                        Referer: referer,
                       },
                     })
                     .then((response) => {
@@ -228,6 +230,7 @@ const Profile = (props) => {
                           headers: {
                             Authorization: localStorage.getItem("token"),
                             "Content-Type": "multipart/form-data",
+                            Referer: referer,
                           },
                         })
                         .then((response) => {

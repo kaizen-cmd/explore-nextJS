@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BaseLayout from "../../components/base_layout";
 import axios from "axios";
-import URL from "../../components/url";
+import URL, { referer } from "../../components/url";
 
 const Profile = (props) => {
   return (
@@ -23,7 +23,7 @@ const Profile = (props) => {
                 style={{
                   width: 225,
                   height: 225,
-                  borderRadius: "50%"
+                  borderRadius: "50%",
                 }}
               />
             </div>
@@ -106,7 +106,11 @@ const Profile = (props) => {
 export default Profile;
 
 Profile.getInitialProps = async (ctx) => {
-  const res = await axios.get(URL + ctx.asPath);
+  const res = await axios.get(URL + ctx.asPath, {
+    headers: {
+      Referer: referer,
+    },
+  });
   const profile = res["data"];
   return {
     user: profile,

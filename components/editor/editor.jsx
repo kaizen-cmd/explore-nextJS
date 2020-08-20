@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
-import URL from "../url";
+import URL, { referer } from "../url";
 import { loggedIn } from "../../pages/_app";
 
 const Editor = (props) => {
@@ -20,6 +20,7 @@ const Editor = (props) => {
         .get(URL + "/codeportal/ps-detail/" + props.ps.pk + "/", {
           headers: {
             Authorization: localStorage.getItem("token"),
+            Referer: referer,
           },
         })
         .then((response) => {
@@ -118,7 +119,12 @@ const Editor = (props) => {
                     axios
                       .post(
                         URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
-                        sendcode
+                        sendcode,
+                        {
+                          headers: {
+                            Referer: referer,
+                          },
+                        }
                       )
                       .then((response) => {
                         var res = response["data"];
@@ -196,6 +202,7 @@ const Editor = (props) => {
                           {
                             headers: {
                               Authorization: localStorage.getItem("token"),
+                              Referer: referer,
                             },
                           }
                         )

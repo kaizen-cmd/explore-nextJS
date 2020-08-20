@@ -1,7 +1,7 @@
 import { setLogin } from "../base_layout";
 import Login from "./login";
 import axios from "axios";
-import URL from "../url";
+import URL, { referer } from "../url";
 import { useState } from "react";
 
 const ForgotPass = (props) => {
@@ -47,9 +47,17 @@ const ForgotPass = (props) => {
                   if (emailPattern.test(email)) {
                     setMessage("Loading ...");
                     axios
-                      .post(`${URL}/accounts/pass-reset-email/`, {
-                        email: email,
-                      })
+                      .post(
+                        `${URL}/accounts/pass-reset-email/`,
+                        {
+                          email: email,
+                        },
+                        {
+                          headers: {
+                            Referer: referer,
+                          },
+                        }
+                      )
                       .then((response) => {
                         setMessage(response["data"]["res"]);
                         setTimeout(() => {

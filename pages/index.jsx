@@ -5,7 +5,7 @@ import SignUpContainer from "../components/new-user-homepage/sign-up-container";
 import Dashboard from "../components/new-user-homepage/dashboard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import URL from "../components/url";
+import URL, { referer } from "../components/url";
 
 var dashboard, setDashboard;
 const Index = (props) => {
@@ -89,7 +89,11 @@ export default Index;
 export { setDashboard };
 
 Index.getInitialProps = async () => {
-  const data = await axios.get(URL + "/home/");
+  const data = await axios.get(URL + "/home/", {
+    headers: {
+      Referer: referer,
+    },
+  });
   const dict = data["data"];
   return {
     dict: dict,

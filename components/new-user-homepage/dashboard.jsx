@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import URL from "../url";
+import URL, { referer } from "../url";
 
 const Dashboard = (props) => {
   const [liveps, setLiveps] = useState([]);
@@ -12,14 +12,21 @@ const Dashboard = (props) => {
   });
 
   useEffect(() => {
-    axios.get(URL + "/codeportal/live-ps/").then((response) => {
-      setLiveps(response["data"]);
-    });
+    axios
+      .get(URL + "/codeportal/live-ps/", {
+        headers: {
+          Referer: referer,
+        },
+      })
+      .then((response) => {
+        setLiveps(response["data"]);
+      });
 
     axios
       .get(`${URL}/accounts/user/`, {
         headers: {
           Authorization: localStorage.getItem("token"),
+          Referer: referer,
         },
       })
       .then((response) => {
