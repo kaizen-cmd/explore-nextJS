@@ -50,11 +50,6 @@ const Register = (props) => {
                       {
                         username: document.getElementById("username").value,
                       },
-                      {
-                        headers: {
-                          Referer: referer,
-                        },
-                      }
                     )
                     .then((response) => {
                       setUExists(response["data"]["username"]);
@@ -82,9 +77,6 @@ const Register = (props) => {
                       {
                         email: document.getElementById("email").value,
                       },
-                      {
-                        Referer: referer,
-                      }
                     )
                     .then((response) => {
                       setEExists(response["data"]["email"]);
@@ -142,11 +134,6 @@ const Register = (props) => {
                           password: password,
                           email: email,
                         },
-                        {
-                          headers: {
-                            Referer: referer,
-                          },
-                        }
                       )
                       .then(function (response) {
                         setMessage(response["data"]["res"]);

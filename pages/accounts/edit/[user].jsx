@@ -24,7 +24,6 @@ const Profile = (props) => {
         .get(`${URL}/accounts/user/`, {
           headers: {
             Authorization: localStorage.getItem("token"),
-            Referer: referer,
           },
         })
         .then((response) => {
@@ -90,7 +89,6 @@ const Profile = (props) => {
                       headers: {
                         Authorization: localStorage.getItem("token"),
                         "Content-Type": "multipart/form-data",
-                        Referer: referer,
                       },
                     })
                     .then((response) => {
@@ -231,7 +229,6 @@ const Profile = (props) => {
                           headers: {
                             Authorization: localStorage.getItem("token"),
                             "Content-Type": "multipart/form-data",
-                            Referer: referer,
                           },
                         })
                         .then((response) => {

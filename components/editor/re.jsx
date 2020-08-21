@@ -24,7 +24,6 @@ const Re = (props) => {
         .get(URL + "/codeportal/ps-detail/" + props.ps.pk + "/", {
           headers: {
             Authorization: localStorage.getItem("token"),
-            Referer: referer,
           },
         })
         .then((response) => {
@@ -177,7 +176,6 @@ const Re = (props) => {
                         sendcode,
                         {
                           headers: {
-                            Referer: referer,
                           },
                         }
                       )
@@ -260,7 +258,6 @@ const Re = (props) => {
                         {
                           headers: {
                             Authorization: localStorage.getItem("token"),
-                            Referer: referer,
                           },
                         }
                       )

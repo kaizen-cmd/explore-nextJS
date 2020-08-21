@@ -27,11 +27,6 @@ export default function MyApp({ Component, pageProps }) {
             {
               token: localStorage.getItem("token"),
             },
-            {
-              headers: {
-                Referer: referer,
-              },
-            }
           )
           .then((response) => {
             response["data"]["res"] === true && setLoggedIn(true);
@@ -39,7 +34,6 @@ export default function MyApp({ Component, pageProps }) {
               .get(`${URL}/accounts/user/`, {
                 headers: {
                   Authorization: localStorage.getItem("token"),
-                  Referer: referer,
                 },
               })
               .then((response) => {

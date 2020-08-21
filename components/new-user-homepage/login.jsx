@@ -69,11 +69,6 @@ const Login = (props) => {
                           username: username,
                           password: password,
                         },
-                        {
-                          headers: {
-                            Referer: "https://codestrike.vercel.app/",
-                          },
-                        }
                       )
                       .then(function (response) {
                         if (
@@ -87,7 +82,6 @@ const Login = (props) => {
                             .get(`${URL}/accounts/user/`, {
                               headers: {
                                 Authorization: localStorage.getItem("token"),
-                                Referer: referer,
                               },
                             })
                             .then((response) => {
@@ -99,11 +93,6 @@ const Login = (props) => {
                               {
                                 token: localStorage.getItem("token"),
                               },
-                              {
-                                headers: {
-                                  Referer: referer,
-                                },
-                              }
                             )
                             .then((response) => {
                               response["data"]["res"] === true &&
@@ -114,7 +103,6 @@ const Login = (props) => {
                                     Authorization: localStorage.getItem(
                                       "token"
                                     ),
-                                    Referer: referer,
                                   },
                                 })
                                 .then((response) => {

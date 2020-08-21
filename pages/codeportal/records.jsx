@@ -58,11 +58,7 @@ const PsIndex = (props) => {
 export default PsIndex;
 
 PsIndex.getInitialProps = async () => {
-  const res = await axios.get(URL + "/codeportal/ps-records/", {
-    headers: {
-      Referer: referer,
-    },
-  });
+  const res = await axios.get(URL + "/codeportal/ps-records/");
   const data = res["data"];
   return {
     ps_objs: data,

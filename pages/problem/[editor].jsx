@@ -29,11 +29,7 @@ export default EditorPage;
 
 EditorPage.getInitialProps = async ({ query }) => {
   const url = URL + "/codeportal/ps-detail/" + query.editor + "/";
-  const ps = await axios.get(url, {
-    headers: {
-      Referer: referer,
-    },
-  });
+  const ps = await axios.get(url);
   const ps_obj = ps["data"];
   return {
     ps: ps_obj,

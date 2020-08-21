@@ -14,9 +14,6 @@ const Dashboard = (props) => {
   useEffect(() => {
     axios
       .get(URL + "/codeportal/live-ps/", {
-        headers: {
-          Referer: referer,
-        },
       })
       .then((response) => {
         setLiveps(response["data"]);
@@ -26,7 +23,6 @@ const Dashboard = (props) => {
       .get(`${URL}/accounts/user/`, {
         headers: {
           Authorization: localStorage.getItem("token"),
-          Referer: referer,
         },
       })
       .then((response) => {

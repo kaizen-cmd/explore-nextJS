@@ -53,11 +53,6 @@ const ResetPass = (props) => {
                       {
                         pass: pass1,
                       },
-                      {
-                        headers: {
-                          Referer: referer,
-                        },
-                      }
                     )
                     .then((response) => {
                       setMessage(response["data"]["res"]);

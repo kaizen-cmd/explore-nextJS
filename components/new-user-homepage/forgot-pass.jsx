@@ -52,11 +52,6 @@ const ForgotPass = (props) => {
                         {
                           email: email,
                         },
-                        {
-                          headers: {
-                            Referer: referer,
-                          },
-                        }
                       )
                       .then((response) => {
                         setMessage(response["data"]["res"]);

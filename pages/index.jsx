@@ -89,11 +89,7 @@ export default Index;
 export { setDashboard };
 
 Index.getInitialProps = async () => {
-  const data = await axios.get(URL + "/home/", {
-    headers: {
-      Referer: referer,
-    },
-  });
+  const data = await axios.get(URL + "/home/");
   const dict = data["data"];
   return {
     dict: dict,

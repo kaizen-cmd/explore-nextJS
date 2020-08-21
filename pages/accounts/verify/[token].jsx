@@ -9,18 +9,12 @@ const Verified = (props) => {
   const [message, setMessage] = useState("Loading...");
   useEffect(() => {
     var url = `${URL}${window.location["pathname"]}`;
-    axios
-      .get(url, {
-        headers: {
-          Referer: referer,
-        },
-      })
-      .then((response) => {
-        setMessage(response["data"]["res"] + "You can now login.");
-        setTimeout(() => {
-          router.push("/");
-        }, 2500);
-      });
+    axios.get(url).then((response) => {
+      setMessage(response["data"]["res"] + "You can now login.");
+      setTimeout(() => {
+        router.push("/");
+      }, 2500);
+    });
   }, []);
   return (
     <BaseLayout>

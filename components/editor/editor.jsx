@@ -20,7 +20,6 @@ const Editor = (props) => {
         .get(URL + "/codeportal/ps-detail/" + props.ps.pk + "/", {
           headers: {
             Authorization: localStorage.getItem("token"),
-            Referer: referer,
           },
         })
         .then((response) => {
@@ -120,11 +119,6 @@ const Editor = (props) => {
                       .post(
                         URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
                         sendcode,
-                        {
-                          headers: {
-                            Referer: referer,
-                          },
-                        }
                       )
                       .then((response) => {
                         var res = response["data"];
@@ -202,7 +196,6 @@ const Editor = (props) => {
                           {
                             headers: {
                               Authorization: localStorage.getItem("token"),
-                              Referer: referer,
                             },
                           }
                         )

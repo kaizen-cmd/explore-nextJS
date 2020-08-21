@@ -49,11 +49,7 @@ const Ranking = (props) => {
 export default Ranking;
 
 Ranking.getInitialProps = async () => {
-  const res = await axios.get(URL + "/codeportal/ranking/", {
-    headers: {
-      Referer: referer,
-    },
-  });
+  const res = await axios.get(URL + "/codeportal/ranking/");
   const data = res["data"];
   return {
     leader_objs: data,

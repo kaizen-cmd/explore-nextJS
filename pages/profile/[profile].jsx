@@ -106,11 +106,7 @@ const Profile = (props) => {
 export default Profile;
 
 Profile.getInitialProps = async (ctx) => {
-  const res = await axios.get(URL + ctx.asPath, {
-    headers: {
-      Referer: referer,
-    },
-  });
+  const res = await axios.get(URL + ctx.asPath);
   const profile = res["data"];
   return {
     user: profile,
