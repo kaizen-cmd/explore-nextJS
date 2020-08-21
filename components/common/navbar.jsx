@@ -36,6 +36,7 @@ const NavBar = (props) => {
       el.classList.contains("active") && el.classList.remove("active");
     });
     id.classList.add("active");
+    document.getElementById("navbar-btn").click();
   };
   return (
     <>

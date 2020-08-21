@@ -5,6 +5,7 @@ import axios from "axios";
 import URL, { referer } from "../../../components/url";
 import FormData from "form-data";
 import { useRouter } from "next/router";
+import { setDot } from "../../_app";
 
 const Profile = (props) => {
   const [bio, setBio] = useState("");
@@ -239,6 +240,12 @@ const Profile = (props) => {
                           setLinlink(response["data"].linkedin_link);
                           setTimeout(() => {
                             setMessage("");
+                            firstname !== "" &&
+                              lastname !== "" &&
+                              bio !== "" &&
+                              ghlink !== "" &&
+                              linlink !== "" &&
+                              setDot(false);
                           }, 2000);
                         });
                     }}
