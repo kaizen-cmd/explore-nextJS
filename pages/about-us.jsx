@@ -18,7 +18,6 @@ const AboutUs = () => {
             <p>
               CodeStrike is a platform for competitive coding contests where coders can learn, develop and show their skills. Codestrike is more than just a coding competition, it's a community of coders. Here at CodeStrike, everyone has the opportunity to showcase their projects, get in touch with fellow programmers to learn, collaborate on projects, and talk about programming in general.
               Sign Up now to take part in exciting coding challenges and enhance your programming skills.
-              Join our DISCORD server to get in touch with fellow programmers to learn, develop, and code together.!
             </p>
           </div>
           <div class="text-center my-3">

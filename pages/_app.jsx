@@ -99,7 +99,7 @@ export default function MyApp({ Component, pageProps }) {
         className="animate__animated animate__pulse animate__slow animate__infinite"
       >
         <a href="https://discord.gg/aFrUQnJ">
-          <img src="images/discord.png" alt="codestrike-discord" />
+          <img src="/images/discord.png" alt="codestrike-discord" />
           <div
             style={{
               width: "23px",
