@@ -129,13 +129,13 @@ const NavBar = (props) => {
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="#">
-                  <Link href="#">
+                  <Link href="/about-us">
                     <a className="nav-link">Our Story</a>
                   </Link>
                 </a>
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="#">
-                  <Link href="#">
+                  <Link href="/contact-us">
                     <a className="nav-link">Contact Us</a>
                   </Link>
                 </a>
