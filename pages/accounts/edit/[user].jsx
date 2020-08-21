@@ -66,7 +66,7 @@ const Profile = (props) => {
               <label htmlFor="profile_pic">Upload new picture</label>
               <input
                 type="file"
-                name=""
+                accept="image/*"
                 style={{
                   fontSize: "1rem",
                   padding: 0,

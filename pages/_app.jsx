@@ -22,12 +22,9 @@ export default function MyApp({ Component, pageProps }) {
     if (user === "") {
       if (localStorage.getItem("token")) {
         axios
-          .post(
-            `${URL}/accounts/validate-token/`,
-            {
-              token: localStorage.getItem("token"),
-            },
-          )
+          .post(`${URL}/accounts/validate-token/`, {
+            token: localStorage.getItem("token"),
+          })
           .then((response) => {
             response["data"]["res"] === true && setLoggedIn(true);
             axios
@@ -65,18 +62,8 @@ export default function MyApp({ Component, pageProps }) {
         <title>CodeStrike</title>
 
         <link rel="manifest" href="/manifest.json" />
-        <link
-          href="/ico.png"
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-        />
-        <link
-          href="/ico.png"
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-        />
+        <link href="/ico.png" rel="icon" type="image/png" sizes="16x16" />
+        <link href="/ico.png" rel="icon" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/ico.png"></link>
         <meta name="theme-color" content="#317EFB" />
         <link
@@ -107,6 +94,26 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <NavBar />
       <Component {...pageProps} />
+      <button
+        id="discord-btn"
+        className="animate__animated animate__pulse animate__slow animate__infinite"
+      >
+        <a href="https://discord.gg/aFrUQnJ">
+          <img src="images/discord.png" alt="codestrike-discord" />
+          <div
+            style={{
+              width: "23px",
+              height: "23px",
+              backgroundColor: "orangered",
+              borderRadius: "50%",
+              display: "inline-block",
+              position: "absolute",
+              right: "0px",
+              color: "white",
+            }}
+          >1</div>
+        </a>
+      </button>
       <Footer />
     </>
   );

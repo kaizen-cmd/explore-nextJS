@@ -168,12 +168,12 @@ h5 {
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 30px;
 }
 
 h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .homepage-top img {
@@ -394,7 +394,6 @@ tr:hover {
   box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.29);
 }
 
-
 a:hover {
   cursor: pointer;
 }
@@ -557,9 +556,38 @@ textarea {
   font-weight: bold;
 }
 
+#discord-btn {
+  top: 88%;
+  left: 93%;
+  position: fixed;
+  z-index: 5;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+#discord-btn img {
+  width: 60px;
+  transition: transform 0.2s;
+}
+
+#discord-btn img:hover {
+  transform: scale(1.2);
+  transition-timing-function: ease-in-out;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
+  }
+  #discord-btn {
+    top: 91%;
+    left: 85%;
+    position: fixed;
+  }
+  #discord-btn img {
+    width: 45px;
+    transition: transform 0.2s;
   }
   .footer .col-lg-12 {
     text-align: center;

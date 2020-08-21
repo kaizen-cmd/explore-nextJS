@@ -5,7 +5,7 @@ import SignUpContainer from "../components/new-user-homepage/sign-up-container";
 import Dashboard from "../components/new-user-homepage/dashboard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import URL, { referer } from "../components/url";
+import URL from "../components/url";
 
 var dashboard, setDashboard;
 const Index = (props) => {
