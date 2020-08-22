@@ -220,7 +220,7 @@ const NavBar = (props) => {
             ) : (
               <li className="nav-item bg-primary rounded">
                 <a
-                  className="nav-link text-light"
+                  className="nav-link text-light px-4"
                   id="login-btn"
                   onClick={() => {
                     window.scrollTo(0, 0);

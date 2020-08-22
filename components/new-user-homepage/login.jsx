@@ -1,6 +1,6 @@
 import { setLogin } from "../base_layout";
 import Register from "./register";
-import URL, { referer } from "../url";
+import URL from "../url";
 import axios from "axios";
 import { useState } from "react";
 import ForgotPass from "./forgot-pass";
@@ -15,6 +15,7 @@ import {
   dot,
   setDot,
 } from "../../pages/_app";
+import SmLoader from "../common/sm-loader";
 
 const Login = (props) => {
   const [message, setMessage] = useState("");
@@ -61,15 +62,12 @@ const Login = (props) => {
                   const username = document.getElementById("username").value;
                   const password = document.getElementById("password").value;
                   if (username !== "" && password !== "") {
-                    setMessage("Loading...");
+                    setMessage(<SmLoader />);
                     axios
-                      .post(
-                        `${URL}/accounts/login/`,
-                        {
-                          username: username,
-                          password: password,
-                        },
-                      )
+                      .post(`${URL}/accounts/login/`, {
+                        username: username,
+                        password: password,
+                      })
                       .then(function (response) {
                         if (
                           response["data"]["token"] !== "Incorrect credentials"
@@ -88,12 +86,9 @@ const Login = (props) => {
                               setPp(response["data"].profile_pic);
                             });
                           axios
-                            .post(
-                              `${URL}/accounts/validate-token/`,
-                              {
-                                token: localStorage.getItem("token"),
-                              },
-                            )
+                            .post(`${URL}/accounts/validate-token/`, {
+                              token: localStorage.getItem("token"),
+                            })
                             .then((response) => {
                               response["data"]["res"] === true &&
                                 setLoggedIn(true);

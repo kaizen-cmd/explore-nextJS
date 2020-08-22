@@ -185,9 +185,6 @@ h3 {
   margin: 10% 0px;
 }
 
-.signup-btn {
-  margin-left: 40%;
-}
 
 .signup-btn button {
   background-color: #0070f3;
@@ -195,7 +192,7 @@ h3 {
   outline: none;
   color: white;
   font-weight: bolder;
-  padding: 10px 0;
+  padding: 14px 55px;
   width: 100%;
   font-size: 1.2rem;
   border-radius: 10px;

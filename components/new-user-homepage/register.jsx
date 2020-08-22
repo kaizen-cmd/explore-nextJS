@@ -3,6 +3,7 @@ import Login from "./login";
 import { useState } from "react";
 import axios from "axios";
 import URL, { referer } from "../url";
+import SmLoader from "../../components/common/sm-loader";
 
 const Register = (props) => {
   const [message, setMessage] = useState("");
@@ -45,12 +46,9 @@ const Register = (props) => {
                 id="username"
                 onBlur={() => {
                   axios
-                    .post(
-                      `${URL}/accounts/validate/`,
-                      {
-                        username: document.getElementById("username").value,
-                      },
-                    )
+                    .post(`${URL}/accounts/validate/`, {
+                      username: document.getElementById("username").value,
+                    })
                     .then((response) => {
                       setUExists(response["data"]["username"]);
                     });
@@ -72,12 +70,9 @@ const Register = (props) => {
                 id="email"
                 onBlur={() => {
                   axios
-                    .post(
-                      `${URL}/accounts/validate/`,
-                      {
-                        email: document.getElementById("email").value,
-                      },
-                    )
+                    .post(`${URL}/accounts/validate/`, {
+                      email: document.getElementById("email").value,
+                    })
                     .then((response) => {
                       setEExists(response["data"]["email"]);
                     });
@@ -125,16 +120,13 @@ const Register = (props) => {
                     uExists === "" &&
                     eExists === ""
                   ) {
-                    setMessage("Loading...");
+                    setMessage(<SmLoader />);
                     axios
-                      .post(
-                        `${URL}/accounts/register/`,
-                        {
-                          username: username,
-                          password: password,
-                          email: email,
-                        },
-                      )
+                      .post(`${URL}/accounts/register/`, {
+                        username: username,
+                        password: password,
+                        email: email,
+                      })
                       .then(function (response) {
                         setMessage(response["data"]["res"]);
                         setTimeout(() => {
