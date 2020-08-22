@@ -28,3 +28,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+public/sw.js
+public/sw.js.map
+public/workbox-b90066a8.js.map
+public/workbox-b90066a8.js
