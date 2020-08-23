@@ -80,6 +80,54 @@ const Index = (props) => {
           </div>
         </div>
       </div>
+      <div>
+        <div className="container p-5">
+          <div className="row">
+            <div className="col-lg-4">
+              <div className="text-center">
+                <p
+                  style={{
+                    fontSize: "4rem",
+                    fontWeight: "bolder",
+                    marginBottom: 0,
+                  }}
+                >
+                  {props.dict.ps_count}
+                </p>
+                <p style={{ fontSize: "1.5rem" }}>Problems</p>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="text-center">
+                <p
+                  style={{
+                    fontSize: "4rem",
+                    fontWeight: "bolder",
+                    marginBottom: 0,
+                  }}
+                >
+                  {props.dict.submission_count}
+                </p>
+                <p style={{ fontSize: "1.5rem" }}>Submissions</p>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="text-center">
+                <p
+                  style={{
+                    fontSize: "4rem",
+                    fontWeight: "bolder",
+                    marginBottom: 0,
+                  }}
+                >
+                  {props.dict.user_count}
+                </p>
+                <p style={{ fontSize: "1.5rem" }}>Users</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {!dashboard && <SignUpContainer option="bottom" />}
     </BaseLayout>
   );
