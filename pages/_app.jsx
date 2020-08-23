@@ -51,8 +51,8 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
@@ -98,21 +98,25 @@ export default function MyApp({ Component, pageProps }) {
         id="discord-btn"
         className="animate__animated animate__pulse animate__slow animate__infinite"
       >
-        <a href="https://discord.gg/aFrUQnJ">
-          <img src="/images/discord.png" alt="codestrike-discord" />
-          <div
-            style={{
-              width: "23px",
-              height: "23px",
-              backgroundColor: "orangered",
-              borderRadius: "50%",
-              display: "inline-block",
-              position: "absolute",
-              right: "0px",
-              color: "white",
-            }}
-          >1</div>
-        </a>
+        {!loggedIn && (
+          <a href="https://discord.gg/aFrUQnJ">
+            <img src="/images/discord.png" alt="codestrike-discord" />
+            <div
+              style={{
+                width: "23px",
+                height: "23px",
+                backgroundColor: "orangered",
+                borderRadius: "50%",
+                display: "inline-block",
+                position: "absolute",
+                right: "0px",
+                color: "white",
+              }}
+            >
+              1
+            </div>
+          </a>
+        )}
       </button>
       <Footer />
     </>

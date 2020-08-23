@@ -36,7 +36,11 @@ const NavBar = (props) => {
       el.classList.contains("active") && el.classList.remove("active");
     });
     id.classList.add("active");
-    document.getElementById("navbar-btn").click();
+    window.innerWidth <= 990 && document.getElementById("navbar-btn").click();
+  };
+
+  const activator1 = () => {
+    window.innerWidth <= 990 && document.getElementById("navbar-btn").click();
   };
   return (
     <>
@@ -130,13 +134,17 @@ const NavBar = (props) => {
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="#">
                   <Link href="#">
-                    <a className="nav-link">Our Story</a>
+                    <a className="nav-link" onClick={activator1}>
+                      Our Story
+                    </a>
                   </Link>
                 </a>
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="#">
                   <Link href="#">
-                    <a className="nav-link">Contact Us</a>
+                    <a className="nav-link" onClick={activator1}>
+                      Contact Us
+                    </a>
                   </Link>
                 </a>
               </div>
@@ -182,7 +190,7 @@ const NavBar = (props) => {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="#" onClick={activator1}>
                       <Link
                         href="/accounts/edit/[user]/"
                         as={`/accounts/edit/${user}/`}
@@ -200,7 +208,7 @@ const NavBar = (props) => {
                       </Link>
                     </a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="#" onClick={activator1}>
                       <Link href="/">
                         <a
                           className="nav-link"

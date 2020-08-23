@@ -5,7 +5,7 @@ const SmLoader = () => {
         src="/images/sm-loader.gif"
         alt="loader"
         style={{
-          width: 55,
+          width: 75,
         }}
       />
     </>

@@ -6,7 +6,13 @@ const FooterCol = ({ head, linkarray }) => {
           <h5>{head}</h5>
         </div>
         {linkarray.map((link) => {
-          return <h6>{link}</h6>;
+          return (
+            <a href={link.link} style={{
+              color: "white",
+            }}>
+              <h6>{link.text}</h6>
+            </a>
+          );
         })}
       </div>
     </div>

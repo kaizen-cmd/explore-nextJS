@@ -573,6 +573,11 @@ textarea {
   transition-timing-function: ease-in-out;
 }
 
+.sidebar-col:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
