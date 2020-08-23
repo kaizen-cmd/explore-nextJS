@@ -18,11 +18,14 @@ const Ranking = (props) => {
           content="CodeStrike is an online community of coders."
         />
       </Head>
+      <div style={{
+        width: "99%"
+      }}>
       <div className="row">
         <div className={classer}>
           <Link href="/">
             <div className="shadow p-3 my-2 ml-5 sidebar-col">
-              <img src="/ico.png" alt="logo" className="mw-100" />
+              <img src="/ico.png" alt="logo" className="mw-100 p-5" />
               <h5>Head towards the dashboard.</h5>
               <h5>See the live problems. Solve them!</h5>
               <h5>Get Points. It's simple!</h5>
@@ -62,16 +65,17 @@ const Ranking = (props) => {
           </div>
         </div>
         <div className={classer}>
-          <Link href="/codeportal/records">
+        <Link href="/">
             <div className="shadow p-3 my-2 mr-5 sidebar-col">
-              <img src="/ico.png" alt="logo" className="mw-100" />
-              <h5>Want to rank top?</h5>
-              <h5>Start solving our practice questions today!</h5>
-              <h5>They are completely free.</h5>
+              <img src="/ico.png" alt="logo" className="mw-100 p-5" />
+              <h5>Head towards the dashboard.</h5>
+              <h5>See the live problems. Solve them!</h5>
+              <h5>Get Points. It's simple!</h5>
               <h1 className="mb-0 pl-5">→</h1>
             </div>
           </Link>
         </div>
+      </div>
       </div>
     </BaseLayout>
   );
