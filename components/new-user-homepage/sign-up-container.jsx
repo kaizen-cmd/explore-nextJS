@@ -41,7 +41,7 @@ const SignUpContainer = ({ option }) => {
         <div className="container pt-4 pb-5">
           <div className="row homepage-top">
             <div className="col-md-6">
-              <div className="col-lg-12 p-5 h-50 head">
+              <div className="col-lg-12 head">
                 <div className="d-flex flex-column w-100 h-100 align-items-center justify-content-center">
                   <div>
                     <h1>
