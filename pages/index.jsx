@@ -128,6 +128,17 @@ const Index = (props) => {
           </div>
         </div>
       </div>
+      <div className="text-center" style={{
+        marginBottom: 100
+      }}>
+        <h3>Help us keep our servers running!</h3>
+        <div className="pm-button">
+          <a href="https://www.payumoney.com/paybypayumoney/#/739DEA8A42A7E089D47B67026DF4172A">
+            <img src="https://www.payumoney.com/media/images/payby_payumoney/new_buttons/23.png" />
+          </a>
+        </div>
+      </div>
+
       {!dashboard && <SignUpContainer option="bottom" />}
     </BaseLayout>
   );
