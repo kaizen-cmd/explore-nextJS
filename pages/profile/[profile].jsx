@@ -49,7 +49,7 @@ const Profile = (props) => {
                 <span>
                   <a
                     href="{`${props.user.github_link}`}"
-                    style={{ color: "blue" }}
+                    style={{ color: "blue", wordBreak: "break-word" }}
                   >
                     &nbsp;&nbsp;&nbsp;{`${props.user.github_link}`}
                   </a>
@@ -60,7 +60,7 @@ const Profile = (props) => {
                 <span>
                   <a
                     href={`${props.user.linkedin_link}`}
-                    style={{ color: "blue" }}
+                    style={{ color: "blue", wordBreak: "break-word"}}
                   >
                     {`${props.user.linkedin_link}`}
                   </a>
