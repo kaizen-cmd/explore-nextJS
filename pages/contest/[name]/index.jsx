@@ -1,1 +1,1 @@
-// Contest Admin View
+// list all the PS in this contest for participants

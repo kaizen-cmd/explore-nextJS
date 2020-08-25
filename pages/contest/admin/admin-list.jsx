@@ -1,4 +1,4 @@
-// Create Contest, see available contests
+// Index of all created Contests by User
 
 const ContestIndex = () => {
     return (
