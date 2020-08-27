@@ -7,6 +7,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar-track {
@@ -30,11 +31,16 @@ body::-webkit-scrollbar-thumb:hover {
   width: 0.4rem;
 }
 
+#contest-navbar::-webkit-scrollbar {
+  width: 0;
+}
+
 .inner-prob-container::-webkit-scrollbar-thumb,
 .inner-op-div::-webkit-scrollbar-thumb {
   background-color: white;
   outline: 1px solid #0f4c75;
 }
+
 
 h1 {
   font-size: 2rem;

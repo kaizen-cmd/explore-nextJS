@@ -23,10 +23,17 @@ const ContestDetailAdmin = () => {
     <BaseLayout>
       <div className="container mt-4">
         <div className="w-100 h-25 mb-4">
-          <div className="d-flex flex-row">
-            <div className="pr-5 pt-4 pb-2 admin-contest">
+          <div
+            className="d-flex flex-row"
+            id="contest-navbar"
+            style={{
+              backgroundColor: "#e5e5e5",
+              overflowX: "scroll",
+            }}
+          >
+            <div className="px-5 pt-4 pb-2 admin-contest">
               <h5
-                className="admin-contest-head"
+                className="admin-contest-head my-0"
                 onClick={() => {
                   setView("details");
                   Array.prototype.forEach.call(elems, function (el) {
@@ -40,9 +47,9 @@ const ContestDetailAdmin = () => {
                 Details
               </h5>
             </div>
-            <div className="pr-5 pt-4 pb-2 admin-contest">
+            <div className="px-5 pt-4 pb-2 admin-contest">
               <h5
-                className="admin-contest-head"
+                className="admin-contest-head my-0"
                 onClick={() => {
                   setView("problems");
                   Array.prototype.forEach.call(elems, function (el) {
@@ -56,9 +63,9 @@ const ContestDetailAdmin = () => {
                 Problems
               </h5>
             </div>
-            <div className="pr-5 pt-4 pb-2 admin-contest">
+            <div className="px-5 pt-4 pb-2 admin-contest">
               <h5
-                className="admin-contest-head"
+                className="admin-contest-head my-0"
                 onClick={() => {
                   setView("subs");
                   Array.prototype.forEach.call(elems, function (el) {
@@ -74,6 +81,7 @@ const ContestDetailAdmin = () => {
             </div>
           </div>
         </div>
+
         {view === "details" && (
           <div>
             <div className="mb-3">
@@ -120,12 +128,13 @@ const ContestDetailAdmin = () => {
                 />
               </div>
             </div>
-            <div className="mb-5">
-              <p>Share this URL with participants: </p>
+            <div>
+              <p className="mb-0">Share this URL with participants: </p>
               <a href={"https://codestrike.vercel.app/" + cSlug}>
                 {"https://codestrike.vercel.app/contest/" + cSlug}
               </a>
             </div>
+            <button className="btn btn-md btn-success my-5 px-5">Save</button>
           </div>
         )}
 
@@ -231,7 +240,41 @@ const ContestDetailAdmin = () => {
           </div>
         )}
 
-        {view === "subs" && <div></div>}
+        {view === "subs" && (
+          <div>
+            <div className="col-lg-9">
+              <div>
+                <h4 className="mb-3">Submissions Recieved so far</h4>
+                <div className="w-100 mx-auto mb-5 mt-2 ps-tab-div">
+                  <table className="table ps-table">
+                    <thead className="black white-text">
+                      <tr>
+                        <th scope="col">Problem</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Solution</th>
+                        <th scope="col">Result</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {availArray.map((p) => {
+                        return (
+                          <tr>
+                            <td>{p.title}</td>
+                            <td>{p.points}</td>
+                            <td>{p.title}</td>
+                            <td>
+                              <p className="text-success p-0 m-0">Correct</p>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </BaseLayout>
   );
