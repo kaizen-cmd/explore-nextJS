@@ -207,6 +207,11 @@ const NavBar = (props) => {
                         </a>
                       </Link>
                     </a>
+                    <a className="dropdown-item" href="#" onClick={activator1}>
+                      <Link href="/contest/admin">
+                        <a className="nav-link">My contests</a>
+                      </Link>
+                    </a>
                     <div className="dropdown-divider"></div>
                     <a className="dropdown-item" href="#" onClick={activator1}>
                       <Link href="/">

@@ -5,7 +5,6 @@ import axios from "axios";
 import URL from "../../../components/url";
 import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
-import { loggedIn } from "../../_app";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -15,40 +14,38 @@ const ContestDetailAdmin = () => {
   const [availArray, setAvailArray] = useState([]);
   const [desc, setDesc] = useState("");
   const [isLive, setIsLive] = useState("");
-  const [subArr, setSubArr] = useState([]);
   const [detailM, setDetailM] = useState("");
   const [problemM, setProbleM] = useState("");
   const [lastURLSegment1, setLastURLSegment1] = useState("");
   const [elems, setElems] = useState([]);
-  const [delPop, setDelPop] = useState(null);
+  const [created, setCreated] = useState(false);
   const router = useRouter();
   useEffect(() => {
-    !loggedIn && router.push("/");
     setElems(document.getElementsByClassName("admin-contest-head"));
     var pageURL = window.location.href;
     var lastURLSegment;
     lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1);
+    setLastURLSegment1(lastURLSegment);
+    !localStorage.getItem("token") && router.push("/");
     axios
-      .get(URL + "/codeportal/admin-contest/" + lastURLSegment + "/", {
+      .get(`${URL}/codeportal/getps/`, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
       })
       .then((res) => {
-        setCSlug(res.data.title);
-        setDesc(res.data.desc);
-        setIsLive(res.data.is_live);
-        setPresentArray([...res.data.ps_list]);
-        setAvailArray([...res.data.all_ps_list]);
-        setSubArr([...res.data.sub_list]);
-        setCSlugUrl(res.data.url);
-        setLastURLSegment1(res.data.pk);
+        if (res.data.res === "OK") {
+          axios.get(`${URL}/codeportal/all-ps/`).then((res) => {
+            setAvailArray(res.data.all_ps_list);
+          });
+        } else {
+          router.push("/");
+        }
       });
   }, []);
   return (
     <BaseLayout>
       <div className="container mt-4">
-        {delPop}
         <div className="w-100 h-25 mb-4">
           <div
             className="d-flex flex-row"
@@ -88,22 +85,6 @@ const ContestDetailAdmin = () => {
                 }}
               >
                 Problems
-              </h5>
-            </div>
-            <div className="px-5 pt-4 pb-2 admin-contest">
-              <h5
-                className="admin-contest-head my-0"
-                onClick={() => {
-                  setView("subs");
-                  Array.prototype.forEach.call(elems, function (el) {
-                    el.style.borderBottom = "none";
-                  });
-                  document.getElementsByClassName(
-                    "admin-contest-head"
-                  )[2].style.borderBottom = "4px solid #0070f3";
-                }}
-              >
-                Submissions
               </h5>
             </div>
           </div>
@@ -165,37 +146,81 @@ const ContestDetailAdmin = () => {
               onClick={() => {
                 setDetailM(<SmLoader />);
                 if (cSlug !== "" && desc !== "") {
-                  axios
-                    .put(
-                      `${URL}/codeportal/admin-contest/${lastURLSegment1}/`,
-                      {
-                        title: cSlug,
-                        desc: desc,
-                        is_live: isLive,
-                      },
-                      {
-                        headers: {
-                          Authorization: localStorage.getItem("token"),
+                  if (!created) {
+                    axios
+                      .post(
+                        `${URL}/codeportal/admin-contest/${lastURLSegment1}/`,
+                        {
+                          title: cSlug,
+                          desc: desc,
+                          is_live: isLive,
                         },
-                      }
-                    )
-                    .then((res) => {
-                      setCSlugUrl(res.data.contest_url);
-                      res.data.res === "Title already used by other contest"
-                        ? setDetailM(
+                        {
+                          headers: {
+                            Authorization: localStorage.getItem("token"),
+                          },
+                        }
+                      )
+                      .then((res) => {
+                        setCSlugUrl(res.data.contest_url);
+                        if (
+                          res.data.res === "Title already used by other contest"
+                        ) {
+                          setDetailM(
                             <p className="text-danger font-weight-bold d-inline">
                               Contest with this title already exists.
                             </p>
-                          )
-                        : setDetailM(
+                          );
+                        } else {
+                          setDetailM(
+                            <p className="text-success font-weight-bold d-inline">
+                              Contest Created.
+                            </p>
+                          );
+                          setCreated(true);
+                        }
+                        setTimeout(() => {
+                          setDetailM(null);
+                        }, 2500);
+                      });
+                  } else {
+                    axios
+                      .put(
+                        `${URL}/codeportal/admin-contest/${lastURLSegment1}/`,
+                        {
+                          title: cSlug,
+                          desc: desc,
+                          is_live: isLive,
+                        },
+                        {
+                          headers: {
+                            Authorization: localStorage.getItem("token"),
+                          },
+                        }
+                      )
+                      .then((res) => {
+                        setCSlugUrl(res.data.contest_url);
+                        if (
+                          res.data.res === "Title already used by other contest"
+                        ) {
+                          setDetailM(
+                            <p className="text-danger font-weight-bold d-inline">
+                              Contest with this title already exists.
+                            </p>
+                          );
+                        } else {
+                          setDetailM(
                             <p className="text-success font-weight-bold d-inline">
                               Saved
                             </p>
                           );
-                      setTimeout(() => {
-                        setDetailM(null);
-                      }, 2500);
-                    });
+                          setCreated(true);
+                        }
+                        setTimeout(() => {
+                          setDetailM(null);
+                        }, 2500);
+                      });
+                  }
                 } else {
                   setDetailM(
                     <p className="d-inline text-danger font-weight-bold">
@@ -212,25 +237,6 @@ const ContestDetailAdmin = () => {
               <p className="mb-0">Share this URL with participants: </p>
               <a href={cSlugUrl}>{cSlugUrl}</a>
             </div>
-            <button
-              className="btn btn-md btn-danger font-weight-bold mt-1 mb-3 px-2"
-              onClick={() => {
-                axios
-                  .delete(
-                    `${URL}/codeportal/admin-contest/${lastURLSegment1}/`,
-                    {
-                      headers: {
-                        Authorization: localStorage.getItem("token"),
-                      },
-                    }
-                  )
-                  .then(() => {
-                    router.push("/contest/admin");
-                  });
-              }}
-            >
-              Delete Contest
-            </button>
           </div>
         )}
 
@@ -290,26 +296,31 @@ const ContestDetailAdmin = () => {
                   presentArray.map((ele) => {
                     ps_list.push(ele.pk);
                   });
-
-                  axios
-                    .put(
-                      `${URL}/codeportal/admin-contest/${lastURLSegment1}/`,
-                      {
-                        ps_list: ps_list,
-                      },
-                      {
-                        headers: {
-                          Authorization: localStorage.getItem("token"),
+                  if (created) {
+                    axios
+                      .put(
+                        `${URL}/codeportal/admin-contest/${lastURLSegment1}/`,
+                        {
+                          ps_list: ps_list,
                         },
-                      }
-                    )
-                    .then(() => {
-                      setProbleM(
-                        <p className="text-success font-weight-bold d-inline">
-                          Saved
-                        </p>
-                      );
-                    });
+                        {
+                          headers: {
+                            Authorization: localStorage.getItem("token"),
+                          },
+                        }
+                      )
+                      .then(() => {
+                        setProbleM(
+                          <p className="text-success font-weight-bold d-inline">
+                            Saved
+                          </p>
+                        );
+                      });
+                  } else {
+                    setProbleM(<p className="text-danger font-weight-bold d-inline">
+                    Fill in the contest details first
+                  </p>)
+                  }
                 }}
               >
                 Save
@@ -363,46 +374,6 @@ const ContestDetailAdmin = () => {
                               >
                                 <strong>+</strong>
                               </button>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {view === "subs" && (
-          <div>
-            <div className="col-lg-9">
-              <div>
-                <h4 className="mb-3">Submissions Recieved so far</h4>
-                <div className="w-100 mx-auto mb-5 mt-2 ps-tab-div">
-                  <table className="table ps-table">
-                    <thead className="black white-text">
-                      <tr>
-                        <th scope="col">Problem</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Solution</th>
-                        <th scope="col">Result</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {subArr.map((p) => {
-                        return (
-                          <tr>
-                            <td>{p.ps_title}</td>
-                            <td>{p.user}</td>
-                            <td>{p.file_path}</td>
-                            <td>
-                              {p.is_correct ? (
-                                <p className="text-success">Correct</p>
-                              ) : (
-                                <p className="danger">Correct</p>
-                              )}
                             </td>
                           </tr>
                         );

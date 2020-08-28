@@ -27,11 +27,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .inner-prob-container::-webkit-scrollbar,
+.inner-op-div::-webkit-scrollbar,
 .inner-op-div::-webkit-scrollbar {
   width: 0.4rem;
 }
 
-#contest-navbar::-webkit-scrollbar {
+#contest-navbar::-webkit-scrollbar, #ad-index::-webkit-scrollbar {
   width: 0;
 }
 
