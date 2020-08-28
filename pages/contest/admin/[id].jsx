@@ -252,7 +252,9 @@ const ContestDetailAdmin = () => {
                       {presentArray.map((p) => {
                         return (
                           <tr id={p.pk}>
-                            <td>{p.title}</td>
+                            <td>
+                              <a href={`${URL}${p.link}`}>{p.title}</a>
+                            </td>
                             <td>{p.points}</td>
                             <td>
                               <button
@@ -338,7 +340,9 @@ const ContestDetailAdmin = () => {
                       {availArray.map((p) => {
                         return (
                           <tr>
-                            <td>{p.title}</td>
+                            <td>
+                              <a href={`${URL}${p.link}`} target="_blank">{p.title}</a>
+                            </td>
                             <td>{p.points}</td>
                             <td>
                               <button
@@ -394,14 +398,20 @@ const ContestDetailAdmin = () => {
                       {subArr.map((p) => {
                         return (
                           <tr>
-                            <td>{p.ps_title}</td>
-                            <td>{p.user}</td>
-                            <td>{p.file_path}</td>
+                            <td className="font-weight-bold">{p.ps_title}</td>
+                            <td className="font-weight-bold">{p.user}</td>
+                            <a href={`${URL}${p.file_path}`} target="_blank">
+                              <td>Click to view</td>
+                            </a>
                             <td>
                               {p.is_correct ? (
-                                <p className="text-success">Correct</p>
+                                <p className="text-success font-weight-bold my-0">
+                                  Correct
+                                </p>
                               ) : (
-                                <p className="danger">Correct</p>
+                                <p className="danger font-weight-bold my-0">
+                                  Correct
+                                </p>
                               )}
                             </td>
                           </tr>

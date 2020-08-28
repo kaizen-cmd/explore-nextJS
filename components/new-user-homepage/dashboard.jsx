@@ -12,12 +12,9 @@ const Dashboard = (props) => {
   });
 
   useEffect(() => {
-    axios
-      .get(URL + "/codeportal/live-ps/", {
-      })
-      .then((response) => {
-        setLiveps(response["data"]);
-      });
+    axios.get(URL + "/codeportal/live-ps/", {}).then((response) => {
+      setLiveps(response["data"]);
+    });
 
     axios
       .get(`${URL}/accounts/user/`, {
@@ -102,9 +99,9 @@ const Dashboard = (props) => {
                           href="/profile/[profile]/"
                           as={`/profile/${ps[1]}/`}
                         >
-                          <a>
-                            <td>{ps[1]}</td>
-                          </a>
+                          <td>
+                            <a>{ps[1]}</a>
+                          </td>
                         </Link>
                       </tr>
                     );

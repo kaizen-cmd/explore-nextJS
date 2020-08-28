@@ -133,7 +133,7 @@ const NavBar = (props) => {
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="#">
-                  <Link href="#">
+                  <Link href="/about-us">
                     <a className="nav-link" onClick={activator1}>
                       Our Story
                     </a>
@@ -141,7 +141,7 @@ const NavBar = (props) => {
                 </a>
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="#">
-                  <Link href="#">
+                  <Link href="/contact-us">
                     <a className="nav-link" onClick={activator1}>
                       Contact Us
                     </a>

@@ -1,9 +1,9 @@
 import Head from "next/head";
-import BaseLayout from "../../components/base_layout";
-import Re from "../../components/editor/re";
-import Editor from "../../components/editor/editor";
+import BaseLayout from "../../../components/base_layout";
+import Re from "../../../components/editor/re";
+import Editor from "../../../components/editor/editor";
 import { useState, useEffect } from "react";
-import URL from "../../components/url";
+import URL from "../../../components/url";
 import axios from "axios";
 
 const EditorPage = (props) => {
@@ -28,7 +28,7 @@ const EditorPage = (props) => {
 export default EditorPage;
 
 EditorPage.getInitialProps = async ({ query }) => {
-  const url = URL + "/codeportal/ps-detail/" + query.editor + "/";
+  const url = URL + "/codeportal/contest-ps-detail/" + query.name + "/" +  query.ps_id + "/";
   const ps = await axios.get(url);
   const ps_obj = ps["data"];
   return {

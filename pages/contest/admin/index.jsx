@@ -105,19 +105,18 @@ const ContestIndex = () => {
                         as={`/contest/admin/${rec.pk}`}
                       >
                         <tr>
-                          <th>{rec.title}</th>
-                          <th>
+                          <th className="my-0">{rec.title}</th>
+                          <th className="my-0">
                             {rec.is_live ? (
-                              <p className="text-success">Live</p>
+                              <p className="text-success my-0">Live</p>
                             ) : (
-                              <p className="text-danger">Not Live</p>
+                              <p className="text-danger my-0">Not Live</p>
                             )}
                           </th>
-                          <th>{rec.sub_count}</th>
+                          <th className="my-0">{rec.sub_count}</th>
                         </tr>
                       </Link>
                     );
-                    1;
                   })}
                 </tbody>
               </table>

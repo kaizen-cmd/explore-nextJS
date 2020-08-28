@@ -258,7 +258,11 @@ const ContestDetailAdmin = () => {
                       {presentArray.map((p) => {
                         return (
                           <tr id={p.pk}>
-                            <td>{p.title}</td>
+                            <td>
+                              <a href={`${URL}${p.link}`} target="_blank">
+                                {p.title}
+                              </a>
+                            </td>
                             <td>{p.points}</td>
                             <td>
                               <button
@@ -317,9 +321,11 @@ const ContestDetailAdmin = () => {
                         );
                       });
                   } else {
-                    setProbleM(<p className="text-danger font-weight-bold d-inline">
-                    Fill in the contest details first
-                  </p>)
+                    setProbleM(
+                      <p className="text-danger font-weight-bold d-inline">
+                        Fill in the contest details first
+                      </p>
+                    );
                   }
                 }}
               >
@@ -349,7 +355,11 @@ const ContestDetailAdmin = () => {
                       {availArray.map((p) => {
                         return (
                           <tr>
-                            <td>{p.title}</td>
+                            <td>
+                              <a href={`${URL}${p.link}`} target="_blank">
+                                {p.title}
+                              </a>
+                            </td>
                             <td>{p.points}</td>
                             <td>
                               <button
