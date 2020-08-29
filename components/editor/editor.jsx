@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
-import URL, { referer } from "../url";
 import { loggedIn } from "../../pages/_app";
 
 const Editor = (props) => {

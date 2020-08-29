@@ -1,7 +1,8 @@
 const TestCase = (props) => {
   var color;
   var res;
-  if (props.is_correct) {
+  console.log(props.is_correct);
+  if (props.is_correct && props.is_correct !== "error") {
     color = "bg-success";
     res = "Correct";
   } else {

@@ -192,7 +192,7 @@ const Profile = (props) => {
                 <h6>
                   Total Correct: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    <strong>{points.attempts}</strong>
+                    <strong>{points.c_attempts}</strong>
                   </span>
                 </h6>
               </div>
