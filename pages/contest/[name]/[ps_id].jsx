@@ -10,7 +10,13 @@ const EditorPage = (props) => {
   const [res, setRes] = useState(null);
   useEffect(() => {
     var w = screen.width;
-    setRes(w <= 900 ? <Editor ps={props.ps} /> : <Re ps={props.ps} />);
+    setRes(
+      w <= 900 ? (
+        <Editor ps={props.ps} psUrl={props.psUrl} />
+      ) : (
+        <Re ps={props.ps} psUrl={props.psUrl} />
+      )
+    );
   }, []);
   return (
     <BaseLayout>
@@ -28,10 +34,17 @@ const EditorPage = (props) => {
 export default EditorPage;
 
 EditorPage.getInitialProps = async ({ query }) => {
-  const url = URL + "/codeportal/contest-ps-detail/" + query.name + "/" +  query.ps_id + "/";
+  const url =
+    URL +
+    "/codeportal/contest-ps-detail/" +
+    query.name +
+    "/" +
+    query.ps_id +
+    "/";
   const ps = await axios.get(url);
   const ps_obj = ps["data"];
   return {
     ps: ps_obj,
+    psUrl: url,
   };
 };

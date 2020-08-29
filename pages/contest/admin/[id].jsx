@@ -409,8 +409,8 @@ const ContestDetailAdmin = () => {
                                   Correct
                                 </p>
                               ) : (
-                                <p className="danger font-weight-bold my-0">
-                                  Correct
+                                <p className="text-danger font-weight-bold my-0">
+                                  Wrong
                                 </p>
                               )}
                             </td>

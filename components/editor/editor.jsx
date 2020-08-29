@@ -17,7 +17,7 @@ const Editor = (props) => {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       axios
-        .get(URL + "/codeportal/ps-detail/" + props.ps.pk + "/", {
+        .get(props.psUrl, {
           headers: {
             Authorization: localStorage.getItem("token"),
           },
@@ -117,7 +117,7 @@ const Editor = (props) => {
                     };
                     axios
                       .post(
-                        URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
+                        props.psUrl,
                         sendcode,
                       )
                       .then((response) => {
@@ -185,7 +185,7 @@ const Editor = (props) => {
                       setLoader(<Loader />);
                       axios
                         .post(
-                          URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
+                          props.psUrl,
                           {
                             lang: lang,
                             is_partial: false,

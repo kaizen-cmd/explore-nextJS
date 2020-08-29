@@ -10,7 +10,13 @@ const EditorPage = (props) => {
   const [res, setRes] = useState(null);
   useEffect(() => {
     var w = screen.width;
-    setRes(w <= 900 ? <Editor ps={props.ps} /> : <Re ps={props.ps} />);
+    setRes(
+      w <= 900 ? (
+        <Editor ps={props.ps} psUrl={props.psUrl} />
+      ) : (
+        <Re ps={props.ps} psUrl={props.psUrl} />
+      )
+    );
   }, []);
   return (
     <BaseLayout>
@@ -33,5 +39,6 @@ EditorPage.getInitialProps = async ({ query }) => {
   const ps_obj = ps["data"];
   return {
     ps: ps_obj,
+    psUrl: url,
   };
 };
