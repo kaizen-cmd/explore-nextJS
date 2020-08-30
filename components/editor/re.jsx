@@ -165,6 +165,7 @@ const Re = (props) => {
                   id="run-btn"
                   onClick={() => {
                     setLoader(<Loader />);
+                    setTc([]);
                     var sendcode = {
                       lang: lang,
                       is_partial: true,

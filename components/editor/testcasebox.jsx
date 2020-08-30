@@ -23,19 +23,19 @@ const TestCase = (props) => {
       </p>
       <p>
         <u className="mr-2">Result:</u>
-        {res}
+        <div>{res}</div>
       </p>
       <p>
         <u className="mr-2">Output:</u>
-        {props.op}
+        <div>{props.op}</div>
       </p>
       <p>
         <u className="mr-2">Input:</u>
-        {props.ip}
+        <div>{props.ip}</div>
       </p>
       <p>
         <u className="mr-2">Expected:</u>
-        {props.exip}
+        <div>{props.exip}</div>
       </p>
     </div>
   );
