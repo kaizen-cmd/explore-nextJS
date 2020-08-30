@@ -11,60 +11,100 @@ const PsIndex = () => {
   const [lastURLSegment1, setLastURLSegment1] = useState("");
   const [title, setTitle] = useState("");
   const [owner, setOwner] = useState("");
+  const [desc, setDesc] = useState("");
   useEffect(() => {
-    var pageURL = window.location.href;
-    var lastURLSegment;
-    lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1);
-    setLastURLSegment1(lastURLSegment);
-    axios.get(`${URL}/codeportal${window.location.pathname}/`).then((res) => {
-      setTitle(res.data.title);
-      setOwner(res.data.owner);
-      setPresentArray(res.data.ps_list);
-    });
-  }, []);
+    if (localStorage.getItem("token")) {
+      var pageURL = window.location.href;
+      var lastURLSegment;
+      lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1);
+      setLastURLSegment1(lastURLSegment);
+      axios.get(`${URL}/codeportal${window.location.pathname}/`).then((res) => {
+        setTitle(res.data.title);
+        setOwner(res.data.owner);
+        setPresentArray(res.data.ps_list);
+        setDesc(res.data.desc);
+      });
+    } else {
+      document.getElementById("login-btn").click();
+      setTimeout(() => {
+        document.getElementById("register-btn").click();
+      }, 1);
+    }
+  }, [loggedIn]);
   return (
     <BaseLayout>
       {loggedIn ? (
-        <div>
-          <div className="text-center mt-2 mb-3">
-            <h1 className="text-center my-0">{title}</h1>
-            <p className="text-center my-0">by</p>
-            <Link href="/profile/[profile]" as={`/profile/${owner}`}>
-              <h3 className="text-center my-0">
-                <a href="">{owner}</a>
-              </h3>
-            </Link>
-          </div>
-          <div className="col-lg-9 mx-auto mb-5">
-            <table className="table ps-table">
-              <thead className="black white-text">
-                <tr>
-                  <th scope="col">Problem</th>
-                  <th scope="col">Points</th>
-                  <th scope="col">Author</th>
-                </tr>
-              </thead>
-              <tbody>
-                {presentArray.map((p) => {
-                  return (
-                    <tr>
-                      <Link
-                        href="/contest/[name]/[ps_id]"
-                        as={`${window.location.pathname}/${p.pk}`}
-                      >
-                        <td className="font-weight-bold"><a>{p.title}</a></td>
-                      </Link>
-                      <td className="font-weight-bold">{p.points}</td>
-                      <Link href="/profile/[profile]" as={`/profile/${owner}`}>
-                        <td className="font-weight-bold">
-                          <a>{p.author}</a>
-                        </td>
-                      </Link>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+        <div
+          className="container mt-2 py-4 px-5 mb-4"
+          style={{
+            backgroundColor: "#f1f3f8",
+          }}
+        >
+          <div className="row">
+            <div className="col-lg-6">
+              <h1 className="my-0">{title} </h1>
+              <Link href="/profile/[profile]" as={`/profile/${owner}`}>
+                <h6 className="d-inline my-0">
+                  Contest Admin: <a className="text-primary">{owner}</a>
+                </h6>
+              </Link>
+              <hr
+                style={{
+                  width: "70%",
+                  border: "none",
+                  borderBottom: "2px solid grey",
+                }}
+              />
+              <div
+                style={{
+                  wordWrap: "break-word",
+                  whiteSpace: "pre-wrap",
+                }}
+              >
+                {desc}
+              </div>
+            </div>
+            <div className="col-lg-6 mb-5 pt-5 px-0">
+              <table className="table ps-table">
+                <thead className="black white-text">
+                  <tr>
+                    <th scope="col">Problem</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Author</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {presentArray.map((p) => {
+                    return (
+                      <tr>
+                        <Link
+                          href="/contest/[name]/[ps_id]"
+                          as={`${window.location.pathname}/${p.pk}`}
+                        >
+                          <td className="font-weight-bold">
+                            <a className="text-primary">{p.title}</a>
+                          </td>
+                        </Link>
+                        <Link
+                          href="/contest/[name]/[ps_id]"
+                          as={`${window.location.pathname}/${p.pk}`}
+                        >
+                          <td className="font-weight-bold">{p.points}</td>
+                        </Link>
+                        <Link
+                          href="/profile/[profile]"
+                          as={`/profile/${owner}`}
+                        >
+                          <td className="font-weight-bold">
+                            <a className="text-primary">{p.author}</a>
+                          </td>
+                        </Link>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       ) : (

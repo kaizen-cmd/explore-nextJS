@@ -85,6 +85,8 @@ const Re = (props) => {
             <div
               className="px-2 inner-prob-container"
               style={{
+                whiteSpace: "pre-line",
+                wordWrap: "break-word",
                 wordBreak: "break-word",
               }}
             >
@@ -171,14 +173,9 @@ const Re = (props) => {
                       code: code,
                     };
                     axios
-                      .post(
-                        props.psUrl,
-                        sendcode,
-                        {
-                          headers: {
-                          },
-                        }
-                      )
+                      .post(props.psUrl, sendcode, {
+                        headers: {},
+                      })
                       .then((response) => {
                         var res = response["data"];
                         setLoader(<></>);

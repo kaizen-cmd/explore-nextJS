@@ -153,6 +153,7 @@ const Login = (props) => {
             <div className="mb-4">
               <a
                 href="#"
+                id="register-btn"
                 onClick={() => {
                   document
                     .getElementById("login-container")

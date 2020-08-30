@@ -23,7 +23,7 @@ const ContestDetailAdmin = () => {
   const [delPop, setDelPop] = useState(null);
   const router = useRouter();
   useEffect(() => {
-    !loggedIn && router.push("/");
+    !localStorage.getItem("token") && router.push("/");
     setElems(document.getElementsByClassName("admin-contest-head"));
     var pageURL = window.location.href;
     var lastURLSegment;

@@ -29,7 +29,7 @@ const Profile = (props) => {
             </div>
 
             <div>
-              <h4 className="mb-0 mt-0">{`${props.user.first_name} ${props.user.last_name}`}</h4>
+              <h4 className="mb-0 mt-0">{`${props.user.first_name.slice(0, 15)} ${props.user.last_name.slice(0, 15)}`}</h4>
               <p>@{`${props.user.username}`}</p>
             </div>
           </div>
@@ -48,7 +48,7 @@ const Profile = (props) => {
                 GitHub Profile:{" "}
                 <span>
                   <a
-                    href="{`${props.user.github_link}`}"
+                    href={`${props.user.github_link}`}
                     style={{ color: "blue", wordBreak: "break-word" }}
                   >
                     &nbsp;&nbsp;&nbsp;{`${props.user.github_link}`}
@@ -60,7 +60,7 @@ const Profile = (props) => {
                 <span>
                   <a
                     href={`${props.user.linkedin_link}`}
-                    style={{ color: "blue", wordBreak: "break-word"}}
+                    style={{ color: "blue", wordBreak: "break-word" }}
                   >
                     {`${props.user.linkedin_link}`}
                   </a>

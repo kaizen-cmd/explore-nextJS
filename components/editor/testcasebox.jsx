@@ -13,6 +13,8 @@ const TestCase = (props) => {
     <div
       className={`${color} col-lg-12 mb-2 tc-div py-2`}
       style={{
+        whiteSpace: "pre-line",
+        wordWrap: "break-word",
         wordBreak: "break-word",
       }}
     >

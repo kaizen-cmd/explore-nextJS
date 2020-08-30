@@ -48,6 +48,8 @@ const Editor = (props) => {
             <div
               className="content px-2"
               style={{
+                whiteSpace: "pre-line",
+                wordWrap: "break-word",
                 wordBreak: "break-word",
               }}
             >
@@ -114,30 +116,25 @@ const Editor = (props) => {
                       cmd: "Run Code",
                       code: code,
                     };
-                    axios
-                      .post(
-                        props.psUrl,
-                        sendcode,
-                      )
-                      .then((response) => {
-                        var res = response["data"];
-                        setLoader(<></>);
-                        var tc_no = 0;
-                        var tcs = res.map((tc) => {
-                          tc_no++;
-                          return (
-                            <TestCase
-                              key={tc_no}
-                              is_correct={tc[1]}
-                              sr_no={tc_no}
-                              op={tc[0]}
-                              ip={tc[2]}
-                              exip={tc[3]}
-                            ></TestCase>
-                          );
-                        });
-                        setTc(tcs);
+                    axios.post(props.psUrl, sendcode).then((response) => {
+                      var res = response["data"];
+                      setLoader(<></>);
+                      var tc_no = 0;
+                      var tcs = res.map((tc) => {
+                        tc_no++;
+                        return (
+                          <TestCase
+                            key={tc_no}
+                            is_correct={tc[1]}
+                            sr_no={tc_no}
+                            op={tc[0]}
+                            ip={tc[2]}
+                            exip={tc[3]}
+                          ></TestCase>
+                        );
                       });
+                      setTc(tcs);
+                    });
                   }}
                 >
                   Run
