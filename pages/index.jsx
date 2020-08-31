@@ -170,7 +170,7 @@ const Index = (props) => {
         <h3>Help us keep our servers running!</h3>
         <div className="pm-button">
           <a href="https://www.payumoney.com/paybypayumoney/#/739DEA8A42A7E089D47B67026DF4172A">
-            <img src="https://www.payumoney.com/media/images/payby_payumoney/new_buttons/23.png" />
+            <button className="btn btn-success font-weight-bold py-2 px-4 mt-2">Donate</button>
           </a>
         </div>
       </div>
