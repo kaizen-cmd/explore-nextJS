@@ -35,14 +35,18 @@ const ContestDetailAdmin = () => {
         },
       })
       .then((res) => {
-        setCSlug(res.data.title);
-        setDesc(res.data.desc);
-        setIsLive(res.data.is_live);
-        setPresentArray([...res.data.ps_list]);
-        setAvailArray([...res.data.all_ps_list]);
-        setSubArr([...res.data.sub_list]);
-        setCSlugUrl(res.data.url);
-        setLastURLSegment1(res.data.pk);
+        if (res.data.res === "Create a custom contest.") {
+          router.push("/contest/admin")
+        } else {
+          setCSlug(res.data.title);
+          setDesc(res.data.desc);
+          setIsLive(res.data.is_live);
+          setPresentArray([...res.data.ps_list]);
+          setAvailArray([...res.data.all_ps_list]);
+          setSubArr([...res.data.sub_list]);
+          setCSlugUrl(res.data.url);
+          setLastURLSegment1(res.data.pk);
+        }
       });
   }, []);
   return (
@@ -341,7 +345,9 @@ const ContestDetailAdmin = () => {
                         return (
                           <tr>
                             <td>
-                              <a href={`${URL}${p.link}`} target="_blank">{p.title}</a>
+                              <a href={`${URL}${p.link}`} target="_blank">
+                                {p.title}
+                              </a>
                             </td>
                             <td>{p.points}</td>
                             <td>
