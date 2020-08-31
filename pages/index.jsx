@@ -6,10 +6,13 @@ import Dashboard from "../components/new-user-homepage/dashboard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import URL from "../components/url";
+import { loggedIn } from "./_app";
+import { useRouter } from "next/router";
 
 var dashboard, setDashboard;
 const Index = (props) => {
   [dashboard, setDashboard] = useState(false);
+  const router = useRouter();
   useEffect(() => {
     window.localStorage.getItem("token") && setDashboard(true);
   }, []);
@@ -23,6 +26,36 @@ const Index = (props) => {
         />
       </Head>
       {dashboard ? <Dashboard /> : <SignUpContainer option="top" />}
+      <div className="container mb-2 mt-5">
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="pt-5">
+              <h3>
+                Host your very own contest on CodeStrike! Use our platform for
+                hiring processes, send a challenge to friends, have fun!
+              </h3>
+              <button
+                className="btn btn-success mt-4 mb-2"
+                id="cc-btn"
+                onClick={() => {
+                  loggedIn
+                    ? router.push("/contest/admin")
+                    : document.getElementById("login-btn").click();
+                }}
+              >
+                Create Contest Now!
+              </button>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <img
+              src="/images/contest.svg"
+              alt="codestrike-contest"
+              className="mw-100"
+            />
+          </div>
+        </div>
+      </div>
       <div className="mt-5 mb-3" id="db-user">
         <div className="container px-3">
           <div className="d-flex justify-content-start">
@@ -128,9 +161,12 @@ const Index = (props) => {
           </div>
         </div>
       </div>
-      <div className="text-center" style={{
-        marginBottom: 100
-      }}>
+      <div
+        className="text-center"
+        style={{
+          marginBottom: 100,
+        }}
+      >
         <h3>Help us keep our servers running!</h3>
         <div className="pm-button">
           <a href="https://www.payumoney.com/paybypayumoney/#/739DEA8A42A7E089D47B67026DF4172A">

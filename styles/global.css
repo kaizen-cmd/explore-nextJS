@@ -206,6 +206,13 @@ h3 {
   box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.3);
 }
 
+#cc-btn {
+  font-weight: bolder;
+  padding: 14px 55px;
+  box-shadow: 0 4px 14px 0 rgba(8, 224, 116, 0.5);
+  font-size: 1.2rem;
+}
+
 .signup-btn button:hover {
   box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.7);
 }
