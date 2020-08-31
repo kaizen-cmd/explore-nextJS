@@ -211,6 +211,7 @@ h3 {
   padding: 14px 55px;
   box-shadow: 0 4px 14px 0 rgba(8, 224, 116, 0.5);
   font-size: 1.2rem;
+  border-radius: 10px;
 }
 
 .signup-btn button:hover {
