@@ -31,8 +31,8 @@ const Index = (props) => {
           <div className="col-lg-6">
             <div className="pt-5">
               <h3>
-                Host your very own contest on CodeStrike! Use our platform for
-                hiring processes, send a challenge to friends, have fun!
+                Use CodeStrike to host your own contests! Our platform is open
+                for hiring purpose, creating personal contests and much more!
               </h3>
               <button
                 className="btn btn-success mt-4 mb-2"
@@ -170,7 +170,9 @@ const Index = (props) => {
         <h3>Help us keep our servers running!</h3>
         <div className="pm-button">
           <a href="https://www.payumoney.com/paybypayumoney/#/739DEA8A42A7E089D47B67026DF4172A">
-            <button className="btn btn-success font-weight-bold py-2 px-4 mt-2">Donate</button>
+            <button className="btn btn-success font-weight-bold py-2 px-4 mt-2">
+              Donate
+            </button>
           </a>
         </div>
       </div>
