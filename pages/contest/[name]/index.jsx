@@ -5,6 +5,7 @@ import axios from "axios";
 import BaseLayout from "../../../components/base_layout";
 import { loggedIn } from "../../_app";
 import Link from "next/link";
+import Head from "next/head";
 
 const PsIndex = () => {
   const [presentArray, setPresentArray] = useState([]);
@@ -33,6 +34,9 @@ const PsIndex = () => {
   }, [loggedIn]);
   return (
     <BaseLayout>
+      <Head>
+      <meta name="description" content={`${desc}`} />
+      </Head>
       {loggedIn ? (
         <div
           className="container mt-2 py-4 px-5 mb-4"
