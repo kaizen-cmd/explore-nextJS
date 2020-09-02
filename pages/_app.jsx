@@ -57,7 +57,8 @@ export default function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <meta name="keywords" content="codestrike, competitive programming, coding, hackerrank, contest, recruitment, technology" />
+        <meta name="description" content="Description" />
+        <meta name="keywords" content="Keywords" />
         <title>CodeStrike</title>
 
         <link rel="manifest" href="/manifest.json" />
