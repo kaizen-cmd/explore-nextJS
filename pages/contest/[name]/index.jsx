@@ -77,14 +77,14 @@ const PsIndex = () => {
                   {presentArray.map((p) => {
                     return (
                       <tr>
-                        <Link
-                          href="/contest/[name]/[ps_id]"
-                          as={`${window.location.pathname}/${p.pk}`}
+                        <a
+                          href={`${window.location.pathname}/${p.pk}`}
+                          target="_blank"
                         >
                           <td className="font-weight-bold">
                             <a className="text-primary">{p.title}</a>
                           </td>
-                        </Link>
+                        </a>
                         <Link
                           href="/contest/[name]/[ps_id]"
                           as={`${window.location.pathname}/${p.pk}`}
