@@ -5,6 +5,7 @@ import axios from "axios";
 import BaseLayout from "../../../components/base_layout";
 import { loggedIn } from "../../_app";
 import Link from "next/link";
+import Head from "next/head";
 
 const PsIndex = () => {
   const [presentArray, setPresentArray] = useState([]);
@@ -33,6 +34,9 @@ const PsIndex = () => {
   }, [loggedIn]);
   return (
     <BaseLayout>
+      <Head>
+      <meta name="description" content={`${desc}`} />
+      </Head>
       {loggedIn ? (
         <div
           className="container mt-2 py-4 px-5 mb-4"
@@ -77,14 +81,14 @@ const PsIndex = () => {
                   {presentArray.map((p) => {
                     return (
                       <tr>
-                        <Link
-                          href="/contest/[name]/[ps_id]"
-                          as={`${window.location.pathname}/${p.pk}`}
+                        <a
+                          href={`${window.location.pathname}/${p.pk}`}
+                          target="_blank"
                         >
                           <td className="font-weight-bold">
                             <a className="text-primary">{p.title}</a>
                           </td>
-                        </Link>
+                        </a>
                         <Link
                           href="/contest/[name]/[ps_id]"
                           as={`${window.location.pathname}/${p.pk}`}
