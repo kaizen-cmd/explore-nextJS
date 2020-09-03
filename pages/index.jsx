@@ -8,6 +8,7 @@ import axios from "axios";
 import URL from "../components/url";
 import { loggedIn } from "./_app";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 var dashboard, setDashboard;
 const Index = (props) => {
@@ -26,8 +27,16 @@ const Index = (props) => {
         />
       </Head>
       {dashboard ? <Dashboard /> : <SignUpContainer option="top" />}
+      <div className="container">
+        <div className="text-center">
+          <h3 className="mt-5 mb-4">Solve Gyankosh Java Assignments here.</h3>
+          <Link href="/contest/gyankosh-java-7-days">
+            <a className="btn-md btn-success cc-btn">Gyankosh Java Contest</a>
+          </Link>
+        </div>
+      </div>
       <div className="container mb-2 mt-5">
-        <div className="row">
+        <div className="row mt-5">
           <div className="col-lg-6">
             <div className="pt-5">
               <h3>
@@ -35,8 +44,7 @@ const Index = (props) => {
                 for hiring purpose, creating personal contests and much more!
               </h3>
               <button
-                className="btn btn-success mt-4 mb-2"
-                id="cc-btn"
+                className="btn btn-success mt-4 mb-2 cc-btn"
                 onClick={() => {
                   loggedIn
                     ? router.push("/contest/admin")
