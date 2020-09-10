@@ -519,6 +519,10 @@ a:hover {
   margin-left: 23%;
 }
 
+td {
+  font-weight: bold;
+}
+
 textarea {
   width: 95%;
   outline: none;
@@ -631,6 +635,11 @@ textarea {
 
 #c-name:focus {
   outline: none;
+}
+
+thead {
+  color: white;
+  background-color: black;
 }
 
 @media screen and (max-width: 900px) {

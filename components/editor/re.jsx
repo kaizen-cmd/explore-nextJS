@@ -4,7 +4,6 @@ import { ControlledEditor } from "@monaco-editor/react";
 import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
-import URL, { referer } from "../url";
 import { loggedIn } from "../../pages/_app";
 
 const Re = (props) => {

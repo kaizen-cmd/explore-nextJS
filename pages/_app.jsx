@@ -1,6 +1,6 @@
 import "../styles/global.css";
 import axios from "axios";
-import URL, { referer } from "../components/url";
+import URL from "../components/url";
 import Footer from "../components/common/footer";
 import Head from "next/head";
 import NavBar from "../components/common/navbar";

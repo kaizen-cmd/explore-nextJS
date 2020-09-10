@@ -1,10 +1,10 @@
 import { setLogin } from "../base_layout";
 import Login from "./login";
 import axios from "axios";
-import URL, { referer } from "../url";
+import URL from "../url";
 import { useState } from "react";
 
-const ForgotPass = (props) => {
+const ForgotPass = () => {
   const [message, setMessage] = useState("");
   return (
     <div

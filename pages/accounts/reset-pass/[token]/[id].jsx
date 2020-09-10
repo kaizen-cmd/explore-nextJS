@@ -1,11 +1,11 @@
 import { useState } from "react";
 import BaseLayout from "../../../../components/base_layout";
 import axios from "axios";
-import URL, { referer } from "../../../../components/url";
+import URL from "../../../../components/url";
 import { useRouter } from "next/router";
 import SmLoader from "../../../../components/common/sm-loader";
 
-const ResetPass = (props) => {
+const ResetPass = () => {
   const [message, setMessage] = useState("");
   const router = useRouter();
   return (

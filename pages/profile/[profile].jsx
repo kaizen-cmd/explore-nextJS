@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BaseLayout from "../../components/base_layout";
 import axios from "axios";
-import URL, { referer } from "../../components/url";
+import URL from "../../components/url";
 
 const Profile = (props) => {
   return (

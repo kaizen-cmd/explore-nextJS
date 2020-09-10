@@ -2,13 +2,13 @@ import Head from "next/head";
 import BaseLayout from "../../../components/base_layout";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import URL, { referer } from "../../../components/url";
+import URL from "../../../components/url";
 import FormData from "form-data";
 import { useRouter } from "next/router";
 import { setDot, setPp } from "../../_app";
 import SmLoader from "../../../components/common/sm-loader";
 
-const Profile = (props) => {
+const Profile = () => {
   const [bio, setBio] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");

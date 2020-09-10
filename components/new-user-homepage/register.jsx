@@ -2,10 +2,10 @@ import { setLogin } from "../base_layout";
 import Login from "./login";
 import { useState } from "react";
 import axios from "axios";
-import URL, { referer } from "../url";
+import URL from "../url";
 import SmLoader from "../../components/common/sm-loader";
 
-const Register = (props) => {
+const Register = () => {
   const [message, setMessage] = useState("");
   const [uExists, setUExists] = useState("");
   const [eExists, setEExists] = useState("");

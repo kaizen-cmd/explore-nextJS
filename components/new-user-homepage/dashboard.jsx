@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import URL, { referer } from "../url";
+import URL from "../url";
 
 const Dashboard = (props) => {
   const [liveps, setLiveps] = useState([]);
