@@ -40,7 +40,7 @@ const Ranking = (props) => {
         username: obj.username,
         points: obj.points,
         clickEvent: () => {
-          router.push(`/profile/{obj.username}`);
+          router.push(`/profile/[profile]`, `/profile/${obj.username}`);
         },
       };
     }),

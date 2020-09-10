@@ -2,7 +2,6 @@ import Head from "next/head";
 import BaseLayout from "../../components/base_layout";
 import axios from "axios";
 import URL from "../../components/url";
-import Link from "next/link";
 import { MDBDataTable } from "mdbreact";
 import { useRouter } from "next/router";
 
@@ -42,7 +41,7 @@ const PsIndex = (props) => {
         subs: obj.total_subs,
         correct: obj.correct_percentage,
         clickEvent: () => {
-          router.push(`/problem/${obj.pk}/`);
+          router.push(`/problem/[editor]`, `/problem/${obj.pk}`);
         },
       };
     }),
