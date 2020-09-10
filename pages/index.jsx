@@ -27,14 +27,7 @@ const Index = (props) => {
         />
       </Head>
       {dashboard ? <Dashboard /> : <SignUpContainer option="top" />}
-      <div className="container">
-        <div className="text-center">
-          <h3 className="mt-5 mb-4">Solve Gyankosh Java Assignments here.</h3>
-          <Link href="/contest/gyankosh-java-7-days">
-            <a className="btn-md btn-success cc-btn">Gyankosh Java Contest</a>
-          </Link>
-        </div>
-      </div>
+      
       <div className="container mb-2 mt-5">
         <div className="row mt-5">
           <div className="col-lg-6">
