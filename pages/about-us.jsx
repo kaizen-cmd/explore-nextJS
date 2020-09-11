@@ -102,7 +102,10 @@ const AboutUs = (props) => {
                     Technical Lead
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/tejasmandre/">
+                    <a
+                      href="https://www.linkedin.com/in/tejasmandre/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -117,7 +120,10 @@ const AboutUs = (props) => {
                     Community Admin
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/suyash-muley">
+                    <a
+                      href="https://www.linkedin.com/in/suyash-muley"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -132,7 +138,10 @@ const AboutUs = (props) => {
                     Business Head
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/anant-mokashi-592a84146/">
+                    <a
+                      href="https://www.linkedin.com/in/anant-mokashi-592a84146/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -160,7 +169,10 @@ const AboutUs = (props) => {
                     Core Team
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/ayush-srivastav-55ba79179/">
+                    <a
+                      href="https://www.linkedin.com/in/ayush-srivastav-55ba79179/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -175,7 +187,10 @@ const AboutUs = (props) => {
                     Core Team
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/shreyas-vaidya-aa0b21183/">
+                    <a
+                      href="https://www.linkedin.com/in/shreyas-vaidya-aa0b21183/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -190,7 +205,10 @@ const AboutUs = (props) => {
                     Core Team
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/divyesh-tharakan-3a6225195/">
+                    <a
+                      href="https://www.linkedin.com/in/divyesh-tharakan-3a6225195/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -218,7 +236,9 @@ const AboutUs = (props) => {
                     Communication
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="#" target="_blank">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -231,7 +251,10 @@ const AboutUs = (props) => {
                     Communication
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/vaibhavprakash8426/">
+                    <a
+                      href="https://www.linkedin.com/in/vaibhavprakash8426/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -244,7 +267,10 @@ const AboutUs = (props) => {
                   <h4 className="font-weight-bold">Apurv Vidhate</h4>
                   <p className="font-weight-bold text-primary mt-1">Business</p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/apurv-vidhate-b19b8b1a0/">
+                    <a
+                      href="https://www.linkedin.com/in/apurv-vidhate-b19b8b1a0/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -272,7 +298,10 @@ const AboutUs = (props) => {
                     Development Consultant
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/viral-sangani/">
+                    <a
+                      href="https://www.linkedin.com/in/viral-sangani/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
@@ -285,7 +314,7 @@ const AboutUs = (props) => {
                   <h4 className="font-weight-bold">Anjani Pandey</h4>
                   <p className="font-weight-bold text-primary mt-1">Graphics</p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="#">LinkedIn</a>
                   </h6>
                 </div>
               </div>
@@ -298,7 +327,10 @@ const AboutUs = (props) => {
                     Code Analysis
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="https://www.linkedin.com/in/shantanupatil23/">
+                    <a
+                      href="https://www.linkedin.com/in/shantanupatil23/"
+                      target="_blank"
+                    >
                       LinkedIn
                     </a>
                   </h6>
