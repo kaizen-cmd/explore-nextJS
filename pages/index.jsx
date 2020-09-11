@@ -90,7 +90,7 @@ const Index = (props) => {
         <div className="container px-3">
           <div className="d-flex justify-content-start">
             <div className="mr-2">
-              <h3>Student Projects</h3>
+              <h3>CodeStrike Projects</h3>
             </div>
             <hr style={{ width: "75%" }} />
           </div>
