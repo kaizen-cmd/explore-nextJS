@@ -24,25 +24,25 @@ const EditorPage = (props) => {
         <title>{props.ps.title}</title>
         <meta
           name="description"
-          content={props.ps.statement.slice(0, 150)}
+          content={`${props.ps.statement.slice(0, 140)} ...Solve Now!`}
         />
         <meta name="og:title" content={props.ps.title} />
         <meta name="og:url" content={props.cLink} />
         <meta
           name="og:description"
-          content={props.ps.statement.slice(0, 150)}
+          content={`${props.ps.statement.slice(0, 140)} ...Solve Now!`}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.ps.title} />
         <meta name="twitter:url" content={props.cLink} />
         <meta
           name="twitter:description"
-          content={props.ps.statement.slice(0, 150)}
+          content={`${props.ps.statement.slice(0, 140)} ...Solve Now!`}
         />
         <meta itemprop="name" content={props.ps.title} />
         <meta
           itemprop="description"
-          content={props.ps.statement.slice(0, 150)}
+          content={`${props.ps.statement.slice(0, 140)} ...Solve Now!`}
         />
       </Head>
       {res}
