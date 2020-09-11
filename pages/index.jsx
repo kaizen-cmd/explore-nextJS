@@ -8,7 +8,6 @@ import axios from "axios";
 import URL from "../components/url";
 import { loggedIn } from "./_app";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 var dashboard, setDashboard;
 const Index = (props) => {
@@ -19,15 +18,50 @@ const Index = (props) => {
   }, []);
   var key = 0;
   return (
-    <BaseLayout navbarprop="home">
+    <BaseLayout>
       <Head>
+        <title>Home</title>
         <meta
           name="description"
-          content="CodeStrike is an online community of coders."
+          content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
         />
+        <meta
+          name="og:description"
+          content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
+        />
+        <meta
+          itemprop="description"
+          content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
+        />
+        <meta
+          name="twitter:description"
+          content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home" />
+        <meta name="twitter:url" content={props.cLink} />
+        <meta
+          name="twitter:image"
+          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
+        />
+        <meta itemprop="name" content="Home" />
+        <meta
+          itemprop="image"
+          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
+        />
+        <meta name="og:title" content="Home" />
+        <meta name="og:url" content={props.cLink} />
+        <meta
+          name="og:image"
+          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
+        />
+        <meta name="og:site_name" content="CodeStrike.in" />
+        <meta name="og:email" content="codestrike20@gmail.com" />
+        <meta property="og:type" content="Coding community" />
+        <meta property="og:points" content="Code Strike_ACHIEVEMENT" />
       </Head>
       {dashboard ? <Dashboard /> : <SignUpContainer option="top" />}
-      
+
       <div className="container mb-2 mt-5">
         <div className="row mt-5">
           <div className="col-lg-6">
@@ -186,10 +220,11 @@ const Index = (props) => {
 export default Index;
 export { setDashboard };
 
-Index.getInitialProps = async () => {
+Index.getInitialProps = async (ctx) => {
   const data = await axios.get(URL + "/home/");
   const dict = data["data"];
   return {
     dict: dict,
+    cLink: "https://codestrike.in" + ctx.asPath,
   };
 };

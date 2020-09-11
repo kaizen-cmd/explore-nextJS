@@ -49,9 +49,28 @@ const Ranking = (props) => {
   return (
     <BaseLayout navbarprop="ranking">
       <Head>
+        <title>Leaderboard CodeStrike</title>
         <meta
           name="description"
-          content="CodeStrike is an online community of coders."
+          content="Solve the problems on CodeStrike to earn points and see yourself rank up on the leaderboard."
+        />
+        <meta name="og:title" content="Leaderboard CodeStrike" />
+        <meta name="og:url" content={props.cLink} />
+        <meta
+          name="og:description"
+          content="Solve the problems on CodeStrike to earn points and see yourself rank up on the leaderboard."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Leaderboard CodeStrike" />
+        <meta name="twitter:url" content={props.cLink} />
+        <meta
+          name="twitter:description"
+          content="Solve the problems on CodeStrike to earn points and see yourself rank up on the leaderboard."
+        />
+        <meta itemprop="name" content="Leaderboard CodeStrike" />
+        <meta
+          itemprop="description"
+          content="Solve the problems on CodeStrike to earn points and see yourself rank up on the leaderboard."
         />
       </Head>
       <div
@@ -95,10 +114,11 @@ const Ranking = (props) => {
 
 export default Ranking;
 
-Ranking.getInitialProps = async () => {
+Ranking.getInitialProps = async (ctx) => {
   const res = await axios.get(URL + "/codeportal/ranking/");
   const data = res["data"];
   return {
     leader_objs: data,
+    cLink: "https://codestrike.in" + ctx.asPath,
   };
 };

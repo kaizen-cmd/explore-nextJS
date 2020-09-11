@@ -21,9 +21,28 @@ const EditorPage = (props) => {
   return (
     <BaseLayout>
       <Head>
+        <title>{props.ps_obj.title}</title>
         <meta
           name="description"
-          content="CodeStrike is an online community of coders."
+          content={props.ps_obj.statement.slice(0, 150)}
+        />
+        <meta name="og:title" content={props.ps_obj.title} />
+        <meta name="og:url" content={props.cLink} />
+        <meta
+          name="og:description"
+          content={props.ps_obj.statement.slice(0, 150)}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={props.ps_obj.title} />
+        <meta name="twitter:url" content={props.cLink} />
+        <meta
+          name="twitter:description"
+          content={props.ps_obj.statement.slice(0, 150)}
+        />
+        <meta itemprop="name" content={props.ps_obj.title} />
+        <meta
+          itemprop="description"
+          content={props.ps_obj.statement.slice(0, 150)}
         />
       </Head>
       {res}
@@ -33,12 +52,13 @@ const EditorPage = (props) => {
 
 export default EditorPage;
 
-EditorPage.getInitialProps = async ({ query }) => {
-  const url = URL + "/codeportal/ps-detail/" + query.editor + "/";
+EditorPage.getInitialProps = async (ctx) => {
+  const url = URL + "/codeportal/ps-detail/" + ctx.query.editor + "/";
   const ps = await axios.get(url);
   const ps_obj = ps["data"];
   return {
     ps: ps_obj,
     psUrl: url,
+    cLink: "https://codestrike.in" + ctx.asPath,
   };
 };

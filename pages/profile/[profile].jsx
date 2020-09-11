@@ -7,10 +7,26 @@ const Profile = (props) => {
   return (
     <BaseLayout>
       <Head>
-        <meta
-          name="description"
-          content="CodeStrike is an online community of coders."
-        />
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <title>
+            {props.user.first_name} {props.user.last_name}
+          </title>
+        ) : (
+          <title>{props.user.username}</title>
+        )}
+        <meta name="description" content={props.user.bio} />
+        <meta name="og:title" content={props.user.username} />
+        <meta name="og:url" content={props.cLink} />
+        <meta name="og:image" content={props.user.profile_pic} />
+        <meta name="og:description" content={props.user.bio} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={props.user.username} />
+        <meta name="twitter:url" content={props.cLink} />
+        <meta name="twitter:description" content={props.user.bio} />
+        <meta name="twitter:image" content={props.user.profile_pic} />
+        <meta itemprop="name" content={props.user.username} />
+        <meta itemprop="description" content={props.user.bio} />
+        <meta itemprop="image" content={props.user.profile_pic} />
       </Head>
       <div className="container profile-container">
         <div className="row">
@@ -29,8 +45,11 @@ const Profile = (props) => {
             </div>
 
             <div>
-              <h4 className="mb-0 mt-0">{`${props.user.first_name.slice(0, 15)} ${props.user.last_name.slice(0, 15)}`}</h4>
-              <p>@{`${props.user.username}`}</p>
+              <h4 className="mb-0 mt-0">{`${props.user.first_name.slice(
+                0,
+                15
+              )} ${props.user.last_name.slice(0, 15)}`}</h4>
+              <p>@{props.user.username}</p>
             </div>
           </div>
           <div className="col-lg-8">
@@ -110,5 +129,6 @@ Profile.getInitialProps = async (ctx) => {
   const profile = res["data"];
   return {
     user: profile,
+    cLink: "https://codestrike.in" + ctx.asPath,
   };
 };

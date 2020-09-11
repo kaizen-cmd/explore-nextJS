@@ -49,9 +49,28 @@ const PsIndex = (props) => {
   return (
     <BaseLayout navbarprop="psindex">
       <Head>
+        <title>Practice Porblems</title>
         <meta
           name="description"
-          content="CodeStrike is an online community of coders."
+          content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
+        />
+        <meta name="og:title" content="Practice Porblems" />
+        <meta name="og:url" content={props.cLink} />
+        <meta
+          name="og:description"
+          content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Practice Porblems" />
+        <meta name="twitter:url" content={props.cLink} />
+        <meta
+          name="twitter:description"
+          content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
+        />
+        <meta itemprop="name" content="Practice Porblems" />
+        <meta
+          itemprop="description"
+          content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
       </Head>
       <div className="w-50 mx-auto mb-5 ps-tab-div">
@@ -63,10 +82,11 @@ const PsIndex = (props) => {
 
 export default PsIndex;
 
-PsIndex.getInitialProps = async () => {
+PsIndex.getInitialProps = async (ctx) => {
   const res = await axios.get(URL + "/codeportal/ps-records/");
   const data = res["data"];
   return {
     ps_objs: data,
+    cLink: "https://codestrike.in" + ctx.asPath
   };
 };

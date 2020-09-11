@@ -1,8 +1,50 @@
 import BaseLayout from "../components/base_layout";
+import Head from "next/head";
 
-const AboutUs = () => {
+const AboutUs = (props) => {
   return (
     <BaseLayout>
+      <Head>
+        <title>About Us</title>
+        <meta
+          name="description"
+          content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
+        />
+        <meta
+          name="og:description"
+          content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
+        />
+        <meta
+          itemprop="description"
+          content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
+        />
+        <meta
+          name="twitter:description"
+          content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us" />
+        <meta name="twitter:url" content={props.cLink} />
+        <meta
+          name="twitter:image"
+          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
+        />
+        <meta itemprop="name" content="About Us" />
+        <meta
+          itemprop="image"
+          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
+        />
+        <meta name="og:title" content="About Us" />
+        <meta name="og:url" content={props.cLink} />
+        <meta
+          name="og:image"
+          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
+        />
+        <meta name="og:site_name" content="CodeStrike.in" />
+        <meta name="og:email" content="codestrike20@gmail.com" />
+        <meta property="og:type" content="Coding community" />
+        <meta property="og:points" content="Code Strike_ACHIEVEMENT" />
+      </Head>
       <div className="top-head d-flex align-items-center flex-column">
         <div className="my-2"></div>
         <h1 className="text-light my-5">About Us</h1>
@@ -16,7 +58,7 @@ const AboutUs = () => {
               lineHeight: 1.8,
             }}
           >
-            CodeStrike is formed by a bunch of geeky engineers who have to come
+            CodeStrike is formed by a bunch of geeky engineers who have come
             together to provide this platform for students, teachers, and
             recruiters for a range of purposes. Students can use our platform to
             learn, develop your programming skills, and code by participating in
@@ -286,3 +328,9 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+AboutUs.getInitialProps = (ctx) => {
+  return {
+    cLink: "https://codestrike.in" + ctx.asPath,
+  };
+};
