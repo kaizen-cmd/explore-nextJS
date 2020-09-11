@@ -60,7 +60,9 @@ const AboutUs = () => {
                     Technical Lead
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/tejasmandre/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -73,7 +75,9 @@ const AboutUs = () => {
                     Community Admin
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/suyash-muley">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -83,10 +87,12 @@ const AboutUs = () => {
                 <div className="text-center">
                   <h4 className="font-weight-bold">Anant Mokashi</h4>
                   <p className="font-weight-bold text-primary mt-1">
-                    Customer Relations
+                    Business Head
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/anant-mokashi-592a84146/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -112,7 +118,9 @@ const AboutUs = () => {
                     Core Team
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/ayush-srivastav-55ba79179/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -125,7 +133,9 @@ const AboutUs = () => {
                     Core Team
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/shreyas-vaidya-aa0b21183/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -138,7 +148,9 @@ const AboutUs = () => {
                     Core Team
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/divyesh-tharakan-3a6225195/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -177,7 +189,9 @@ const AboutUs = () => {
                     Communication
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/vaibhavprakash8426/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -188,14 +202,16 @@ const AboutUs = () => {
                   <h4 className="font-weight-bold">Apurv Vidhate</h4>
                   <p className="font-weight-bold text-primary mt-1">Business</p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/apurv-vidhate-b19b8b1a0/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="help-supports mb-5">
+        <div className="help-support mb-5">
           <div className="text-center">
             <h5>Support and help</h5>
           </div>
@@ -214,7 +230,9 @@ const AboutUs = () => {
                     Development Consultant
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/viral-sangani/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
@@ -238,7 +256,9 @@ const AboutUs = () => {
                     Code Analysis
                   </p>
                   <h6 className="font-weight-bold">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/shantanupatil23/">
+                      LinkedIn
+                    </a>
                   </h6>
                 </div>
               </div>
