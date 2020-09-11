@@ -135,7 +135,7 @@ const NavBar = (props) => {
                 <a className="dropdown-item" href="#">
                   <Link href="/about-us">
                     <a className="nav-link" onClick={activator1}>
-                      Our Story
+                      Our Team
                     </a>
                   </Link>
                 </a>
