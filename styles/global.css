@@ -614,6 +614,10 @@ thead {
   background-color: black;
 }
 
+.icons {
+  font-size: 2.3rem;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;

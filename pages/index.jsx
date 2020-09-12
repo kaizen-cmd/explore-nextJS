@@ -20,7 +20,7 @@ const Index = (props) => {
   return (
     <BaseLayout>
       <Head>
-        <title>Home</title>
+        <title>Home | CodeStrike</title>
         <meta
           name="description"
           content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
@@ -38,18 +38,18 @@ const Index = (props) => {
           content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Home" />
+        <meta name="twitter:title" content="Home | CodeStrike" />
         <meta name="twitter:url" content={props.cLink} />
         <meta
           name="twitter:image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
-        <meta itemprop="name" content="Home" />
+        <meta itemprop="name" content="Home | CodeStrike" />
         <meta
           itemprop="image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
-        <meta name="og:title" content="Home" />
+        <meta name="og:title" content="Home | CodeStrike" />
         <meta name="og:url" content={props.cLink} />
         <meta
           name="og:image"
@@ -59,6 +59,12 @@ const Index = (props) => {
         <meta name="og:email" content="codestrike20@gmail.com" />
         <meta property="og:type" content="Coding community" />
         <meta property="og:points" content="Code Strike_ACHIEVEMENT" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(props.schema),
+          }}
+        ></script>
       </Head>
       {dashboard ? <Dashboard /> : <SignUpContainer option="top" />}
 
@@ -226,5 +232,43 @@ Index.getInitialProps = async (ctx) => {
   return {
     dict: dict,
     cLink: "https://codestrike.in" + ctx.asPath,
+    shcema: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Code_Strike",
+      legalName: "CodeStrike.in",
+      url: "http://codestrike.in/",
+      logo: "https://img.techpowerup.org/200717/codestrike-logo-min.png",
+      foundingDate: "2020",
+      founders: [
+        {
+          "@type": "Person",
+          name: "Tejas Mandre",
+        },
+        {
+          "@type": "Person",
+          name: "Anant Mokashi",
+        },
+        {
+          "@type": "Person",
+          name: "Suyash Muley",
+        },
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "MIT SOE, MIT ADT University",
+        addressLocality: "Pune",
+        addressRegion: "MH",
+        postalCode: "411014",
+        addressCountry: "India",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        telephone: "[+91-9021343679]",
+        email: "codestrike200@gmail.com",
+      },
+      sameAs: ["https://discord.gg/C5UfaXy"],
+    },
   };
 };

@@ -77,7 +77,7 @@ const AboutUs = (props) => {
   return (
     <BaseLayout>
       <Head>
-        <title>About Us</title>
+        <title>About Us | CodeStrike</title>
         <meta
           name="description"
           content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
@@ -95,18 +95,18 @@ const AboutUs = (props) => {
           content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us" />
+        <meta name="twitter:title" content="About Us | CodeStrike" />
         <meta name="twitter:url" content={props.cLink} />
         <meta
           name="twitter:image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
-        <meta itemprop="name" content="About Us" />
+        <meta itemprop="name" content="About Us | CodeStrike" />
         <meta
           itemprop="image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
-        <meta name="og:title" content="About Us" />
+        <meta name="og:title" content="About Us | CodeStrike" />
         <meta name="og:url" content={props.cLink} />
         <meta
           name="og:image"
@@ -244,7 +244,7 @@ const AboutUs = (props) => {
         </div>
       </div>
 
-      <div className="bottom-head d-flex align-items-center flex-column">
+      <div className="top-head d-flex align-items-center flex-column">
         <div className="my-2"></div>
         <h3 className="text-light mt-5">We are always growing.</h3>
         <h4 className="font-weight-bold text-light">Want to join us?</h4>

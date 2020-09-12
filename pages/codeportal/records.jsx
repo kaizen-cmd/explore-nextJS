@@ -49,25 +49,25 @@ const PsIndex = (props) => {
   return (
     <BaseLayout navbarprop="psindex">
       <Head>
-        <title>Practice Porblems</title>
+        <title>Practice Porblems | CodeStrike</title>
         <meta
           name="description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
-        <meta name="og:title" content="Practice Porblems" />
+        <meta name="og:title" content="Practice Problems | CodeStrike" />
         <meta name="og:url" content={props.cLink} />
         <meta
           name="og:description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Practice Porblems" />
+        <meta name="twitter:title" content="Practice Problems | CodeStrike" />
         <meta name="twitter:url" content={props.cLink} />
         <meta
           name="twitter:description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
-        <meta itemprop="name" content="Practice Porblems" />
+        <meta itemprop="name" content="Practice Problems | CodeStrike" />
         <meta
           itemprop="description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."

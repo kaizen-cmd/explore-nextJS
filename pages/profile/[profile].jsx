@@ -9,23 +9,66 @@ const Profile = (props) => {
       <Head>
         {props.user.first_name != "" && props.user.last_name != "" ? (
           <title>
-            {props.user.first_name} {props.user.last_name}
+            {props.user.first_name} {props.user.last_name} | CodeStrike
           </title>
         ) : (
-          <title>{props.user.username}</title>
+          <title>{props.user.username} | CodeStrike</title>
         )}
-        <meta name="description" content={props.user.bio} />
-        <meta name="og:title" content={props.user.username} />
+        <meta
+          name="description"
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+        />
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <meta
+            name="og:title"
+            content={`${props.user.first_name} ${props.user.last_name} | CodeStrike`}
+          />
+        ) : (
+          <meta
+            name="og:title"
+            content={`${props.user.username} | CodeStrike`}
+          />
+        )}
+
         <meta name="og:url" content={props.cLink} />
         <meta name="og:image" content={props.user.profile_pic} />
-        <meta name="og:description" content={props.user.bio} />
+        <meta
+          name="og:description"
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={props.user.username} />
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <meta
+            name="twitter:title"
+            content={`${props.user.first_name} ${props.user.last_name} | CodeStrike`}
+          />
+        ) : (
+          <meta
+            name="twitter:title"
+            content={`${props.user.username} | CodeStrike`}
+          />
+        )}
         <meta name="twitter:url" content={props.cLink} />
-        <meta name="twitter:description" content={props.user.bio} />
+        <meta
+          name="twitter:description"
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+        />
         <meta name="twitter:image" content={props.user.profile_pic} />
-        <meta itemprop="name" content={props.user.username} />
-        <meta itemprop="description" content={props.user.bio} />
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <meta
+            itemProp="name"
+            content={`${props.user.first_name} ${props.user.last_name} | CodeStrike`}
+          />
+        ) : (
+          <meta
+            itemProp="name"
+            content={`${props.user.username} | CodeStrike`}
+          />
+        )}
+        <meta
+          itemprop="description"
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+        />
         <meta itemprop="image" content={props.user.profile_pic} />
       </Head>
       <div className="container profile-container">

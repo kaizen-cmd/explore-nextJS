@@ -18,44 +18,7 @@ export default function MyApp({ Component, pageProps }) {
   [user, setUser] = useState("");
   [pp, setPp] = useState("Profile");
   [dot, setDot] = useState(false);
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Code_Strike",
-    legalName: "CodeStrike.in",
-    url: "http://codestrike.in/",
-    logo: "https://img.techpowerup.org/200717/codestrike-logo-min.png",
-    foundingDate: "2020",
-    founders: [
-      {
-        "@type": "Person",
-        name: "Tejas Mandre",
-      },
-      {
-        "@type": "Person",
-        name: "Anant Mokashi",
-      },
-      {
-        "@type": "Person",
-        name: "Suyash Muley",
-      },
-    ],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "MIT SOE, MIT ADT University",
-      addressLocality: "Pune",
-      addressRegion: "MH",
-      postalCode: "411014",
-      addressCountry: "India",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      telephone: "[+91-9021343679]",
-      email: "codestrike200@gmail.com",
-    },
-    sameAs: ["https://discord.gg/C5UfaXy"],
-  };
+
   useEffect(() => {
     if (user === "") {
       if (localStorage.getItem("token")) {
@@ -104,12 +67,7 @@ export default function MyApp({ Component, pageProps }) {
         <link href="/ico.png" rel="icon" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/ico.png"></link>
         <meta name="theme-color" content="#317EFB" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema),
-          }}
-        ></script>
+
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -135,6 +93,10 @@ export default function MyApp({ Component, pageProps }) {
           integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
           crossOrigin="anonymous"
         ></script>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
       </Head>
       <NavBar />
       <Component {...pageProps} />

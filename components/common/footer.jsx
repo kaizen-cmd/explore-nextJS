@@ -49,6 +49,30 @@ const Footer = (props) => {
         <div className="col-lg-3">
           <div className="col-lg-12 text-center">
             <img src="/ico.png" alt="logo" />
+            <div className="px-4 mt-3">
+              <div className="px-5">
+                <div className="d-flex mx-5 justify-content-between">
+                  <i
+                    className="fa fa-instagram text-white"
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  ></i>
+                  <i
+                    className="fa fa-linkedin text-white"
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  ></i>
+                  <i
+                    className="fa fa-youtube text-white"
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  ></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="cp-text mt-5">
