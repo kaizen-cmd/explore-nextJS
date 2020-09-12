@@ -52,7 +52,7 @@ const Footer = (props) => {
             <div className="px-4 mt-3">
               <div className="px-5">
                 <div className="d-flex mx-5 justify-content-between">
-                  <a href="https://www.instagram.com/code_strike/">
+                  <a href="https://www.instagram.com/code_strike/" target="_blank">
                     <i
                       className="fa fa-instagram text-white"
                       style={{
@@ -60,7 +60,7 @@ const Footer = (props) => {
                       }}
                     ></i>
                   </a>
-                  <a href="https://www.linkedin.com/company/codestriketech">
+                  <a href="https://www.linkedin.com/company/codestriketech" target="_blank">
                     <i
                       className="fa fa-linkedin text-white"
                       style={{
@@ -68,7 +68,7 @@ const Footer = (props) => {
                       }}
                     ></i>
                   </a>
-                  <a href="https://www.youtube.com/channel/UCtinB90JWpCaPU8IBqJUMLQ">
+                  <a href="https://www.youtube.com/channel/UCtinB90JWpCaPU8IBqJUMLQ" target="_blank">
                     <i
                       className="fa fa-youtube text-white"
                       style={{

@@ -150,13 +150,22 @@ const ContactUs = (props) => {
                 </h5>
               </div>
               <div className="icons px-5 d-flex justify-content-between mx-5 mb-5">
-                <a href="https://www.instagram.com/code_strike/?hl=en">
+                <a
+                  href="https://www.instagram.com/code_strike/?hl=en"
+                  target="_blank"
+                >
                   <i className="fa fa-instagram text-white"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/codestriketech">
+                <a
+                  href="https://www.linkedin.com/company/codestriketech"
+                  target="_blank"
+                >
                   <i className="fa fa-linkedin text-white"></i>
                 </a>
-                <a href="https://www.youtube.com/channel/UCtinB90JWpCaPU8IBqJUMLQ">
+                <a
+                  href="https://www.youtube.com/channel/UCtinB90JWpCaPU8IBqJUMLQ"
+                  target="_blank"
+                >
                   <i className="fa fa-youtube text-white"></i>
                 </a>
               </div>
