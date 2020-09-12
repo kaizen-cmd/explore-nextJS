@@ -72,7 +72,7 @@ const Dashboard = (props) => {
           <div className="col-md-6">
             <div className="col-lg-12 mt-2">
               <div className="mb-2 text-center">
-                <h4 className="mb-0">Live Problems</h4>
+                <h4 className="mb-0">CodeStrike Contest Live</h4>
               </div>
               <table className="table ps-table">
                 <thead className="black white-text">

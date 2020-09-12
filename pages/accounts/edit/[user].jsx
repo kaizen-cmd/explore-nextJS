@@ -45,10 +45,7 @@ const Profile = () => {
   return (
     <BaseLayout navbarprop="profile">
       <Head>
-        <meta
-          name="description"
-          content="CodeStrike is an online community of coders."
-        />
+        <title>My Profile | CodeStrike</title>
       </Head>
       <div className="container profile-container profile-container-edit">
         <div className="row">

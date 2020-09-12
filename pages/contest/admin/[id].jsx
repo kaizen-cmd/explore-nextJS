@@ -5,7 +5,7 @@ import axios from "axios";
 import URL from "../../../components/url";
 import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
-import { loggedIn } from "../../_app";
+import Head from "next/head";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -36,7 +36,7 @@ const ContestDetailAdmin = () => {
       })
       .then((res) => {
         if (res.data.res === "Create a custom contest.") {
-          router.push("/contest/admin")
+          router.push("/contest/admin");
         } else {
           setCSlug(res.data.title);
           setDesc(res.data.desc);
@@ -51,6 +51,9 @@ const ContestDetailAdmin = () => {
   }, []);
   return (
     <BaseLayout>
+      <Head>
+        <title>Edit {cSlug} | CodeStrike</title>
+      </Head>
       <div className="container mt-4">
         {delPop}
         <div className="w-100 h-25 mb-4">

@@ -35,6 +35,7 @@ const ContestIndex = () => {
   return (
     <BaseLayout navbarprop="ranking">
       <Head>
+        <title>My Contests | CodeStrike</title>
         <meta
           name="description"
           content="CodeStrike is an online community of coders."

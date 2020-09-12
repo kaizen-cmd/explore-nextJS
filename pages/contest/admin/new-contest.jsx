@@ -5,6 +5,7 @@ import axios from "axios";
 import URL from "../../../components/url";
 import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -45,6 +46,9 @@ const ContestDetailAdmin = () => {
   }, []);
   return (
     <BaseLayout>
+    <Head>
+      <title>New Contest | CodeStrike</title>
+    </Head>
       <div className="container mt-4">
         <div className="w-100 h-25 mb-4">
           <div

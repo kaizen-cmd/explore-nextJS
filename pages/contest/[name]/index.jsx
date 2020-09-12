@@ -35,7 +35,8 @@ const PsIndex = () => {
   return (
     <BaseLayout>
       <Head>
-      <meta name="description" content={`${desc}`} />
+        <title>{title} | CodeStrike</title>
+        <meta name="description" content={`${desc}`} />
       </Head>
       {loggedIn ? (
         <div

@@ -139,16 +139,26 @@ const ContactUs = (props) => {
                   }}
                 />
                 <h5 className="text-center my-5">
-                  <a href="mailTo:codestrike20@gmail.com" className="text-light">
+                  <a
+                    href="mailTo:codestrike20@gmail.com"
+                    className="text-light"
+                  >
                     {" "}
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i><span className="mr-1">{"  "} codestrike20@gmail.com</span>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <span className="mr-1">{"  "} codestrike20@gmail.com</span>
                   </a>
                 </h5>
               </div>
               <div className="icons px-5 d-flex justify-content-between mx-5 mb-5">
-                <i className="fa fa-instagram text-white"></i>
-                <i className="fa fa-linkedin text-white"></i>
-                <i className="fa fa-youtube text-white"></i>
+                <a href="https://www.instagram.com/code_strike/?hl=en">
+                  <i className="fa fa-instagram text-white"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/codestriketech">
+                  <i className="fa fa-linkedin text-white"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCtinB90JWpCaPU8IBqJUMLQ">
+                  <i className="fa fa-youtube text-white"></i>
+                </a>
               </div>
               <div>
                 <img
