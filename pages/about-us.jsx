@@ -1,7 +1,79 @@
 import BaseLayout from "../components/base_layout";
 import Head from "next/head";
+import TeamCard from "../components/miscellaneous/team-card";
 
 const AboutUs = (props) => {
+  const team = {
+    founders: [
+      {
+        name: "Tejas Mandre",
+        role: "Technical Lead",
+        linlink: "https://www.linkedin.com/in/tejasmandre/",
+      },
+      {
+        name: "Anant Mokashi",
+        role: "Business Head",
+        linlink: "https://www.linkedin.com/in/suyash-muley",
+      },
+      {
+        name: "Suyash Muley",
+        role: "Community Admin",
+        linlink: "https://www.linkedin.com/in/anant-mokashi-592a84146/",
+      },
+    ],
+    psteam: [
+      {
+        name: "Ayush Srivastav",
+        role: "Core Member",
+        linlink: "https://www.linkedin.com/in/ayush-srivastav-55ba79179/",
+      },
+      {
+        name: "Shreyas Vaidya",
+        role: "Core Member",
+        linlink: "https://www.linkedin.com/in/shreyas-vaidya-aa0b21183/",
+      },
+      {
+        name: "Divyesh Tharakan",
+        role: "Core Member",
+        linlink: "https://www.linkedin.com/in/divyesh-tharakan-3a6225195/",
+      },
+    ],
+    communication: [
+      {
+        name: "Hardik Ambati",
+        role: "Communication",
+        linlink: "https://www.linkedin.com/in/hardik-ambati-479ba11b5/",
+      },
+      {
+        name: "Vaibhav Prakash",
+        role: "Marketing",
+        linlink: "https://www.linkedin.com/in/vaibhavprakash8426/",
+      },
+      {
+        name: "Apurv Vidhate",
+        role: "Business",
+        linlink: "https://www.linkedin.com/in/apurv-vidhate-b19b8b1a0/",
+      },
+    ],
+    support: [
+      {
+        name: "Viral Sangani",
+        role: "Development Consultant",
+        linlink: "https://www.linkedin.com/in/viral-sangani/",
+      },
+      {
+        name: "Anjani Pandey",
+        role: "Graphics",
+        linlink: "#",
+      },
+      {
+        name: "Shantanu Patil",
+        role: "Code Ananlysis",
+        linlink: "https://www.linkedin.com/in/shantanupatil23/",
+      },
+    ],
+  };
+
   return (
     <BaseLayout>
       <Head>
@@ -50,7 +122,9 @@ const AboutUs = (props) => {
         <h1 className="text-light my-5">About Us</h1>
         <div className="my-2"></div>
       </div>
+      
       <div className="container">
+      
         <div className="desc mb-4 mt-3">
           <p
             className="font-weight-bold text-center"
@@ -70,6 +144,7 @@ const AboutUs = (props) => {
             touch and develop together.
           </p>
         </div>
+
         <div className="main-start-hr">
           <div className="d-flex align-items-center">
             <div>
@@ -83,6 +158,7 @@ const AboutUs = (props) => {
             />
           </div>
         </div>
+
         <div className="co-founders mt-4 mb-5">
           <div className="text-center">
             <h5>Co-Founders</h5>
@@ -94,62 +170,16 @@ const AboutUs = (props) => {
             }}
           />
           <div className="row">
-            <div className="col-lg-4 p-3">
-              <div className="shadow rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Tejas Mandre</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Technical Lead
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/tejasmandre/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Suyash Muley</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Community Admin
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/suyash-muley"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Anant Mokashi</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Business Head
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/anant-mokashi-592a84146/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
+            {team.founders.map((founder) => (
+              <TeamCard
+                name={founder.name}
+                role={founder.role}
+                linlink={founder.linlink}
+              />
+            ))}
           </div>
         </div>
+
         <div className="ps-team mb-5">
           <div className="text-center">
             <h5>Code Judges</h5>
@@ -161,62 +191,16 @@ const AboutUs = (props) => {
             }}
           />
           <div className="row">
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Ayush Srivastav</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Core Team
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/ayush-srivastav-55ba79179/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Shreyas Vaidya</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Core Team
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/shreyas-vaidya-aa0b21183/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Divyesh Tharakan</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Core Team
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/divyesh-tharakan-3a6225195/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
+            {team.psteam.map((member) => (
+              <TeamCard
+                name={member.name}
+                role={member.role}
+                linlink={member.linlink}
+              />
+            ))}
           </div>
         </div>
+
         <div className="communication mb-5">
           <div className="text-center">
             <h5>Communication and business</h5>
@@ -228,57 +212,16 @@ const AboutUs = (props) => {
             }}
           />
           <div className="row">
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Hardik Ambati</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Communication
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a href="#" target="_blank">
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Vaibhav Prakash</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Communication
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/vaibhavprakash8426/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Apurv Vidhate</h4>
-                  <p className="font-weight-bold text-primary mt-1">Business</p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/apurv-vidhate-b19b8b1a0/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
+            {team.communication.map((member) => (
+              <TeamCard
+                name={member.name}
+                role={member.role}
+                linlink={member.linlink}
+              />
+            ))}
           </div>
         </div>
+
         <div className="help-support mb-5">
           <div className="text-center">
             <h5>Support and help</h5>
@@ -290,57 +233,18 @@ const AboutUs = (props) => {
             }}
           />
           <div className="row">
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Viral Sangani</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Development Consultant
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/viral-sangani/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Anjani Pandey</h4>
-                  <p className="font-weight-bold text-primary mt-1">Graphics</p>
-                  <h6 className="font-weight-bold">
-                    <a href="#">LinkedIn</a>
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 p-3">
-              <div className="shadow bg-light rounded px-3 py-5">
-                <div className="text-center">
-                  <h4 className="font-weight-bold">Shantanu Patil</h4>
-                  <p className="font-weight-bold text-primary mt-1">
-                    Code Analysis
-                  </p>
-                  <h6 className="font-weight-bold">
-                    <a
-                      href="https://www.linkedin.com/in/shantanupatil23/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            </div>
+            {team.support.map((member) => (
+              <TeamCard
+                name={member.name}
+                role={member.role}
+                linlink={member.linlink}
+              />
+            ))}
           </div>
         </div>
       </div>
-      <div className="top-head d-flex align-items-center flex-column">
+
+      <div className="bottom-head d-flex align-items-center flex-column">
         <div className="my-2"></div>
         <h3 className="text-light mt-5">We are always growing.</h3>
         <h4 className="font-weight-bold text-light">Want to join us?</h4>
@@ -355,6 +259,7 @@ const AboutUs = (props) => {
         </a>
         <div className="my-2"></div>
       </div>
+    
     </BaseLayout>
   );
 };

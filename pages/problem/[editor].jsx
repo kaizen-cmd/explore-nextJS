@@ -21,7 +21,7 @@ const EditorPage = (props) => {
   return (
     <BaseLayout>
       <Head>
-        <title>{props.ps.title}</title>
+        <title>CodeStrike|{props.ps.title}</title>
         <meta
           name="description"
           content={`${props.ps.statement.slice(0, 140)} ...Solve Now!`}
