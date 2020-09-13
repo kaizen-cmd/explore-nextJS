@@ -21,7 +21,7 @@ const EditorPage = (props) => {
   return (
     <BaseLayout>
       <Head>
-        <title>{ps.title} Contest | CodeStrike</title>
+        <title>{props.ps.title} Contest | CodeStrike</title>
         <meta
           name="description"
           content="CodeStrike is an online community of coders."

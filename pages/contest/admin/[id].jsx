@@ -243,7 +243,7 @@ const ContestDetailAdmin = () => {
 
         {view === "problems" && (
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-lg-7">
               <div>
                 <h4 className="mb-3">Problems in Contest</h4>
                 <div className="w-100 mx-auto mb-4 mt-2 ps-tab-div">
@@ -331,57 +331,80 @@ const ContestDetailAdmin = () => {
                 borderBottom: "2px",
               }}
             />
-            <div className="col-lg-9">
-              <div>
-                <h4 className="mb-3">Available Problems</h4>
-                <div className="w-100 mx-auto mb-5 mt-2 ps-tab-div">
-                  <table className="table ps-table">
-                    <thead className="black white-text">
-                      <tr>
-                        <th scope="col">Problem</th>
-                        <th scope="col">Points</th>
-                        <th scope="col"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {availArray.map((p) => {
-                        return (
-                          <tr>
-                            <td>
-                              <a href={`${URL}${p.link}`} target="_blank">
-                                {p.title}
-                              </a>
-                            </td>
-                            <td>{p.points}</td>
-                            <td>
-                              <button
-                                style={{
-                                  borderRadius: "50%",
-                                  outline: "none",
-                                  backgroundColor: "transparent",
-                                  border: "2px solid #09db1a",
-                                  color: "#09db1a",
-                                  width: "27px",
-                                }}
-                                onClick={() => {
-                                  setPresentArray([
-                                    ...presentArray,
-                                    {
-                                      title: p.title,
-                                      points: p.points,
-                                      pk: p.pk,
-                                    },
-                                  ]);
-                                }}
-                              >
-                                <strong>+</strong>
-                              </button>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
+            <div className="row">
+              <div className="col-lg-7">
+                <div>
+                  <h4 className="mb-3">Available Problems</h4>
+                  <div className="w-100 mx-auto mb-5 mt-2 ps-tab-div">
+                    <table className="table ps-table">
+                      <thead className="black white-text">
+                        <tr>
+                          <th scope="col">Problem</th>
+                          <th scope="col">Points</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {availArray.map((p) => {
+                          return (
+                            <tr>
+                              <td>
+                                <a href={`${URL}${p.link}`} target="_blank">
+                                  {p.title}
+                                </a>
+                              </td>
+                              <td>{p.points}</td>
+                              <td>
+                                <button
+                                  style={{
+                                    borderRadius: "50%",
+                                    outline: "none",
+                                    backgroundColor: "transparent",
+                                    border: "2px solid #09db1a",
+                                    color: "#09db1a",
+                                    width: "27px",
+                                  }}
+                                  onClick={() => {
+                                    setPresentArray([
+                                      ...presentArray,
+                                      {
+                                        title: p.title,
+                                        points: p.points,
+                                        pk: p.pk,
+                                      },
+                                    ]);
+                                  }}
+                                >
+                                  <strong>+</strong>
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-5">
+                <h4 className="mb-3">Submit your own problem</h4>
+                <p>
+                  Staement should have the main problem, input format, output
+                  format, sample input, sample output and test cases. Problem
+                  should be descriptive, should not contain any inconsistency.
+                  You'll be marked as the author of the problem.
+                </p>
+                <p className="font-weight-bold">
+                  You'll receive an email after the problem get's published.
+                </p>
+                <textarea
+                  style={{
+                    width: "100%",
+                    height: "500px",
+                  }}
+                ></textarea>
+                <div className="text-center">
+                  <button className="btn btn-md btn-success">Submit</button>
                 </div>
               </div>
             </div>

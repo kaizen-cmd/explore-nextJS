@@ -46,9 +46,9 @@ const ContestDetailAdmin = () => {
   }, []);
   return (
     <BaseLayout>
-    <Head>
-      <title>New Contest | CodeStrike</title>
-    </Head>
+      <Head>
+        <title>New Contest | CodeStrike</title>
+      </Head>
       <div className="container mt-4">
         <div className="w-100 h-25 mb-4">
           <div
@@ -246,7 +246,7 @@ const ContestDetailAdmin = () => {
 
         {view === "problems" && (
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-lg-7">
               <div>
                 <h4 className="mb-3">Problems in Contest</h4>
                 <div className="w-100 mx-auto mb-4 mt-2 ps-tab-div">
@@ -343,7 +343,7 @@ const ContestDetailAdmin = () => {
                 borderBottom: "2px",
               }}
             />
-            <div className="col-lg-9">
+            <div className="col-lg-7">
               <div>
                 <h4 className="mb-3">Available Problems</h4>
                 <div className="w-100 mx-auto mb-5 mt-2 ps-tab-div">
@@ -395,6 +395,27 @@ const ContestDetailAdmin = () => {
                     </tbody>
                   </table>
                 </div>
+              </div>
+            </div>
+            <div className="col-lg-5">
+              <h4 className="mb-3">Submit your own problem</h4>
+              <p>
+                Staement should have the main problem, input format, output
+                format, sample input, sample output and test cases. Problem
+                should be descriptive, should not contain any inconsistency.
+                You'll be marked as the author of the problem.
+              </p>
+              <p className="font-weight-bold">
+                You'll receive an email after the problem get's published.
+              </p>
+              <textarea
+                style={{
+                  width: "100%",
+                  height: "500px",
+                }}
+              ></textarea>
+              <div className="text-center">
+                <button className="btn btn-md btn-success">Submit</button>
               </div>
             </div>
           </div>
