@@ -105,11 +105,7 @@ const ContactUs = (props) => {
                 }}
               ></textarea>
             </div>
-            <div
-              style={{
-                marginLeft: "32%",
-              }}
-            >
+            <div className="contact-send-msg-btn">
               <button className="btn btn-primary btn-md font-weight-bold mb-4 px-3">
                 Send Message
               </button>
