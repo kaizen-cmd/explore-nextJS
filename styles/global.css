@@ -629,6 +629,10 @@ thead {
   width: 40%;
 }
 
+.contact-send-msg-btn {
+  margin-left: 32%;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
@@ -643,6 +647,9 @@ thead {
   .contact-container {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+  .contact-send-msg-btn {
+    margin-left: 26%;
   }
   #discord-btn {
     top: 91%;
