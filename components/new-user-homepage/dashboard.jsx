@@ -92,7 +92,7 @@ const Dashboard = (props) => {
                             href="/problem/[editor]/"
                             as={`/problem/${ps[3]}/`}
                           >
-                            <a>{ps[0]}</a>
+                            <a target="_blank">{ps[0]}</a>
                           </Link>
                         </td>
                         <Link
