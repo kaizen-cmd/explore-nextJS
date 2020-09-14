@@ -1,7 +1,11 @@
 import BaseLayout from "../components/base_layout";
 import Head from "next/head";
+import URL from "../components/url";
+import axios from "axios";
+import { useState } from "react";
 
 const ContactUs = (props) => {
+  const [message, setMessage] = useState("");
   return (
     <BaseLayout>
       <Head>
@@ -68,6 +72,7 @@ const ContactUs = (props) => {
               <div>
                 <input
                   type="text"
+                  id="name"
                   placeholder="Full Name"
                   style={{
                     outline: "none",
@@ -81,6 +86,7 @@ const ContactUs = (props) => {
               <div>
                 <input
                   type="text"
+                  id="email"
                   placeholder="Email"
                   style={{
                     outline: "none",
@@ -96,6 +102,7 @@ const ContactUs = (props) => {
               <p className="font-weight-bold m-0 ml-1 mb-2">Your message</p>
               <textarea
                 className="mb-3 shadow-sm font-weight-bold"
+                id="message"
                 style={{
                   outline: "none",
                   padding: "7px 8px",
@@ -106,9 +113,32 @@ const ContactUs = (props) => {
               ></textarea>
             </div>
             <div className="contact-send-msg-btn">
-              <button className="btn btn-primary btn-md font-weight-bold mb-4 px-3">
+              <button
+                className="btn btn-primary btn-md font-weight-bold mb-4 px-3"
+                onClick={() => {
+                  const name = document.getElementById("name").value;
+                  const email = document.getElementById("email").value;
+                  const message = document.getElementById("message").value;
+                  if (message != "" && email != "" && name != "") {
+                    axios
+                      .post(`${URL}/contact/`, {
+                        name: name,
+                        email: email,
+                        message: message,
+                      })
+                      .then((res) => {
+                        setMessage(res.data);
+                      });
+                  } else {
+                    setMessage("Fill in the required fields");
+                  }
+                }}
+              >
                 Send Message
               </button>
+            </div>
+            <div className="text-center">
+              <p className="font-weight-bold text-primary">{message}</p>
             </div>
           </div>
           <div className="bg-dark contact-right-div">
