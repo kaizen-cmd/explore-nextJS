@@ -32,7 +32,8 @@ body::-webkit-scrollbar-thumb:hover {
   width: 0.4rem;
 }
 
-#contest-navbar::-webkit-scrollbar, #ad-index::-webkit-scrollbar {
+#contest-navbar::-webkit-scrollbar,
+#ad-index::-webkit-scrollbar {
   width: 0;
 }
 
@@ -41,7 +42,6 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: white;
   outline: 1px solid #0f4c75;
 }
-
 
 h1 {
   font-size: 2rem;
@@ -195,7 +195,6 @@ h3 {
 .head {
   margin: 10% 0px;
 }
-
 
 .signup-btn button {
   background-color: #0070f3;
@@ -618,9 +617,32 @@ thead {
   font-size: 2.3rem;
 }
 
+.contact-main {
+  flex-flow: wrap;
+}
+
+.contact-left-div {
+  width: 60%;
+}
+
+.contact-right-div {
+  width: 40%;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
+  }
+  .contact-left-div,
+  .contact-right-div {
+    width: 100%;
+  }
+  .contact-left-div {
+    padding-left: 20px;
+  }
+  .contact-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   #discord-btn {
     top: 91%;

@@ -50,13 +50,9 @@ const ContactUs = (props) => {
         <h1 className="text-light my-5">Contact Us</h1>
         <div className="my-2"></div>
       </div>
-      <div className="container my-5 border-top border-left border-bottom border-dark pl-4 pr-0">
-        <div className="d-flex">
-          <div
-            style={{
-              width: "60%",
-            }}
-          >
+      <div className="container my-5 border-top border-left border-bottom border-dark pl-4 pr-0 contact-container">
+        <div className="d-flex contact-main">
+          <div className="contact-left-div">
             <div className="my-4">
               <h4 className="m-0 mb-1 font-weight-bold">Send us a message</h4>
               <hr
@@ -119,12 +115,7 @@ const ContactUs = (props) => {
               </button>
             </div>
           </div>
-          <div
-            style={{
-              width: "40%",
-            }}
-            className="bg-dark"
-          >
+          <div className="bg-dark contact-right-div">
             <div>
               <div className="my-4 px-3">
                 <h4 className="font-weight-bold text-light text-center mb-4">
