@@ -6,6 +6,9 @@ import { useState } from "react";
 
 const ContactUs = (props) => {
   const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
   return (
     <BaseLayout>
       <Head>
@@ -81,6 +84,9 @@ const ContactUs = (props) => {
                     border: "1px solid grey",
                   }}
                   className="mt-2 mb-4 shadow-sm font-weight-bold"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                 />
               </div>
               <div>
@@ -95,6 +101,9 @@ const ContactUs = (props) => {
                     border: "1px solid grey",
                   }}
                   className="mb-4 shadow-sm font-weight-bold"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -110,21 +119,22 @@ const ContactUs = (props) => {
                   border: "1px solid grey",
                   height: "200px",
                 }}
+                onChange={(e) => {
+                  setText(e.target.value);
+                }}
               ></textarea>
             </div>
             <div className="contact-send-msg-btn">
               <button
                 className="btn btn-primary btn-md font-weight-bold mb-4 px-3"
                 onClick={() => {
-                  const name = document.getElementById("name").value;
-                  const email = document.getElementById("email").value;
-                  const message = document.getElementById("message").value;
-                  if (message != "" && email != "" && name != "") {
+                  setMessage("Sending...");
+                  if (text != "" && email != "" && name != "") {
                     axios
                       .post(`${URL}/contact/`, {
                         name: name,
                         email: email,
-                        message: message,
+                        message: text,
                       })
                       .then((res) => {
                         setMessage(res.data.res);
