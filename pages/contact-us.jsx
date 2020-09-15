@@ -127,7 +127,7 @@ const ContactUs = (props) => {
                         message: message,
                       })
                       .then((res) => {
-                        setMessage(res.data);
+                        setMessage(res.data.res);
                       });
                   } else {
                     setMessage("Fill in the required fields");
