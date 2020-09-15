@@ -138,6 +138,9 @@ const ContactUs = (props) => {
                       })
                       .then((res) => {
                         setMessage(res.data.res);
+                        setName("");
+                        setEmail("");
+                        setText("");
                       });
                   } else {
                     setMessage("Fill in the required fields");
