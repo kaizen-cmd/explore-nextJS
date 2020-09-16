@@ -711,6 +711,11 @@ thead {
   }
 }
 
+.team-card:hover {
+  box-shadow: 0 0.3rem .5rem rgba(0, 0, 0, 0.15) !important;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 993px) {
   .active {
     background-color: white;

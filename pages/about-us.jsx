@@ -1,6 +1,7 @@
 import BaseLayout from "../components/base_layout";
 import Head from "next/head";
 import TeamCard from "../components/miscellaneous/team-card";
+import PaleBlueContainer from "../components/miscellaneous/pale-blue-container";
 
 const AboutUs = (props) => {
   const team = {
@@ -117,14 +118,8 @@ const AboutUs = (props) => {
         <meta property="og:type" content="Coding community" />
         <meta property="og:points" content="Code Strike_ACHIEVEMENT" />
       </Head>
-      <div className="top-head d-flex align-items-center flex-column">
-        <div className="my-2"></div>
-        <h1 className="text-light my-5">About Us</h1>
-        <div className="my-2"></div>
-      </div>
-      
+      <PaleBlueContainer text="About Us"></PaleBlueContainer>
       <div className="container">
-      
         <div className="desc mb-4 mt-3">
           <p
             className="font-weight-bold text-center"
@@ -259,7 +254,6 @@ const AboutUs = (props) => {
         </a>
         <div className="my-2"></div>
       </div>
-    
     </BaseLayout>
   );
 };

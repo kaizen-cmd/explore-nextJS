@@ -75,10 +75,12 @@ const NavBar = (props) => {
                   width: "300px",
                 }}
                 onFocus={() => {
-                  document.getElementById("search").style.borderBottom = "1.5px blue solid"
+                  document.getElementById("search").style.borderBottom =
+                    "1.5px blue solid";
                 }}
                 onBlur={() => {
-                  document.getElementById("search").style.borderBottom = "1px gray solid"
+                  document.getElementById("search").style.borderBottom =
+                    "1px gray solid";
                 }}
               />
               <button
@@ -125,7 +127,7 @@ const NavBar = (props) => {
                 activator(document.getElementsByClassName("nav-item")[1])
               }
             >
-              <Link href="/codeportal/records">
+              <Link href="/codeportal">
                 <a className="nav-link">
                   <div
                     style={{
@@ -173,7 +175,7 @@ const NavBar = (props) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                About Us
+                Enquiry
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="#">

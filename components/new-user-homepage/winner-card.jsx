@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-const WinnerCard = ({ name, image, bio, is_win, link }) => {
+const WinnerCard = ({ name, image, bio, is_win, link, isCat }) => {
   return (
     <>
       {is_win ? (
-        <Link href="/profile/[profile]" as={`/profile/${name}`}>
+        <Link href={isCat ? "/codeportal/[category]" : "/profile/[profile]"} as={isCat ? link : `/profile/${name}`}>
           <div className="col-lg-4 winner-card">
             <div className="col-lg-12">
               <div className="text-center mt-3">
                 <div className="card-img w-100">
-                  <img src={image} alt={name} className="win" />
+                  <img src={image} alt={name} className={isCat ? "proj" : "win"} />
                 </div>
                 <h5 className="mt-3">{name}</h5>
                 <div className="bio">

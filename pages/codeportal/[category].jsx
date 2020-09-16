@@ -83,7 +83,7 @@ const PsIndex = (props) => {
 export default PsIndex;
 
 PsIndex.getInitialProps = async (ctx) => {
-  const res = await axios.get(URL + "/codeportal/ps-records/");
+  const res = await axios.get(`${URL}/codeportal/category-specific/${ctx.query.category}`);
   const data = res["data"];
   return {
     ps_objs: data,

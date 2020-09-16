@@ -1,3 +1,4 @@
+import PaleBlueContainer from "../components/miscellaneous/pale-blue-container";
 import BaseLayout from "../components/base_layout";
 import Head from "next/head";
 import URL from "../components/url";
@@ -52,11 +53,7 @@ const ContactUs = (props) => {
         <meta property="og:type" content="Coding community" />
         <meta property="og:points" content="Code Strike_ACHIEVEMENT" />
       </Head>
-      <div className="top-head d-flex align-items-center flex-column">
-        <div className="my-2"></div>
-        <h1 className="text-light my-5">Contact Us</h1>
-        <div className="my-2"></div>
-      </div>
+      <PaleBlueContainer text="Contact Us"></PaleBlueContainer>
       <div className="container my-5 border-top border-left border-bottom border-dark pl-4 pr-0 contact-container">
         <div className="d-flex contact-main">
           <div className="contact-left-div">
