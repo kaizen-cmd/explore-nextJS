@@ -23,7 +23,7 @@ const ContactUs = (props) => {
           content="Want to turn your idea into a business? Want to hire employees by testing their programming skills? Contact CodeStrike today for availing the service."
         />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="Want to turn your idea into a business? Want to hire employees by testing their programming skills? Contact CodeStrike today for availing the service."
         />
         <meta
@@ -37,9 +37,9 @@ const ContactUs = (props) => {
           name="twitter:image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
-        <meta itemprop="name" content="Contact Us | CodeStrike" />
+        <meta itemProp="name" content="Contact Us | CodeStrike" />
         <meta
-          itemprop="image"
+          itemProp="image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
         <meta name="og:title" content="Contact Us | CodeStrike" />

@@ -30,7 +30,7 @@ const Index = (props) => {
           content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
         />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="CodeStrike is an online programming skills testing platform for employers, hiring managers and computer science students."
         />
         <meta
@@ -44,9 +44,9 @@ const Index = (props) => {
           name="twitter:image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
-        <meta itemprop="name" content="Home | CodeStrike" />
+        <meta itemProp="name" content="Home | CodeStrike" />
         <meta
-          itemprop="image"
+          itemProp="image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
         <meta name="og:title" content="Home | CodeStrike" />

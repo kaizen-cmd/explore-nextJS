@@ -39,9 +39,9 @@ const EditorPage = (props) => {
           name="twitter:description"
           content={`${props.ps.statement.slice(0, 140)} ...Solve Now!`}
         />
-        <meta itemprop="name" content={`${props.ps.title} | CodeStrike`} />
+        <meta itemProp="name" content={`${props.ps.title} | CodeStrike`} />
         <meta
-          itemprop="description"
+          itemProp="description"
           content={`${props.ps.statement.slice(0, 140)} ...Solve Now!`}
         />
       </Head>

@@ -88,7 +88,7 @@ const AboutUs = (props) => {
           content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
         />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="CodeStrike is created by a bunch of geeky engineers who came together and started competitive coding and train fellow students."
         />
         <meta
@@ -102,9 +102,9 @@ const AboutUs = (props) => {
           name="twitter:image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
-        <meta itemprop="name" content="About Us | CodeStrike" />
+        <meta itemProp="name" content="About Us | CodeStrike" />
         <meta
-          itemprop="image"
+          itemProp="image"
           content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
         />
         <meta name="og:title" content="About Us | CodeStrike" />

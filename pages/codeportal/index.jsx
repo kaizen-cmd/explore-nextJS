@@ -27,9 +27,9 @@ const ProblemIndex = ({ contests, cLink }) => {
           name="twitter:description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
-        <meta itemprop="name" content="Practice Problems | CodeStrike" />
+        <meta itemProp="name" content="Practice Problems | CodeStrike" />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
       </Head>

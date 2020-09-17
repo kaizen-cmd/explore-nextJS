@@ -66,10 +66,10 @@ const Profile = (props) => {
           />
         )}
         <meta
-          itemprop="description"
+          itemProp="description"
           content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
         />
-        <meta itemprop="image" content={props.user.profile_pic} />
+        <meta itemProp="image" content={props.user.profile_pic} />
       </Head>
       <div className="container profile-container">
         <div className="row">

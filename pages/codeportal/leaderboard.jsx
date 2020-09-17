@@ -67,9 +67,9 @@ const Ranking = (props) => {
           name="twitter:description"
           content="Solve the problems on CodeStrike to earn points and see yourself rank up on the leaderboard."
         />
-        <meta itemprop="name" content="Leaderboard | CodeStrike" />
+        <meta itemProp="name" content="Leaderboard | CodeStrike" />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="Solve the problems on CodeStrike to earn points and see yourself rank up on the leaderboard."
         />
       </Head>

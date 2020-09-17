@@ -49,7 +49,7 @@ const PsIndex = (props) => {
   return (
     <BaseLayout navbarprop="psindex">
       <Head>
-        <title>Practice Porblems | CodeStrike</title>
+        <title>{props.category} | CodeStrike</title>
         <meta
           name="description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
@@ -67,9 +67,9 @@ const PsIndex = (props) => {
           name="twitter:description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
-        <meta itemprop="name" content="Practice Problems | CodeStrike" />
+        <meta itemProp="name" content="Practice Problems | CodeStrike" />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="Practice problems on CodeStrike and see your coding skills reach new heights. Porblems are updated on a daily basis."
         />
       </Head>
@@ -83,10 +83,13 @@ const PsIndex = (props) => {
 export default PsIndex;
 
 PsIndex.getInitialProps = async (ctx) => {
-  const res = await axios.get(`${URL}/codeportal/category-specific/${ctx.query.category}`);
+  const res = await axios.get(
+    `${URL}/codeportal/category-specific/${ctx.query.category}`
+  );
   const data = res["data"];
   return {
-    ps_objs: data,
-    cLink: "https://codestrike.in" + ctx.asPath
+    ps_objs: data.problems,
+    category: data.category,
+    cLink: "https://codestrike.in" + ctx.asPath,
   };
 };
