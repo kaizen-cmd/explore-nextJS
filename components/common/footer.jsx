@@ -82,7 +82,7 @@ const Footer = (props) => {
           </div>
         </div>
         <div className="cp-text mt-5">
-          <p>Copy Rights, Team Code_Strike® {year}</p>
+          <p>Copyright© Team CodeStrike® {year}</p>
           <hr />
         </div>
       </div>

@@ -69,7 +69,7 @@ const AboutUs = (props) => {
       },
       {
         name: "Shantanu Patil",
-        role: "Code Ananlysis",
+        role: "Code Analysis",
         linlink: "https://www.linkedin.com/in/shantanupatil23/",
       },
     ],

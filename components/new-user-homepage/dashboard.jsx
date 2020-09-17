@@ -39,7 +39,7 @@ const Dashboard = (props) => {
                   <span>
                     <strong>{user.username}</strong>
                   </span>{" "}
-                  choose any one problem and solve it. Keep Coding!.
+                  choose any one problem and solve it. Keep Coding!
                 </h4>
                 <h4>When in doubt, use bruteforce.</h4>
               </div>
