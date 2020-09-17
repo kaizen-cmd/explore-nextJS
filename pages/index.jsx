@@ -103,7 +103,7 @@ const Index = (props) => {
             <div className="mr-2">
               <h3>Latest Winners</h3>
             </div>
-            <hr style={{ width: "77%" }} />
+            <hr style={{ width: "79%" }} />
           </div>
         </div>
       </div>
