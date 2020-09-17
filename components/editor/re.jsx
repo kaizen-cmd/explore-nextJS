@@ -79,7 +79,7 @@ const Re = (props) => {
           <div className="prob-container">
             <div className="d-flex flex-row header pl-2">
               <h2 className="mr-auto mb-0 py-2">Problem</h2>
-              <button id="pt-btn">10 points</button>
+              <button id="pt-btn">{props.ps.points} points</button>
             </div>
             <div
               className="px-2 inner-prob-container"

@@ -42,7 +42,7 @@ const Editor = (props) => {
                 <h2 className="m-0">Problem</h2>
               </div>
               <div className="d-flex justify-content-end w-100 editor-head-editor">
-                <button id="pt-btn">10 points</button>
+                <button id="pt-btn">{props.ps.points} points</button>
               </div>
             </div>
             <div
