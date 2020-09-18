@@ -3,10 +3,14 @@ import axios from "axios";
 import BaseLayout from "../../components/base_layout";
 import URL from "../../components/url";
 import PaleBlueContainer from "../../components/miscellaneous/pale-blue-container";
+import Head from "next/head";
 
 const SearchResults = (props) => {
   return (
     <BaseLayout>
+      <Head>
+        <title>Search {props.query} | CodeStrike</title>
+      </Head>
       <PaleBlueContainer
         text={
           <>
@@ -30,7 +34,7 @@ const SearchResults = (props) => {
               })
             : "No problems found"}
         </div>
-        <div className="users">
+        <div className="users mb-4">
           <h4 className="font-weight-bold mt-4 mb-2">CodeStrike Users</h4>
           {props.results.users != []
             ? props.results.users.map((user) => {

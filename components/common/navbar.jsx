@@ -97,8 +97,7 @@ const NavBar = () => {
                   background: "transparent",
                 }}
                 onClick={() => {
-                  search != "" &&
-                    router.push("/search/[query]", `/search/${search}`);
+                  search != "" && router.push(`/search/${search}`);
                 }}
               >
                 <svg
