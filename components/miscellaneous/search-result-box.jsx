@@ -5,7 +5,11 @@ const SearchResultBox = (props) => {
     <>
       {props.isProblem ? (
         <Link href="/problem/[editor]" as={`/problem/${props.link}`}>
-          <a>
+          <a
+            style={{
+              textDecoration: "none",
+            }}
+          >
             <div>
               <div className="rows shadow-sm px-2 my-3 py-2">
                 <p className="font-weight-bold m-0 text-primary">
