@@ -1,11 +1,14 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setLogin } from "../base_layout";
 import Login from "../new-user-homepage/login";
 import { setDashboard } from "../../pages";
 import { loggedIn, setLoggedIn, user, pp, dot } from "../../pages/_app";
 
-const NavBar = (props) => {
+const NavBar = () => {
+  const router = useRouter();
+  const [search, setSearch] = useState("");
   useEffect(() => {
     window.addEventListener("scroll", () => {
       var st = window.pageYOffset || document.documentElement.scrollTop;
@@ -82,6 +85,10 @@ const NavBar = (props) => {
                   document.getElementById("search").style.borderBottom =
                     "1px gray solid";
                 }}
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
               />
               <button
                 className="font-weight-bold"
@@ -89,21 +96,25 @@ const NavBar = (props) => {
                   padding: "5px 10px",
                   background: "transparent",
                 }}
+                onClick={() => {
+                  search != "" &&
+                    router.push("/search/[query]", `/search/${search}`);
+                }}
               >
                 <svg
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
-                  class="bi bi-search"
+                  className="bi bi-search"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
                   />
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
                   />
                 </svg>

@@ -1,4 +1,7 @@
+import FooterLink from "./footer-link";
+
 const FooterCol = ({ head, linkarray }) => {
+  var keyCount = 0;
   return (
     <div className="col-lg-3">
       <div className="col-lg-12 pl-5">
@@ -6,13 +9,8 @@ const FooterCol = ({ head, linkarray }) => {
           <h5>{head}</h5>
         </div>
         {linkarray.map((link) => {
-          return (
-            <a href={link.link} style={{
-              color: "white",
-            }}>
-              <h6>{link.text}</h6>
-            </a>
-          );
+          keyCount++;
+          return <FooterLink key={keyCount} link={link} />;
         })}
       </div>
     </div>
