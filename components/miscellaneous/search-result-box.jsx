@@ -21,7 +21,11 @@ const SearchResultBox = (props) => {
       ) : (
         <div>
           <Link href="/profile/[profile]" as={`/profile/${props.link}`}>
-            <a>
+            <a
+              style={{
+                textDecoration: "none",
+              }}
+            >
               <div>
                 <div className="d-flex flex-row shadow-sm my-2 align-items-center">
                   <div className="mr-3 p-2">
@@ -38,9 +42,7 @@ const SearchResultBox = (props) => {
                       </p>
                     </div>
                     <div>
-                      <p className="font-weight-bold m-0">
-                        {props.bio}
-                      </p>
+                      <p className="font-weight-bold m-0">{props.bio}</p>
                     </div>
                   </div>
                 </div>
