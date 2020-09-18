@@ -70,7 +70,7 @@ const NavBar = () => {
                 type="text"
                 id="search"
                 className="font-weight-bold py-1 px-2"
-                placeholder="Search Questions or Users"
+                placeholder="Search CodeStrike"
                 style={{
                   outline: "none",
                   border: "none",
