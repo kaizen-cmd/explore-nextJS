@@ -11,7 +11,7 @@ const Verified = () => {
   useEffect(() => {
     var url = `${URL}${window.location["pathname"]}`;
     axios.get(url).then((response) => {
-      setMessage(response["data"]["res"] + "You can now login.");
+      setMessage(response["data"]["res"] + " You can now login.");
       setTimeout(() => {
         router.push("/");
       }, 2500);

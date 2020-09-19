@@ -6,6 +6,7 @@ import URL from "../url";
 import SmLoader from "../../components/common/sm-loader";
 
 const Register = () => {
+  const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [uExists, setUExists] = useState("");
   const [eExists, setEExists] = useState("");
@@ -52,6 +53,12 @@ const Register = () => {
                     .then((response) => {
                       setUExists(response["data"]["username"]);
                     });
+                }}
+                value={username}
+                onChange={(e) => {
+                  var val = e.target.value;
+                  val = val.replace(" ", "_");
+                  setUsername(val);
                 }}
               />
               <p
