@@ -49,7 +49,15 @@ const NavBar = () => {
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
         <Link href="/">
-          <a className="navbar-brand">CodeStrike</a>
+          <a className="navbar-brand p-0">
+            <img
+              src="/images/navbar-logo.png"
+              alt=""
+              style={{
+                width: "170px !important",
+              }}
+            />
+          </a>
         </Link>
         <button
           id="navbar-btn"
@@ -75,7 +83,7 @@ const NavBar = () => {
                   outline: "none",
                   border: "none",
                   borderBottom: "1px gray solid",
-                  width: "300px",
+                  width: "250px",
                 }}
                 onFocus={() => {
                   document.getElementById("search").style.borderBottom =
