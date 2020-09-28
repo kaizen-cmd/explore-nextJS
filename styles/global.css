@@ -716,6 +716,10 @@ thead {
   cursor: pointer;
 }
 
+#click-tc:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 993px) {
   .active {
     background-color: white;

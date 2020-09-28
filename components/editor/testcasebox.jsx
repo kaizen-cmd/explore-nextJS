@@ -1,6 +1,23 @@
+import { useState } from "react";
+
 const TestCase = (props) => {
+  const [expand, setExpand] = useState(false);
   var color;
   var res;
+  var style;
+  expand
+    ? (style = {
+        whiteSpace: "pre-line",
+        wordWrap: "break-word",
+        wordBreak: "break-word",
+      })
+    : (style = {
+        whiteSpace: "pre-line",
+        wordWrap: "break-word",
+        wordBreak: "break-word",
+        height: "40px",
+        overflowY: "hidden",
+      });
   console.log(props.is_correct);
   if (props.is_correct && props.is_correct !== "error") {
     color = "bg-success";
@@ -10,16 +27,14 @@ const TestCase = (props) => {
     res = "Wrong";
   }
   return (
-    <div
-      className={`${color} col-lg-12 mb-2 tc-div py-2`}
-      style={{
-        whiteSpace: "pre-line",
-        wordWrap: "break-word",
-        wordBreak: "break-word",
-      }}
-    >
-      <p>
-        <u>Test Case #{props.sr_no}</u>
+    <div className={`${color} col-lg-12 mb-2 tc-div py-2`} style={style}>
+      <p
+        onClick={() => {
+          setExpand(!expand);
+        }}
+      >
+        <u className="mr-2">Test Case #{props.sr_no}</u>
+      <span id="click-tc">Click to {expand ? "Collapse": "Expand"}</span>
       </p>
       <p>
         <u className="mr-2">Result:</u>
