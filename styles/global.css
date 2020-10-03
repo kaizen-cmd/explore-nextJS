@@ -728,6 +728,9 @@ thead {
   .active a {
     color: #0070f3;
   }
+  #search, #search-btn {
+    display: inline !important;
+  }
 }
 
 @media screen and (max-width: 475px) {
@@ -735,4 +738,11 @@ thead {
   #l-selector-1 {
     display: none;
   }
+}
+
+@media screen and (max-width: 1300px) {
+  #search, #search-btn {
+    display: none;
+  }
+
 }
