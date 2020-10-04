@@ -62,12 +62,15 @@ export default function MyApp({ Component, pageProps }) {
           name="keywords"
           content="codestrike, competitive programming, coding, hackerrank, contest, recruitment, technology, kickstart"
         />
+        <meta
+          name="google-site-verification"
+          content="IhXOHLrIIqBUyYgV1CklI9WGqrMmPrF-WnvQJ39dnfM"
+        />
         <link rel="manifest" href="/manifest.json" />
         <link href="/ico.png" rel="icon" type="image/png" sizes="16x16" />
         <link href="/ico.png" rel="icon" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/ico.png"></link>
         <meta name="theme-color" content="#317EFB" />
-
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
