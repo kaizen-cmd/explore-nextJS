@@ -132,7 +132,7 @@ const NavBar = () => {
             <li
               className="nav-item"
               onClick={() =>
-                activator(document.getElementsByClassName("nav-item")[0])
+                activator(document.getElementsByClassName("nav-item")[1])
               }
             >
               <Link href="/">
@@ -144,7 +144,7 @@ const NavBar = () => {
             <li
               className="nav-item"
               onClick={() =>
-                activator(document.getElementsByClassName("nav-item")[1])
+                activator(document.getElementsByClassName("nav-item")[2])
               }
             >
               <Link href="/codeportal">
@@ -178,7 +178,7 @@ const NavBar = () => {
             <li
               className="nav-item"
               onClick={() =>
-                activator(document.getElementsByClassName("nav-item")[2])
+                activator(document.getElementsByClassName("nav-item")[3])
               }
             >
               <Link href="/codeportal/leaderboard">
