@@ -107,10 +107,13 @@ const MCQContest = ({ query }) => {
   const createUpdateContest = (title, desc, questionArray, status, update) => {
     if (questionArray.length === 0) {
       setMainMessage("Add atleast one question");
+      setWindow("questions");
     } else if (title === "") {
       setMainMessage("Contest title is mandatory");
+      setWindow("details");
     } else if (desc === "") {
       setMainMessage("Description is mandatory");
+      setWindow("details");
     } else if (title.includes("_dummy") || title.includes("new")) {
       setMainMessage("'new', '_dummy' word not allowed in contest title");
     } else {
@@ -136,6 +139,7 @@ const MCQContest = ({ query }) => {
           setMainMessage(res.data.res);
         } else {
           setMainMessage(message);
+          setContestSlug(`https://codestrike.in/quiz/attempt/${res.data.res}`);
           router.push("/quiz/admin/[contest]", `/quiz/admin/${res.data.res}`);
         }
       });
