@@ -55,24 +55,22 @@ hr {
 
 .navbar {
   background-color: white;
-  padding: 15px 195px;
   font-family: "Lato", sans-serif;
-  animation: fillwhite 0.5s;
+  transition: 0.5s;
   animation-fill-mode: forwards;
 }
 
-@keyframes fillblack {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: black;
-  }
+.nav-container {
+  background-color: white;
+  transition: 0.5s;
+}
+
+.nav-link {
+  padding: 8px 0 !important;
 }
 
 .color-black {
-  animation: fillblack 0.5s;
-  animation-fill-mode: forwards;
+  background-color: black;
 }
 
 .color-black a {
@@ -81,15 +79,6 @@ hr {
 
 .color-black button {
   color: white;
-}
-
-@keyframes fillwhite {
-  from {
-    background-color: black;
-  }
-  to {
-    background-color: white;
-  }
 }
 
 nav button {
@@ -190,6 +179,10 @@ h3 {
 .homepage-top img {
   max-width: 100%;
   padding: 0;
+}
+
+.hover:hover {
+  cursor: pointer;
 }
 
 .head {
@@ -419,6 +412,7 @@ a:hover {
   position: absolute;
   z-index: 2;
 }
+
 .inner-main-login {
   width: 30%;
 }
@@ -633,6 +627,11 @@ thead {
   margin-left: 32%;
 }
 
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
@@ -712,7 +711,7 @@ thead {
 }
 
 .team-card:hover {
-  box-shadow: 0 0.3rem .5rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.15) !important;
   cursor: pointer;
 }
 
@@ -728,7 +727,8 @@ thead {
   .active a {
     color: #0070f3;
   }
-  #search, #search-btn {
+  #search,
+  #search-btn {
     display: inline !important;
   }
 }
@@ -741,8 +741,8 @@ thead {
 }
 
 @media screen and (max-width: 1300px) {
-  #search, #search-btn {
+  #search,
+  #search-btn {
     display: none;
   }
-
 }

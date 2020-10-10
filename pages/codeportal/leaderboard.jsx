@@ -92,7 +92,7 @@ const Ranking = (props) => {
           </div>
           <div className="col-lg-6">
             <div className="w-100 mx-auto mb-5 mt-2 ps-tab-div">
-              <MDBDataTable medium data={data} />
+              <MDBDataTable medium data={data} noBottomColumns={true} />
             </div>
           </div>
           <div className={classer}>
