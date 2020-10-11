@@ -187,7 +187,7 @@ const MCQContest = ({ query }) => {
   return (
     <BaseLayout>
       <Head>
-        <title>Admin {title} | CodeStrike</title>
+        <title>{title} | Admin</title>
       </Head>
       {loggedIn ? (
         <div
