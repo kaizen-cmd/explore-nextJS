@@ -27,24 +27,29 @@ export default function MyApp({ Component, pageProps }) {
             token: localStorage.getItem("token"),
           })
           .then((response) => {
-            response["data"]["res"] === true && setLoggedIn(true);
-            axios
-              .get(`${URL}/accounts/user/`, {
-                headers: {
-                  Authorization: localStorage.getItem("token"),
-                },
-              })
-              .then((response) => {
-                const profile = response["data"];
-                setUser(profile.username);
-                profile.first_name !== "" &&
-                profile.last_name !== "" &&
-                profile.github_link !== "" &&
-                profile.linkedin_link !== ""
-                  ? setDot(false)
-                  : setDot(true);
-                setPp(profile.profile_pic);
-              });
+            if (response.data.res === true) {
+              setLoggedIn(true);
+              axios
+                .get(`${URL}/accounts/user/`, {
+                  headers: {
+                    Authorization: localStorage.getItem("token"),
+                  },
+                })
+                .then((response) => {
+                  const profile = response["data"];
+                  setUser(profile.username);
+                  profile.first_name !== "" &&
+                  profile.last_name !== "" &&
+                  profile.github_link !== "" &&
+                  profile.linkedin_link !== ""
+                    ? setDot(false)
+                    : setDot(true);
+                  setPp(profile.profile_pic);
+                });
+            } else {
+              setLoggedIn(false);
+              localStorage.removeItem("token");
+            }
           });
       }
     }

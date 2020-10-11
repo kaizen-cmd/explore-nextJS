@@ -142,7 +142,7 @@ const MCQContest = ({ query }) => {
         } else {
           setMainMessage(message);
           setContestSlug(`https://codestrike.in/quiz/attempt/${res.data.res}`);
-          router.push("/quiz/admin/[contest]", `/quiz/admin/${res.data.res}`);
+          router.push(`/quiz/admin/${res.data.res}`);
         }
       });
     }
