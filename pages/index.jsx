@@ -8,6 +8,7 @@ import axios from "axios";
 import URL from "../components/url";
 import { loggedIn } from "./_app";
 import { useRouter } from "next/router";
+import CourseCard6 from "../components/miscellaneous/course-card-6";
 
 var dashboard, setDashboard;
 const Index = (props) => {
@@ -66,35 +67,55 @@ const Index = (props) => {
           }}
         ></script>
       </Head>
-      {dashboard ? <Dashboard /> : <SignUpContainer option="top" />}
+      {loggedIn ? <Dashboard /> : <SignUpContainer option="top" />}
 
       <div className="container mb-2 mt-5">
         <div className="row mt-5">
-          <div className="col-lg-6">
-            <div className="pt-5">
-              <h3>
-                Use CodeStrike to host your own contests! Our platform is open
-                for hiring purpose, creating personal contests and much more!
-              </h3>
-              <button
-                className="btn btn-success mt-4 mb-2 cc-btn"
-                onClick={() => {
-                  loggedIn
-                    ? router.push("/contest/admin")
-                    : document.getElementById("login-btn").click();
-                }}
-              >
-                Create Contest Now!
-              </button>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <img
-              src="/images/contest.svg"
-              alt="codestrike-contest"
-              className="mw-100"
-            />
-          </div>
+          {!loggedIn ? (
+            <>
+              <div className="col-lg-6">
+                <div className="pt-5">
+                  <h3>
+                    Use CodeStrike to host your own contests! Our platform is
+                    open for hiring purpose, creating personal contests and much
+                    more!
+                  </h3>
+                  <button
+                    className="btn btn-success mt-4 mb-2 cc-btn"
+                    onClick={() => {
+                      loggedIn
+                        ? router.push("/contest/admin")
+                        : document.getElementById("login-btn").click();
+                    }}
+                  >
+                    Create Contest Now!
+                  </button>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <img
+                  src="/images/contest.svg"
+                  alt="codestrike-contest"
+                  className="mw-100"
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <CourseCard6
+                key="1"
+                title="Problem Solving"
+                description="Try solving these problems to level up your problem solving skills using anyone of the three languages available: C++, Java, Pyhton. Make that you pass all the test cases. For discussions on problems join our Discord Server."
+                link="/codeportal/problem-solving"
+              />
+              <CourseCard6
+                key="2"
+                title="Java"
+                description="Baisc java problems straight from the Java experts. Try solving these problems to learn control flow, conditional statements and the syntax of Java language. Be sure to select the java language from the drop down."
+                link="/codeportal/java"
+              />
+            </>
+          )}
         </div>
       </div>
       <div className="mt-5 mb-3" id="db-user">

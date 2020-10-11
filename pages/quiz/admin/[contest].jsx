@@ -101,7 +101,9 @@ const MCQContest = ({ query }) => {
           Authorization: localStorage.getItem("token"),
         },
       }
-    );
+    ).then(() => {
+      router.push("/quiz/admin")
+    });
   };
 
   const createUpdateContest = (title, desc, questionArray, status, update) => {
@@ -446,14 +448,12 @@ const MCQContest = ({ query }) => {
                   >
                     Update Contest
                   </button>
-                  <Link href="/quiz/admin">
                     <a
                       className="btn bg-light text-danger font-weight-bold border-danger w-75 mt-3"
                       onClick={() => deleteContest(contestPk)}
                     >
                       Delete Contest
                     </a>
-                  </Link>
                 </>
               )
             )}
