@@ -48,7 +48,7 @@ const Footer = (props) => {
         />
         <div className="col-lg-3">
           <div className="col-lg-12 text-center">
-            <img src="/ico.png" alt="logo" />
+            <img src="/images/footer-logo.png" alt="logo" />
             <div className="px-4 mt-3">
               <div className="px-5">
                 <div className="d-flex mx-5 justify-content-between">

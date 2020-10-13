@@ -102,7 +102,7 @@ const MCQContest = ({ query }) => {
         },
       }
     ).then(() => {
-      router.push("/quiz/admin")
+      router.push("/quiz/admin");
     });
   };
 
@@ -388,8 +388,8 @@ const MCQContest = ({ query }) => {
                           },
                         ]);
                         setOpvalue("");
-                        setCheckboxval(false);
                         setOpMessage("");
+                        setCheckboxval(false);
                       }
                     }}
                   >
@@ -448,12 +448,12 @@ const MCQContest = ({ query }) => {
                   >
                     Update Contest
                   </button>
-                    <a
-                      className="btn bg-light text-danger font-weight-bold border-danger w-75 mt-3"
-                      onClick={() => deleteContest(contestPk)}
-                    >
-                      Delete Contest
-                    </a>
+                  <a
+                    className="btn bg-light text-danger font-weight-bold border-danger w-75 mt-3"
+                    onClick={() => deleteContest(contestPk)}
+                  >
+                    Delete Contest
+                  </a>
                 </>
               )
             )}
