@@ -32,3 +32,6 @@ public/sw.js
 public/sw.js.map
 public/workbox-b90066a8.js.map
 public/workbox-b90066a8.js
+*.bat
+sw.js
+sw.js.map

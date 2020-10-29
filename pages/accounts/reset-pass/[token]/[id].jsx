@@ -1,10 +1,11 @@
 import { useState } from "react";
 import BaseLayout from "../../../../components/base_layout";
 import axios from "axios";
-import URL, {referer} from "../../../../components/url";
+import URL from "../../../../components/url";
 import { useRouter } from "next/router";
+import SmLoader from "../../../../components/common/sm-loader";
 
-const ResetPass = (props) => {
+const ResetPass = () => {
   const [message, setMessage] = useState("");
   const router = useRouter();
   return (
@@ -45,15 +46,12 @@ const ResetPass = (props) => {
                 var pass1 = document.getElementById("pass1").value;
                 var pass2 = document.getElementById("pass2").value;
                 if (pass1.length >= 8 && pass1 === pass2) {
-                  setMessage("Loading...");
+                  setMessage(<SmLoader />);
                   var url = `${URL}${window.location["pathname"]}`;
                   axios
-                    .post(
-                      url,
-                      {
-                        pass: pass1,
-                      },
-                    )
+                    .post(url, {
+                      pass: pass1,
+                    })
                     .then((response) => {
                       setMessage(response["data"]["res"]);
                       setTimeout(() => {

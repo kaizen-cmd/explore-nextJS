@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import BaseLayout from "../../../components/base_layout";
 import axios from "axios";
-import URL, { referer } from "../../../components/url";
+import URL from "../../../components/url";
+import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
 
-const Verified = (props) => {
+const Verified = () => {
   const router = useRouter();
-  const [message, setMessage] = useState("Loading...");
+  const [message, setMessage] = useState(<SmLoader />);
   useEffect(() => {
     var url = `${URL}${window.location["pathname"]}`;
     axios.get(url).then((response) => {
-      setMessage(response["data"]["res"] + "You can now login.");
+      setMessage(response["data"]["res"] + " You can now login.");
       setTimeout(() => {
         router.push("/");
       }, 2500);

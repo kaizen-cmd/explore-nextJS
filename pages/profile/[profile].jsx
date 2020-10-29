@@ -1,16 +1,75 @@
 import Head from "next/head";
 import BaseLayout from "../../components/base_layout";
 import axios from "axios";
-import URL, { referer } from "../../components/url";
+import URL from "../../components/url";
 
 const Profile = (props) => {
   return (
     <BaseLayout>
       <Head>
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <title>
+            {props.user.first_name} {props.user.last_name} | CodeStrike
+          </title>
+        ) : (
+          <title>{props.user.username} | CodeStrike</title>
+        )}
         <meta
           name="description"
-          content="CodeStrike is an online community of coders."
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
         />
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <meta
+            name="og:title"
+            content={`${props.user.first_name} ${props.user.last_name} | CodeStrike`}
+          />
+        ) : (
+          <meta
+            name="og:title"
+            content={`${props.user.username} | CodeStrike`}
+          />
+        )}
+
+        <meta name="og:url" content={props.cLink} />
+        <meta name="og:image" content={props.user.profile_pic} />
+        <meta
+          name="og:description"
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <meta
+            name="twitter:title"
+            content={`${props.user.first_name} ${props.user.last_name} | CodeStrike`}
+          />
+        ) : (
+          <meta
+            name="twitter:title"
+            content={`${props.user.username} | CodeStrike`}
+          />
+        )}
+        <meta name="twitter:url" content={props.cLink} />
+        <meta
+          name="twitter:description"
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+        />
+        <meta name="twitter:image" content={props.user.profile_pic} />
+        {props.user.first_name != "" && props.user.last_name != "" ? (
+          <meta
+            itemProp="name"
+            content={`${props.user.first_name} ${props.user.last_name} | CodeStrike`}
+          />
+        ) : (
+          <meta
+            itemProp="name"
+            content={`${props.user.username} | CodeStrike`}
+          />
+        )}
+        <meta
+          itemProp="description"
+          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+        />
+        <meta itemProp="image" content={props.user.profile_pic} />
       </Head>
       <div className="container profile-container">
         <div className="row">
@@ -29,8 +88,11 @@ const Profile = (props) => {
             </div>
 
             <div>
-              <h4 className="mb-0 mt-0">{`${props.user.first_name} ${props.user.last_name}`}</h4>
-              <p>@{`${props.user.username}`}</p>
+              <h4 className="mb-0 mt-0">{`${props.user.first_name.slice(
+                0,
+                15
+              )} ${props.user.last_name.slice(0, 15)}`}</h4>
+              <p>@{props.user.username}</p>
             </div>
           </div>
           <div className="col-lg-8">
@@ -48,8 +110,8 @@ const Profile = (props) => {
                 GitHub Profile:{" "}
                 <span>
                   <a
-                    href="{`${props.user.github_link}`}"
-                    style={{ color: "blue" }}
+                    href={`${props.user.github_link}`}
+                    style={{ color: "blue", wordBreak: "break-word" }}
                   >
                     &nbsp;&nbsp;&nbsp;{`${props.user.github_link}`}
                   </a>
@@ -60,7 +122,7 @@ const Profile = (props) => {
                 <span>
                   <a
                     href={`${props.user.linkedin_link}`}
-                    style={{ color: "blue" }}
+                    style={{ color: "blue", wordBreak: "break-word" }}
                   >
                     {`${props.user.linkedin_link}`}
                   </a>
@@ -110,5 +172,6 @@ Profile.getInitialProps = async (ctx) => {
   const profile = res["data"];
   return {
     user: profile,
+    cLink: "https://codestrike.in" + ctx.asPath,
   };
 };

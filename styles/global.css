@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Lato&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +5,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar-track {
@@ -26,8 +25,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .inner-prob-container::-webkit-scrollbar,
+.inner-op-div::-webkit-scrollbar,
 .inner-op-div::-webkit-scrollbar {
   width: 0.4rem;
+}
+
+#contest-navbar::-webkit-scrollbar,
+#ad-index::-webkit-scrollbar {
+  width: 0;
 }
 
 .inner-prob-container::-webkit-scrollbar-thumb,
@@ -48,24 +53,22 @@ hr {
 
 .navbar {
   background-color: white;
-  padding: 15px 195px;
   font-family: "Lato", sans-serif;
-  animation: fillwhite 0.5s;
+  transition: 0.5s;
   animation-fill-mode: forwards;
 }
 
-@keyframes fillblack {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: black;
-  }
+.nav-container {
+  background-color: white;
+  transition: 0.5s;
+}
+
+.nav-link {
+  padding: 8px 0 !important;
 }
 
 .color-black {
-  animation: fillblack 0.5s;
-  animation-fill-mode: forwards;
+  background-color: black;
 }
 
 .color-black a {
@@ -74,15 +77,6 @@ hr {
 
 .color-black button {
   color: white;
-}
-
-@keyframes fillwhite {
-  from {
-    background-color: black;
-  }
-  to {
-    background-color: white;
-  }
 }
 
 nav button {
@@ -97,6 +91,10 @@ nav button:focus {
 
 .navbar-brand img {
   width: 100px;
+}
+
+.top-head {
+  background-color: rgba(125, 178, 238);
 }
 
 a {
@@ -181,12 +179,12 @@ h3 {
   padding: 0;
 }
 
-.head {
-  margin: 10% 0px;
+.hover:hover {
+  cursor: pointer;
 }
 
-.signup-btn {
-  margin-left: 40%;
+.head {
+  margin: 10% 0px;
 }
 
 .signup-btn button {
@@ -195,11 +193,19 @@ h3 {
   outline: none;
   color: white;
   font-weight: bolder;
-  padding: 10px 0;
+  padding: 14px 55px;
   width: 100%;
   font-size: 1.2rem;
   border-radius: 10px;
   box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.3);
+}
+
+.cc-btn {
+  font-weight: bolder;
+  padding: 14px 55px;
+  box-shadow: 0 4px 14px 0 rgba(8, 224, 116, 0.5);
+  font-size: 1.2rem;
+  border-radius: 10px;
 }
 
 .signup-btn button:hover {
@@ -437,6 +443,7 @@ a:hover {
   position: absolute;
   z-index: 2;
 }
+
 .inner-main-login {
   width: 30%;
 }
@@ -506,6 +513,10 @@ a:hover {
 
 .login-heading {
   margin-left: 23%;
+}
+
+td {
+  font-weight: bold;
 }
 
 textarea {
@@ -609,9 +620,66 @@ textarea {
   transition-timing-function: ease-in-out;
 }
 
+.sidebar-col:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.admin-contest:hover {
+  cursor: pointer;
+}
+
+#c-name:focus {
+  outline: none;
+}
+
+thead {
+  color: white;
+  background-color: black;
+}
+
+.icons {
+  font-size: 2.3rem;
+}
+
+.contact-main {
+  flex-flow: wrap;
+}
+
+.contact-left-div {
+  width: 60%;
+}
+
+.contact-right-div {
+  width: 40%;
+}
+
+.contact-send-msg-btn {
+  margin-left: 32%;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
+  }
+  .contact-left-div,
+  .contact-right-div {
+    width: 100%;
+  }
+  .contact-left-div {
+    padding-left: 20px;
+  }
+  .contact-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .contact-send-msg-btn {
+    margin-left: 26%;
   }
   #discord-btn {
     top: 91%;
@@ -673,6 +741,16 @@ textarea {
   }
 }
 
+
+.team-card:hover {
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.15) !important;
+  cursor: pointer;
+}
+
+#click-tc:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 993px) {
   .active {
     background-color: white;
@@ -681,11 +759,22 @@ textarea {
   .active a {
     color: #0070f3;
   }
+  #search,
+  #search-btn {
+    display: inline !important;
+  }
 }
 
 @media screen and (max-width: 475px) {
   #l-selector-2,
   #l-selector-1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #search,
+  #search-btn {
     display: none;
   }
 }

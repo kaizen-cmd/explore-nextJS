@@ -1,4 +1,7 @@
-const URL = "https://test.codestrike.in";
-const referer = "https://codestrike.vercel.app/";
+const DEBUG = false;
+
+
+var URL;
+
+!DEBUG ? (URL = "https://api.codestrike.in") : (URL = "http://localhost:8000");
 export default URL;
-export { referer };

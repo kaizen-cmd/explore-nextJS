@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import URL, { referer } from "../url";
+import URL from "../url";
 
 const Dashboard = (props) => {
   const [liveps, setLiveps] = useState([]);
@@ -12,12 +12,9 @@ const Dashboard = (props) => {
   });
 
   useEffect(() => {
-    axios
-      .get(URL + "/codeportal/live-ps/", {
-      })
-      .then((response) => {
-        setLiveps(response["data"]);
-      });
+    axios.get(URL + "/codeportal/live-ps/", {}).then((response) => {
+      setLiveps(response["data"]);
+    });
 
     axios
       .get(`${URL}/accounts/user/`, {
@@ -42,7 +39,7 @@ const Dashboard = (props) => {
                   <span>
                     <strong>{user.username}</strong>
                   </span>{" "}
-                  choose anyone problem and try solving it.
+                  choose any one problem and solve it. Keep Coding!
                 </h4>
                 <h4>When in doubt, use bruteforce.</h4>
               </div>
@@ -75,7 +72,7 @@ const Dashboard = (props) => {
           <div className="col-md-6">
             <div className="col-lg-12 mt-2">
               <div className="mb-2 text-center">
-                <h4 className="mb-0">Live Problems</h4>
+                <h4 className="mb-0">CodeStrike Contest Live</h4>
               </div>
               <table className="table ps-table">
                 <thead className="black white-text">
@@ -95,16 +92,16 @@ const Dashboard = (props) => {
                             href="/problem/[editor]/"
                             as={`/problem/${ps[3]}/`}
                           >
-                            <a>{ps[0]}</a>
+                            <a target="_blank">{ps[0]}</a>
                           </Link>
                         </td>
                         <Link
                           href="/profile/[profile]/"
                           as={`/profile/${ps[1]}/`}
                         >
-                          <a>
-                            <td>{ps[1]}</td>
-                          </a>
+                          <td>
+                            <a>{ps[1]}</a>
+                          </td>
                         </Link>
                       </tr>
                     );

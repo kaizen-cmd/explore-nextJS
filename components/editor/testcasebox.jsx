@@ -1,7 +1,25 @@
+import { useState } from "react";
+
 const TestCase = (props) => {
+  const [expand, setExpand] = useState(false);
   var color;
   var res;
-  if (props.is_correct) {
+  var style;
+  expand
+    ? (style = {
+        whiteSpace: "pre-line",
+        wordWrap: "break-word",
+        wordBreak: "break-word",
+      })
+    : (style = {
+        whiteSpace: "pre-line",
+        wordWrap: "break-word",
+        wordBreak: "break-word",
+        height: "40px",
+        overflowY: "hidden",
+      });
+  console.log(props.is_correct);
+  if (props.is_correct && props.is_correct !== "error") {
     color = "bg-success";
     res = "Correct";
   } else {
@@ -9,30 +27,30 @@ const TestCase = (props) => {
     res = "Wrong";
   }
   return (
-    <div
-      className={`${color} col-lg-12 mb-2 tc-div py-2`}
-      style={{
-        wordBreak: "break-word",
-      }}
-    >
-      <p>
-        <u>Test Case #{props.sr_no}</u>
+    <div className={`${color} col-lg-12 mb-2 tc-div py-2`} style={style}>
+      <p
+        onClick={() => {
+          setExpand(!expand);
+        }}
+      >
+        <u className="mr-2">Test Case #{props.sr_no}</u>
+      <span id="click-tc">Click to {expand ? "Collapse": "Expand"}</span>
       </p>
       <p>
         <u className="mr-2">Result:</u>
-        {res}
+        <div>{res}</div>
       </p>
       <p>
         <u className="mr-2">Output:</u>
-        {props.op}
+        <div>{props.op}</div>
       </p>
       <p>
         <u className="mr-2">Input:</u>
-        {props.ip}
+        <div>{props.ip}</div>
       </p>
       <p>
         <u className="mr-2">Expected:</u>
-        {props.exip}
+        <div>{props.exip}</div>
       </p>
     </div>
   );

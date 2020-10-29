@@ -2,12 +2,13 @@ import Head from "next/head";
 import BaseLayout from "../../../components/base_layout";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import URL, { referer } from "../../../components/url";
+import URL from "../../../components/url";
 import FormData from "form-data";
 import { useRouter } from "next/router";
-import { setDot } from "../../_app";
+import { setDot, setPp } from "../../_app";
+import SmLoader from "../../../components/common/sm-loader";
 
-const Profile = (props) => {
+const Profile = () => {
   const [bio, setBio] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -44,10 +45,7 @@ const Profile = (props) => {
   return (
     <BaseLayout navbarprop="profile">
       <Head>
-        <meta
-          name="description"
-          content="CodeStrike is an online community of coders."
-        />
+        <title>My Profile | CodeStrike</title>
       </Head>
       <div className="container profile-container profile-container-edit">
         <div className="row">
@@ -76,7 +74,7 @@ const Profile = (props) => {
                 id="picUpload"
                 onChange={() => {
                   var formData = new FormData();
-                  setMessage("Loading...");
+                  setMessage(<SmLoader />);
                   document.getElementById("picUpload").value === ""
                     ? ""
                     : formData.append(
@@ -191,7 +189,7 @@ const Profile = (props) => {
                 <h6>
                   Total Correct: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    <strong>{points.attempts}</strong>
+                    <strong>{points.c_attempts}</strong>
                   </span>
                 </h6>
               </div>
@@ -200,7 +198,7 @@ const Profile = (props) => {
                   <button
                     className="btn btn-md btn-success px-5"
                     onClick={() => {
-                      setMessage("Loading...");
+                      setMessage(<SmLoader />);
                       var regexQuery =
                         "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$";
                       var url = new RegExp(regexQuery, "i");
@@ -235,6 +233,7 @@ const Profile = (props) => {
                           setMessage("Saved Successfully");
                           setGhlink(response["data"].github_link);
                           setLinlink(response["data"].linkedin_link);
+                          setPp(response["data"].profile_pic);
                           setTimeout(() => {
                             setMessage("");
                             firstname !== "" &&

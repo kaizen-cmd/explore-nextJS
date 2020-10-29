@@ -4,7 +4,6 @@ import { ControlledEditor } from "@monaco-editor/react";
 import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
-import URL, { referer } from "../url";
 import { loggedIn } from "../../pages/_app";
 
 const Re = (props) => {
@@ -21,7 +20,7 @@ const Re = (props) => {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       axios
-        .get(URL + "/codeportal/ps-detail/" + props.ps.pk + "/", {
+        .get(props.psUrl, {
           headers: {
             Authorization: localStorage.getItem("token"),
           },
@@ -80,11 +79,13 @@ const Re = (props) => {
           <div className="prob-container">
             <div className="d-flex flex-row header pl-2">
               <h2 className="mr-auto mb-0 py-2">Problem</h2>
-              <button id="pt-btn">10 points</button>
+              <button id="pt-btn">{props.ps.points} points</button>
             </div>
             <div
               className="px-2 inner-prob-container"
               style={{
+                whiteSpace: "pre-line",
+                wordWrap: "break-word",
                 wordBreak: "break-word",
               }}
             >
@@ -163,6 +164,7 @@ const Re = (props) => {
                   id="run-btn"
                   onClick={() => {
                     setLoader(<Loader />);
+                    setTc([]);
                     var sendcode = {
                       lang: lang,
                       is_partial: true,
@@ -171,14 +173,9 @@ const Re = (props) => {
                       code: code,
                     };
                     axios
-                      .post(
-                        URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
-                        sendcode,
-                        {
-                          headers: {
-                          },
-                        }
-                      )
+                      .post(props.psUrl, sendcode, {
+                        headers: {},
+                      })
                       .then((response) => {
                         var res = response["data"];
                         setLoader(<></>);
@@ -247,7 +244,7 @@ const Re = (props) => {
                     setLoader(<Loader />);
                     axios
                       .post(
-                        URL + "/codeportal/ps-detail/" + props.ps.pk + "/",
+                        props.psUrl,
                         {
                           lang: lang,
                           is_partial: false,
