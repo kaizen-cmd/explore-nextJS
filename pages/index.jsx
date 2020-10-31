@@ -118,6 +118,51 @@ const Index = (props) => {
           )}
         </div>
       </div>
+      <div>
+        <div className="container">
+          <div className="row mt-5">
+
+            <div className="col-lg-6">
+              <div
+                style={{
+                  height: "500px",
+                }}
+              >
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                  <img src="/images/blog.svg" alt="codestrike-blog" style={{
+                    maxWidth: "90%"
+                  }}/>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div
+                style={{
+                  height: "500px",
+                }}
+              >
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                  <div>
+                    <h3>
+                      Want to read about latest tech, industry news ? Got an
+                      article on mind and want to share it with the world ?
+                    </h3>
+                  </div>
+                  <div className="mt-2">
+                    <a
+                      href="https://blog.codestrike.in"
+                      target="_blank"
+                      className="btn btn-succes bnt-lg cc-btn font-weight-bold bg-success text-light"
+                    >
+                      Head to our Blog
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="mt-5 mb-3" id="db-user">
         <div className="container px-3">
           <div className="d-flex justify-content-start">

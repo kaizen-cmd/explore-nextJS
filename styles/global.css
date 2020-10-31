@@ -208,6 +208,10 @@ h3 {
   border-radius: 10px;
 }
 
+.cc-btn:focus {
+  outline: none;
+}
+
 .signup-btn button:hover {
   box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.7);
 }
@@ -630,6 +634,21 @@ input:focus {
   box-shadow: none;
 }
 
+.ip-style {
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 118, 255, 0.3) inset;
+  padding: 10px;
+}
+.ip-style:focus {
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 118, 255, 0.3) inset;
+  padding: 10px;
+}
+
+.correct-option {
+  background-color: rgba(17, 241, 36, 0.3);
+}
+
 @media screen and (max-width: 900px) {
   .resp {
     padding-right: 0px !important;
@@ -721,6 +740,12 @@ input:focus {
   .active {
     background-color: white;
     box-shadow: none;
+  }
+  .top-contest-box {
+    flex-direction: column !important;
+  }
+  .top-contest-box .d-flex {
+    width: 100% !important
   }
   .active a {
     color: #0070f3;
