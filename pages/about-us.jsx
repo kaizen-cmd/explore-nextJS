@@ -14,12 +14,12 @@ const AboutUs = (props) => {
       {
         name: "Anant Mokashi",
         role: "Business Head",
-        linlink: "https://www.linkedin.com/in/suyash-muley",
+        linlink: "https://www.linkedin.com/in/anant-mokashi-592a84146/",
       },
       {
         name: "Suyash Muley",
         role: "Community Admin",
-        linlink: "https://www.linkedin.com/in/anant-mokashi-592a84146/",
+        linlink: "https://www.linkedin.com/in/suyash-muley",
       },
     ],
     psteam: [
