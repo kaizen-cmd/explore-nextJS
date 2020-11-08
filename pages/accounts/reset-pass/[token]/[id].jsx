@@ -47,7 +47,7 @@ const ResetPass = () => {
                 var pass2 = document.getElementById("pass2").value;
                 if (pass1.length >= 8 && pass1 === pass2) {
                   setMessage(<SmLoader />);
-                  var url = `${URL}${window.location["pathname"]}`;
+                  var url = `${URL}${window.location["pathname"]}/`;
                   axios
                     .post(url, {
                       pass: pass1,
