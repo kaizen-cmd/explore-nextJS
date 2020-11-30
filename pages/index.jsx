@@ -105,13 +105,13 @@ const Index = (props) => {
               <CourseCard6
                 key="1"
                 title="Problem Solving"
-                description="Try solving these problems to level up your problem solving skills using anyone of the three languages C++, Java, Pyhton. Make that you pass all the test cases. For discussions on problems join our Discord Server."
+                description="Try solving these problems to level up your problem-solving skills using anyone of the three languages C++, Java, Python. Make that you pass all the test cases. For discussions on problems join our Discord Server."
                 link="/codeportal/problem-solving"
               />
               <CourseCard6
                 key="2"
                 title="Java"
-                description="Baisc java problems straight from the Java basics. Try solving these problems to learn control flow, conditional statements and the syntax of Java language. Be sure to select the java language from the drop down."
+                description="Basic java problems straight from the Java basics. Try solving these problems to learn control flow, conditional statements and the syntax of Java language. Be sure to select the java language from the drop-down."
                 link="/codeportal/java"
               />
             </>
