@@ -71,43 +71,55 @@ const Dashboard = (props) => {
           </div>
           <div className="col-md-6">
             <div className="col-lg-12 mt-2">
-              <div className="mb-2 text-center">
-                <h4 className="mb-0">CodeStrike Contest Live</h4>
-              </div>
-              <table className="table ps-table">
-                <thead className="black white-text">
-                  <tr>
-                    <th scope="col">Points</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {liveps.map((ps) => {
-                    return (
+              {liveps.length !== 0 ? (
+                <>
+                  <div className="mb-2 text-center">
+                    <h4 className="mb-0">CodeStrike Contest Live</h4>
+                  </div>
+                  <table className="table ps-table">
+                    <thead className="black white-text">
                       <tr>
-                        <th scope="row">{ps[2]}</th>
-                        <td>
-                          <Link
-                            href="/problem/[editor]/"
-                            as={`/problem/${ps[3]}/`}
-                          >
-                            <a target="_blank">{ps[0]}</a>
-                          </Link>
-                        </td>
-                        <Link
-                          href="/profile/[profile]/"
-                          as={`/profile/${ps[1]}/`}
-                        >
-                          <td>
-                            <a>{ps[1]}</a>
-                          </td>
-                        </Link>
+                        <th scope="col">Points</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
                       </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+                    </thead>
+                    <tbody>
+                      {liveps.map((ps) => {
+                        return (
+                          <tr>
+                            <th scope="row">{ps[2]}</th>
+                            <td>
+                              <Link
+                                href="/problem/[editor]/"
+                                as={`/problem/${ps[3]}/`}
+                              >
+                                <a target="_blank">{ps[0]}</a>
+                              </Link>
+                            </td>
+                            <Link
+                              href="/profile/[profile]/"
+                              as={`/profile/${ps[1]}/`}
+                            >
+                              <td>
+                                <a>{ps[1]}</a>
+                              </td>
+                            </Link>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </>
+              ) : (
+                <>
+                  <div className="d-flex w-100 py-5 justify-content-center">
+                    <div>
+                      <h3>CodeStrike weekly contest is over. Try practicing until the next one.</h3>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
