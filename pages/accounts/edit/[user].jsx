@@ -14,7 +14,10 @@ const Profile = () => {
   const [lastname, setLastname] = useState("");
   const [ghlink, setGhlink] = useState("");
   const [linlink, setLinlink] = useState("");
-  const [profilePic, setProfilePic] = useState("");
+  const [collegename, setCollegename] = useState("");
+  const [branchname, setBranchname] = useState("");
+  const [yearofstudy, setYearofStudy] = useState("");
+  //const [profilePic, setProfilePic] = useState("");
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [points, setPoints] = useState({});
@@ -35,8 +38,11 @@ const Profile = () => {
           setLastname(profile.last_name);
           setGhlink(profile.github_link);
           setLinlink(profile.linkedin_link);
-          setProfilePic(profile.profile_pic);
+          //setProfilePic(profile.profile_pic);
           setUsername(profile.username);
+          setCollegename(profile.college_name);
+          setBranchname(profile.branch_name);
+          setYearofStudy(profile.year_of_study)
         });
     } else {
       router.push("/");
@@ -50,108 +56,99 @@ const Profile = () => {
       <div className="container profile-container profile-container-edit">
         <div className="row">
           <div className="col-lg-4 d-flex flex-column align-items-center mb-0">
-            <div className="pt-5">
-              <img
-                src={profilePic}
-                alt={firstname + " " + lastname}
-                className="mb-0 p-3"
-                style={{
-                  width: 225,
-                  height: 225,
-                  borderRadius: "50%",
-                }}
-              />
-              <label htmlFor="profile_pic">Upload new picture</label>
-              <input
-                type="file"
-                accept="image/*"
-                style={{
-                  fontSize: "1rem",
-                  padding: 0,
-                  width: "225px",
-                  marginBottom: 10,
-                }}
-                id="picUpload"
-                onChange={() => {
-                  var formData = new FormData();
-                  setMessage(<SmLoader />);
-                  document.getElementById("picUpload").value === ""
-                    ? ""
-                    : formData.append(
-                        "profile_pic",
-                        document.getElementById("picUpload").files[0]
-                      );
-                  formData.append("username", username);
-                  axios
-                    .put(`${URL}/accounts/user/`, formData, {
-                      headers: {
-                        Authorization: localStorage.getItem("token"),
-                        "Content-Type": "multipart/form-data",
-                      },
-                    })
-                    .then((response) => {
-                      setProfilePic(response["data"].profile_pic);
-                      setMessage("Saved Successfully");
-                    });
-                }}
-              />
-            </div>
-
-            <div>
-              <h4 className="mb-0 mt-0">
-                <input
-                  type="text"
-                  className="w-50"
-                  placeholder="first"
-                  onChange={(e) => {
-                    setFirstname(e.target.value);
-                  }}
-                  value={firstname}
-                />
-                <input
-                  type="text"
-                  className="w-50"
-                  placeholder="last"
-                  onChange={(e) => {
-                    setLastname(e.target.value);
-                  }}
-                  value={lastname}
-                />
-              </h4>
-              <p className="mt-3">
-                <strong>@{username}</strong>
-              </p>
-            </div>
           </div>
           <div className="col-lg-8">
             <div className="d-flex flex-column mt-4">
-              <div className="mb-3">
-                <div>
-                  <h5>My bio</h5>
-                </div>
-                <div className="mb-3">
-                  <textarea
-                    name=""
-                    id=""
-                    placeholder="bio"
-                    value={bio}
-                    onChange={(e) => {
-                      setBio(e.target.value);
-                    }}
-                    value={bio}
-                  ></textarea>
-                </div>
+              <div>
+                <h5>Profile</h5>
               </div>
               <div>
-                <h5>Other Profiles</h5>
+                First Name:{" "} 
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    // onChange={(e) => {
+                    //   setGhlink(e.target.value);
+                    // }}
+                    // value={ghlink}
+                  />
+                </span>
               </div>
+              <br />
+              <div>
+                Last Name:{" "} 
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    // onChange={(e) => {
+                    //   setGhlink(e.target.value);
+                    // }}
+                    // value={ghlink}
+                  />
+                </span>
+              </div>
+              <br />
+              <div>
+                College Name:{" "} 
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <select value={collegename} onChange={(e) => setCollegename(e.currentTarget.value)}>
+                    <option value="MIT">MIT</option>
+                    <option value="IIT">IIT</option>
+                    <option value="VIT">VIT</option>
+                  </select>
+                </span>
+              </div>
+              <br />
+              <div>
+                Branch / Dept:{" "}
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <select value={branchname} onChange={(e) => setBranchname(e.currentTarget.value)}>
+                    <option value="CSE">CSE</option>
+                    <option value="IT">IT</option>
+                  </select>
+                </span>
+              </div>
+              <br />
+              <div>
+                Year of Study:{" "}
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+                  <select value={yearofstudy} onChange={(e) => setYearofStudy(e.currentTarget.value)}>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                  </select>
+              </div>
+              <br />
+              <div>
+                Roll Number  :{"   "}
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input
+                    type="text"
+                    placeholder="Roll No"
+                    // onChangey={(e) => {
+                    //   setGhlink(e.target.value);
+                    // }}
+                    // value={ghlink}
+                  />
+                </span>
+              </div>
+              <br />
               <div>
                 GitHub Profile:{" "}
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <input
                     type="url"
-                    placeholder="github profile link"
+                    placeholder="Github profile link"
                     onChange={(e) => {
                       setGhlink(e.target.value);
                     }}
@@ -166,7 +163,7 @@ const Profile = () => {
                   &nbsp;
                   <input
                     type="url"
-                    placeholder="linkedin profile link"
+                    placeholder="Linkedin profile link"
                     onChange={(e) => {
                       setLinlink(e.target.value);
                     }}
@@ -207,6 +204,18 @@ const Profile = () => {
                       firstname === ""
                         ? ""
                         : formData.append("first_name", firstname);
+
+                      collegename === ""
+                        ? ""
+                        : formData.append("college_name", collegename);
+                      
+                      branchname === ""
+                        ? ""
+                        : formData.append("branch_name", branchname);
+                      
+                      yearofstudy === ""
+                        ? ""
+                        : formData.append("year_of_study", yearofstudy);
 
                       lastname === ""
                         ? ""
