@@ -116,25 +116,23 @@ export default function MyApp({ Component, pageProps }) {
         id="discord-btn"
         className="animate__animated animate__pulse animate__slow animate__infinite"
       >
-        {!loggedIn && (
-          <a href="https://discord.gg/aFrUQnJ" target="_blank">
-            <img src="/images/discord.png" alt="codestrike-discord" />
-            <div
-              style={{
-                width: "23px",
-                height: "23px",
-                backgroundColor: "orangered",
-                borderRadius: "50%",
-                display: "inline-block",
-                position: "absolute",
-                right: "0px",
-                color: "white",
-              }}
-            >
-              1
-            </div>
-          </a>
-        )}
+        <a href="https://discord.gg/aFrUQnJ" target="_blank">
+          <img src="/images/discord.png" alt="codestrike-discord" />
+          <div
+            style={{
+              width: "23px",
+              height: "23px",
+              backgroundColor: "orangered",
+              borderRadius: "50%",
+              display: "inline-block",
+              position: "absolute",
+              right: "0px",
+              color: "white",
+            }}
+          >
+            1
+          </div>
+        </a>
       </button>
       <Footer />
     </>
