@@ -243,7 +243,7 @@ const NavBar = () => {
                         aria-expanded="false"
                       >
                         <img
-                          src={pp}
+                          src="https://img.icons8.com/metro/52/000000/user-male-circle.png"
                           className="rounded-circle"
                           alt="my-profile"
                           style={{
@@ -260,7 +260,8 @@ const NavBar = () => {
                               borderRadius: "50%",
                               display: "inline-block",
                               position: "absolute",
-                              right: "17px",
+                              right: "7px",
+                              top: "5px",
                             }}
                           ></div>
                         ) : (
@@ -297,11 +298,11 @@ const NavBar = () => {
                             <a className="nav-link">Coding contests</a>
                           </Link>
                         </a>
-                        <a className="dropdown-item" onClick={activator1}>
+                        {/* <a className="dropdown-item" onClick={activator1}>
                           <Link href="/quiz/admin">
                             <a className="nav-link">MCQ contests</a>
                           </Link>
-                        </a>
+                        </a> */}
                         <div className="dropdown-divider"></div>
                         <a
                           className="dropdown-item"

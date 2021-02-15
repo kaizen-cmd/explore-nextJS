@@ -39,7 +39,41 @@ const Register = () => {
               </button>
             </div>
           </div>
-          <div className="d-flex flex-column align-items-center">
+          <form
+            className="d-flex flex-column align-items-center"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const username = document.getElementById("username").value;
+              const password = document.getElementById("password").value;
+              const email = document.getElementById("email").value;
+              var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+              if (
+                username !== "" &&
+                password !== "" &&
+                emailPattern.test(email) &&
+                username.length >= 4 &&
+                password.length >= 8 &&
+                uExists === "" &&
+                eExists === ""
+              ) {
+                setMessage(<SmLoader />);
+                axios
+                  .post(`${URL}/accounts/register/`, {
+                    username: username,
+                    password: password,
+                    email: email,
+                  })
+                  .then(function (response) {
+                    setMessage(response["data"]["res"]);
+                    setTimeout(() => {
+                      document.getElementById("close-btn").click();
+                    }, 2500);
+                  });
+              } else {
+                setMessage("Information Invalid");
+              }
+            }}
+          >
             <div>
               <input
                 type="text"
@@ -112,41 +146,7 @@ const Register = () => {
               </p>
             </div>
             <div>
-              <button
-                onClick={() => {
-                  const username = document.getElementById("username").value;
-                  const password = document.getElementById("password").value;
-                  const email = document.getElementById("email").value;
-                  var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-                  if (
-                    username !== "" &&
-                    password !== "" &&
-                    emailPattern.test(email) &&
-                    username.length >= 4 &&
-                    password.length >= 8 &&
-                    uExists === "" &&
-                    eExists === ""
-                  ) {
-                    setMessage(<SmLoader />);
-                    axios
-                      .post(`${URL}/accounts/register/`, {
-                        username: username,
-                        password: password,
-                        email: email,
-                      })
-                      .then(function (response) {
-                        setMessage(response["data"]["res"]);
-                        setTimeout(() => {
-                          document.getElementById("close-btn").click();
-                        }, 2500);
-                      });
-                  } else {
-                    setMessage("Information Invalid");
-                  }
-                }}
-              >
-                Register
-              </button>
+              <button tpye="submit">Register</button>
             </div>
             <div className="mb-4">
               <a
@@ -162,7 +162,7 @@ const Register = () => {
                 Already a member? Login here.
               </a>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
