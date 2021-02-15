@@ -194,7 +194,7 @@ const NavBar = () => {
                   }
                 >
                   <Link href="/codeportal/leaderboard">
-                    <a className="nav-link">Ranking</a>
+                    <a className="nav-link">Global Rank</a>
                   </Link>
                 </li>
                 <li className="nav-item dropdown mt-2">

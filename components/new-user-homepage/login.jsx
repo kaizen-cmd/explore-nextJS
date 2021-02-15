@@ -49,33 +49,40 @@ const Login = (props) => {
               </button>
             </div>
           </div>
-          <div className="d-flex flex-column align-items-center">
-            <div>
-              <input type="text" placeholder="Username" id="username" />
-            </div>
-            <div>
-              <input type="password" placeholder="Password" id="password" />
-            </div>
-            <div>
-              <button
-                onClick={() => {
-                  const username = document.getElementById("username").value;
-                  const password = document.getElementById("password").value;
-                  if (username !== "" && password !== "") {
-                    setMessage(<SmLoader />);
-                    axios
-                      .post(`${URL}/accounts/login/`, {
-                        username: username,
-                        password: password,
-                      })
-                      .then(function (response) {
-                        if (
-                          response["data"]["token"] !== "Incorrect credentials"
-                        ) {
-                          localStorage.setItem(
-                            "token",
-                            `${response["data"]["token"]}`
-                          );
+          <form
+            className="d-flex flex-column align-items-center"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const username = document.getElementById("username").value;
+              const password = document.getElementById("password").value;
+              if (username !== "" && password !== "") {
+                setMessage(<SmLoader />);
+                axios
+                  .post(`${URL}/accounts/login/`, {
+                    username: username,
+                    password: password,
+                  })
+                  .then(function (response) {
+                    if (response["data"]["token"] !== "Incorrect credentials") {
+                      localStorage.setItem(
+                        "token",
+                        `${response["data"]["token"]}`
+                      );
+                      axios
+                        .get(`${URL}/accounts/user/`, {
+                          headers: {
+                            Authorization: localStorage.getItem("token"),
+                          },
+                        })
+                        .then((response) => {
+                          setPp(response["data"].profile_pic);
+                        });
+                      axios
+                        .post(`${URL}/accounts/validate-token/`, {
+                          token: localStorage.getItem("token"),
+                        })
+                        .then((response) => {
+                          response["data"]["res"] === true && setLoggedIn(true);
                           axios
                             .get(`${URL}/accounts/user/`, {
                               headers: {
@@ -83,49 +90,37 @@ const Login = (props) => {
                               },
                             })
                             .then((response) => {
-                              setPp(response["data"].profile_pic);
+                              const profile = response["data"];
+                              setUser(profile.username);
+                              profile.first_name !== "" &&
+                              profile.last_name !== "" &&
+                              profile.github_link !== "" &&
+                              profile.linkedin_link !== ""
+                                ? setDot(false)
+                                : setDot(true);
+                              setPp(profile.profile_pic);
                             });
-                          axios
-                            .post(`${URL}/accounts/validate-token/`, {
-                              token: localStorage.getItem("token"),
-                            })
-                            .then((response) => {
-                              response["data"]["res"] === true &&
-                                setLoggedIn(true);
-                              axios
-                                .get(`${URL}/accounts/user/`, {
-                                  headers: {
-                                    Authorization: localStorage.getItem(
-                                      "token"
-                                    ),
-                                  },
-                                })
-                                .then((response) => {
-                                  const profile = response["data"];
-                                  setUser(profile.username);
-                                  profile.first_name !== "" &&
-                                  profile.last_name !== "" &&
-                                  profile.github_link !== "" &&
-                                  profile.linkedin_link !== ""
-                                    ? setDot(false)
-                                    : setDot(true);
-                                  setPp(profile.profile_pic);
-                                });
-                            });
-                          document.getElementById("close-btn").click();
-                          setLoggedIn(true);
-                          document.getElementById("db-user")
-                            ? setDashboard(true)
-                            : "";
-                        } else {
-                          setMessage("Incorrect credentials");
-                        }
-                      });
-                  }
-                }}
-              >
-                Login
-              </button>
+                        });
+                      document.getElementById("close-btn").click();
+                      setLoggedIn(true);
+                      document.getElementById("db-user")
+                        ? setDashboard(true)
+                        : "";
+                    } else {
+                      setMessage("Incorrect credentials");
+                    }
+                  });
+              }
+            }}
+          >
+            <div>
+              <input type="text" placeholder="Username" id="username" />
+            </div>
+            <div>
+              <input type="password" placeholder="Password" id="password" />
+            </div>
+            <div>
+              <button type="submit">Login</button>
             </div>
             <div
               style={{
@@ -166,7 +161,7 @@ const Login = (props) => {
                 New member? Register here.
               </a>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
