@@ -117,7 +117,7 @@ export default function MyApp({ Component, pageProps }) {
         className="animate__animated animate__pulse animate__slow animate__infinite"
       >
         {!loggedIn && (
-          <a href="https://discord.gg/aFrUQnJ">
+          <a href="https://discord.gg/aFrUQnJ" target="_blank">
             <img src="/images/discord.png" alt="codestrike-discord" />
             <div
               style={{
