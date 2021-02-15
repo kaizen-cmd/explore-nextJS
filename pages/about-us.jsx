@@ -8,69 +8,37 @@ const AboutUs = (props) => {
     founders: [
       {
         name: "Tejas Mandre",
-        role: "Technical Lead",
         linlink: "https://www.linkedin.com/in/tejasmandre/",
       },
       {
         name: "Anant Mokashi",
-        role: "Business Head",
         linlink: "https://www.linkedin.com/in/anant-mokashi-592a84146/",
       },
       {
         name: "Suyash Muley",
-        role: "Community Admin",
         linlink: "https://www.linkedin.com/in/suyash-muley",
       },
     ],
-    psteam: [
+    team: [
       {
         name: "Ayush Srivastav",
-        role: "Core Member",
         linlink: "https://www.linkedin.com/in/ayush-srivastav-55ba79179/",
       },
       {
-        name: "Shreyas Vaidya",
-        role: "Core Member",
-        linlink: "https://www.linkedin.com/in/shreyas-vaidya-aa0b21183/",
-      },
-      {
-        name: "Divyesh Tharakan",
-        role: "Core Member",
-        linlink: "https://www.linkedin.com/in/divyesh-tharakan-3a6225195/",
-      },
-    ],
-    communication: [
-      {
-        name: "Hardik Ambati",
-        role: "Communication",
-        linlink: "https://www.linkedin.com/in/hardik-ambati-479ba11b5/",
-      },
-      {
-        name: "Vaibhav Prakash",
-        role: "Marketing",
-        linlink: "https://www.linkedin.com/in/vaibhavprakash8426/",
-      },
-      {
-        name: "Apurv Vidhate",
-        role: "Business",
-        linlink: "https://www.linkedin.com/in/apurv-vidhate-b19b8b1a0/",
-      },
-    ],
-    support: [
-      {
         name: "Viral Sangani",
-        role: "Development Consultant",
         linlink: "https://www.linkedin.com/in/viral-sangani/",
       },
       {
         name: "Anjani Pandey",
-        role: "Graphics",
         linlink: "#",
       },
       {
-        name: "Shantanu Patil",
-        role: "Code Analysis",
-        linlink: "https://www.linkedin.com/in/shantanupatil23/",
+        name: "Hardik Ambati",
+        linlink: "https://www.linkedin.com/in/hardik-ambati-479ba11b5/",
+      },
+      {
+        name: "Apurv Vidhate",
+        linlink: "https://www.linkedin.com/in/apurv-vidhate-b19b8b1a0/",
       },
     ],
   };
@@ -177,7 +145,7 @@ const AboutUs = (props) => {
 
         <div className="ps-team mb-5">
           <div className="text-center">
-            <h5>Code Judges</h5>
+            <h5>The Team</h5>
           </div>
           <hr
             className="w-100"
@@ -186,49 +154,7 @@ const AboutUs = (props) => {
             }}
           />
           <div className="row">
-            {team.psteam.map((member) => (
-              <TeamCard
-                name={member.name}
-                role={member.role}
-                linlink={member.linlink}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="communication mb-5">
-          <div className="text-center">
-            <h5>Communication and business</h5>
-          </div>
-          <hr
-            className="w-100"
-            style={{
-              borderBottom: "4px solid grey",
-            }}
-          />
-          <div className="row">
-            {team.communication.map((member) => (
-              <TeamCard
-                name={member.name}
-                role={member.role}
-                linlink={member.linlink}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="help-support mb-5">
-          <div className="text-center">
-            <h5>Support and help</h5>
-          </div>
-          <hr
-            className="w-100"
-            style={{
-              borderBottom: "4px solid grey",
-            }}
-          />
-          <div className="row">
-            {team.support.map((member) => (
+            {team.team.map((member) => (
               <TeamCard
                 name={member.name}
                 role={member.role}
