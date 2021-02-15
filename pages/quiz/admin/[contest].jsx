@@ -291,9 +291,12 @@ const MCQContest = ({ query }) => {
                 <h6 className="font-weight-bold m-0">
                   Share this URL with participants
                 </h6>
-                <p className="font-weight-bold m-0 text-primary">
+                <a
+                  className="font-weight-bold m-0 text-primary"
+                  target="_blank"
+                >
                   {contestSlug}
-                </p>
+                </a>
               </div>
             </div>
           ) : window === "questions" ? (

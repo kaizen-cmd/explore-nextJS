@@ -217,7 +217,9 @@ const ContestDetailAdmin = () => {
             {detailM}
             <div className="mb-5">
               <p className="mb-0">Share this URL with participants: </p>
-              <a href={cSlugUrl}>{cSlugUrl}</a>
+              <a href={cSlugUrl} target="_blank">
+                {cSlugUrl}
+              </a>
             </div>
             <button
               className="btn btn-md btn-danger font-weight-bold mt-1 mb-3 px-2"
