@@ -16,7 +16,10 @@ const Profile = (props) => {
         )}
         <meta
           name="description"
-          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+          content={
+            "Signup on CodeStrike and upgrade your peogramming skills today" +
+            "...More on codestrike.in"
+          }
         />
         {props.user.first_name != "" && props.user.last_name != "" ? (
           <meta
@@ -34,7 +37,10 @@ const Profile = (props) => {
         <meta name="og:image" content={props.user.profile_pic} />
         <meta
           name="og:description"
-          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+          content={
+            "Signup on CodeStrike and upgrade your peogramming skills today" +
+            "...More on codestrike.in"
+          }
         />
         <meta name="twitter:card" content="summary_large_image" />
         {props.user.first_name != "" && props.user.last_name != "" ? (
@@ -51,7 +57,10 @@ const Profile = (props) => {
         <meta name="twitter:url" content={props.cLink} />
         <meta
           name="twitter:description"
-          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+          content={
+            "Signup on CodeStrike and upgrade your peogramming skills today" +
+            "...More on codestrike.in"
+          }
         />
         <meta name="twitter:image" content={props.user.profile_pic} />
         {props.user.first_name != "" && props.user.last_name != "" ? (
@@ -67,7 +76,10 @@ const Profile = (props) => {
         )}
         <meta
           itemProp="description"
-          content={props.user.bio.slice(0, 125) + "...More on codestrike.in"}
+          content={
+            "Signup on CodeStrike and upgrade your peogramming skills today" +
+            "...More on codestrike.in"
+          }
         />
         <meta itemProp="image" content={props.user.profile_pic} />
       </Head>
@@ -76,7 +88,7 @@ const Profile = (props) => {
           <div className="col-lg-4 d-flex flex-column align-items-center mb-0">
             <div className="pt-5">
               <img
-                src={`${props.user.profile_pic}`}
+                src="https://www.pngarts.com/files/3/Avatar-Free-PNG-Image.png"
                 alt={props.user.username}
                 className="mb-0 p-3"
                 style={{
@@ -97,12 +109,7 @@ const Profile = (props) => {
           </div>
           <div className="col-lg-8">
             <div className="d-flex flex-column mt-4">
-              <div className="mb-3">
-                <div>
-                  <h5>My bio</h5>
-                </div>
-                <div className="mb-3">{`${props.user.bio}`}</div>
-              </div>
+              <div className="mb-3"></div>
               <div>
                 <h5>Other Profiles</h5>
               </div>

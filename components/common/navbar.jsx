@@ -85,7 +85,14 @@ const NavBar = () => {
             >
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link">
+                  <form
+                    className="nav-link"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      search != "" &&
+                        router.push("/search/[query]", `/search/${search}`);
+                    }}
+                  >
                     <input
                       type="text"
                       id="search"
@@ -111,13 +118,10 @@ const NavBar = () => {
                     />
                     <button
                       className="font-weight-bold"
+                      type="submit"
                       style={{
                         padding: "5px 10px",
                         background: "transparent",
-                      }}
-                      onClick={() => {
-                        search != "" &&
-                          router.push("/search/[query]", `/search/${search}`);
                       }}
                       id="search-btn"
                     >
@@ -139,7 +143,7 @@ const NavBar = () => {
                         />
                       </svg>
                     </button>
-                  </a>
+                  </form>
                 </li>
                 <li
                   className="nav-item mt-2"
