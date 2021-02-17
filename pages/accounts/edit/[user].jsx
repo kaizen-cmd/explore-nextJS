@@ -12,6 +12,7 @@ const Profile = () => {
   const [bio, setBio] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const [rollno, setrollno] = useState("");
   const [ghlink, setGhlink] = useState("");
   const [linlink, setLinlink] = useState("");
   const [collegename, setCollegename] = useState("");
@@ -36,6 +37,7 @@ const Profile = () => {
           setBio(profile.bio);
           setFirstname(profile.first_name);
           setLastname(profile.last_name);
+          setrollno(profile.roll_no);
           setGhlink(profile.github_link);
           setLinlink(profile.linkedin_link);
           //setProfilePic(profile.profile_pic);
@@ -69,10 +71,10 @@ const Profile = () => {
                   <input
                     type="text"
                     placeholder="First Name"
-                    // onChange={(e) => {
-                    //   setGhlink(e.target.value);
-                    // }}
-                    // value={ghlink}
+                    onChange={(e) => {
+                      setFirstname(e.target.value);
+                    }}
+                    value={firstname}
                   />
                 </span>
               </div>
@@ -84,10 +86,10 @@ const Profile = () => {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    // onChange={(e) => {
-                    //   setGhlink(e.target.value);
-                    // }}
-                    // value={ghlink}
+                    onChange={(e) => {
+                      setLastname(e.target.value);
+                    }}
+                    value={lastname}
                   />
                 </span>
               </div>
@@ -134,10 +136,10 @@ const Profile = () => {
                   <input
                     type="text"
                     placeholder="Roll No"
-                    // onChangey={(e) => {
-                    //   setGhlink(e.target.value);
-                    // }}
-                    // value={ghlink}
+                    onChange={(e) => {
+                      setrollno(e.target.value);
+                    }}
+                    value={rollno}
                   />
                 </span>
               </div>
@@ -220,12 +222,15 @@ const Profile = () => {
                       lastname === ""
                         ? ""
                         : formData.append("last_name", lastname);
-                      bio === "" ? "" : formData.append("bio", bio);
 
                       ghlink === "" && url.test(ghlink) !== true
                         ? ""
                         : formData.append("github_link", ghlink);
 
+                      rollno === ""
+                        ? ""
+                        : formData.append("roll_no",rollno);
+                      
                       linlink === "" && url.test(linlink) !== true
                         ? ""
                         : formData.append("linkedin_link", linlink);
