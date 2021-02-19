@@ -28,8 +28,6 @@ const Re = (props) => {
         })
         .then((response) => {
           const ps_obj = response["data"];
-          ps_obj.lang === "" ? setLang("python") : setLang(ps_obj.lang);
-          setCode(ps_obj.partial_sol);
           if (ps_obj.disable !== "") {
             setDisabled("disabled");
             setTc(
@@ -243,6 +241,7 @@ const Re = (props) => {
                 onClick={() => {
                   if (localStorage.getItem("token")) {
                     setLoader(<Loader />);
+                    setDisabled(true);
                     axios
                       .post(
                         props.psUrl,
@@ -262,8 +261,21 @@ const Re = (props) => {
                       .then((response) => {
                         var res = response["data"];
                         setLoader(<></>);
-                        setTc(res.res);
-                        setDisabled("disabled");
+                        var tc_no = 0;
+                        var tcs = res.map((tc) => {
+                          tc_no++;
+                          return (
+                            <TestCase
+                              key={tc_no}
+                              is_correct={tc[1]}
+                              sr_no={tc_no}
+                              op={tc[0]}
+                              ip={tc[2]}
+                              exip={tc[3]}
+                            ></TestCase>
+                          );
+                        });
+                        setTc(tcs);
                       });
                   } else {
                     document.getElementById("login-btn").click();

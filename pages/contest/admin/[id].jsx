@@ -6,6 +6,7 @@ import URL from "../../../components/url";
 import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import parser from "html-react-parser";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -425,6 +426,7 @@ const ContestDetailAdmin = () => {
                         <th scope="col">Problem</th>
                         <th scope="col">Username</th>
                         <th scope="col">Solution</th>
+                        <th scope="col">Score</th>
                         <th scope="col">Result</th>
                       </tr>
                     </thead>
@@ -437,6 +439,7 @@ const ContestDetailAdmin = () => {
                             <a href={`${URL}${p.file_path}`} target="_blank">
                               <td>Click to view</td>
                             </a>
+                            <td className="font-weight-bold">{p.score}</td>
                             <td>
                               {p.is_correct ? (
                                 <p className="text-success font-weight-bold my-0">
