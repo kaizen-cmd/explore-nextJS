@@ -41,21 +41,12 @@ const Index = (props) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Home | CodeStrike" />
         <meta name="twitter:url" content={props.cLink} />
-        <meta
-          name="twitter:image"
-          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
-        />
+        <meta name="twitter:image" content="/images/meta-icon.png" />
         <meta itemProp="name" content="Home | CodeStrike" />
-        <meta
-          itemProp="image"
-          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
-        />
+        <meta itemProp="image" content="/images/meta-icon.png" />
         <meta name="og:title" content="Home | CodeStrike" />
         <meta name="og:url" content={props.cLink} />
-        <meta
-          name="og:image"
-          content="https://img.techpowerup.org/200717/codestrike-logo-min.png"
-        />
+        <meta name="og:image" content="/images/meta-icon.png" />
         <meta name="og:site_name" content="CodeStrike.in" />
         <meta name="og:email" content="codestrike20@gmail.com" />
         <meta property="og:type" content="Coding community" />
