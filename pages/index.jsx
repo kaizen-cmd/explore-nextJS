@@ -102,7 +102,7 @@ const Index = (props) => {
             </>
           ) : (
             <>
-              <CourseCard6
+              {/* <CourseCard6
                 key="1"
                 title="Problem Solving"
                 description="Try solving these problems to level up your problem-solving skills using anyone of the three languages C++, Java, Python. Make that you pass all the test cases. For discussions on problems join our Discord Server."
@@ -113,7 +113,7 @@ const Index = (props) => {
                 title="Java"
                 description="Basic java problems straight from the Java basics. Try solving these problems to learn control flow, conditional statements and the syntax of Java language. Be sure to select the java language from the drop-down."
                 link="/codeportal/java"
-              />
+              /> */}
             </>
           )}
         </div>
@@ -121,7 +121,6 @@ const Index = (props) => {
       <div>
         <div className="container">
           <div className="row mt-5">
-
             <div className="col-lg-6">
               <div
                 style={{
@@ -129,9 +128,13 @@ const Index = (props) => {
                 }}
               >
                 <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
-                  <img src="/images/blog.svg" alt="codestrike-blog" style={{
-                    maxWidth: "90%"
-                  }}/>
+                  <img
+                    src="/images/blog.svg"
+                    alt="codestrike-blog"
+                    style={{
+                      maxWidth: "90%",
+                    }}
+                  />
                 </div>
               </div>
             </div>
