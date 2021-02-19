@@ -4,6 +4,7 @@ import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
 import { loggedIn } from "../../pages/_app";
+import parser from "html-react-parser";
 
 const Editor = (props) => {
   const [lang, setLang] = useState("python");
@@ -54,7 +55,7 @@ const Editor = (props) => {
               }}
             >
               <h4 className="mt-2">{props.ps.title}</h4>
-              {props.ps.statement}
+              {parser(props.ps.statement)}
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Loader from "../common/loader";
 import TestCase from "../editor/testcasebox";
 import axios from "axios";
 import { loggedIn } from "../../pages/_app";
+import parser from "html-react-parser";
 
 const Re = (props) => {
   const [lang, setLang] = useState("python");
@@ -98,7 +99,7 @@ const Re = (props) => {
               >
                 {props.ps.title}
               </h1>
-              {props.ps.statement}
+              {parser(props.ps.statement)}
               <div style={{ visibility: "hidden" }}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
                 facere praesentium, saepe cumque similique dignissimos officia
