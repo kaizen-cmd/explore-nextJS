@@ -1,5 +1,4 @@
-const DEBUG = false;
-
+const DEBUG = process.env.DEBUG === "false" ? false : true;
 
 var URL;
 
