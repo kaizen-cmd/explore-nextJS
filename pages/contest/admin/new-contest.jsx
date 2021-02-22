@@ -6,7 +6,7 @@ import URL from "../../../components/url";
 import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { CKEditor } from "ckeditor4-react";
+import CKEditor from "ckeditor4-react";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -122,11 +122,6 @@ const ContestDetailAdmin = () => {
                   setDesc(e.editor.getData());
                 }}
               />
-              value={desc}
-              onChange=
-              {(e) => {
-                setDesc(e.target.value);
-              }}
             </div>
             <div className="mb-3">
               <div className="d-flex flex-row align-items-center">
