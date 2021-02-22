@@ -151,9 +151,6 @@ const ContestDetailAdmin = () => {
                 Submissions
               </h5>
             </div>
-<<<<<<< HEAD
-
-=======
             <div className="px-5 pt-4 pb-2 admin-contest">
               <h5
                 className="admin-contest-head my-0"
@@ -170,7 +167,6 @@ const ContestDetailAdmin = () => {
                 Leader Board
               </h5>
             </div>
->>>>>>> 6f96b7a26e8d7e6423f751ea5c604e58149e0ec6
           </div>
         </div>
 
