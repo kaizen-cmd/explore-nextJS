@@ -62,6 +62,49 @@ const Index = (props) => {
 
       <div className="container mb-2 mt-5">
         <div className="row mt-5">
+
+        <div className="container">
+          <div className="row mt-5">
+            <div className="col-lg-6">
+              <div
+                style={{
+                  height: "500px",
+                }}
+              >
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                  <div>
+                    <iframe src="https://discord.com/widget?id=725628554875895829&theme=dark" width="350" height="500" allowtransparency="true" frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div
+                style={{
+                  height: "500px",
+                }}
+              >
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                  <div>
+                    <h3>
+                      Join our Discord Server and be a part of our programming ecosystem!
+                    </h3>
+
+                    <div className="mt-2">
+                       <a
+                        href="https://discord.gg/uN6jXWqt3H"
+                        target="_blank"
+                        className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
+                      >
+                        Discord Server
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
           {!loggedIn ? (
             <>
               <div className="col-lg-6">
@@ -119,9 +162,7 @@ const Index = (props) => {
                 }}
               >
                 <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
-                  {/* <div>
-                    <iframe src="https://discord.com/widget?id=725628554875895829&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                  </div> */}
+
                   <img
                     src="/images/blog.svg"
                     alt="codestrike-blog"
@@ -157,6 +198,25 @@ const Index = (props) => {
                 </div>
               </div>
             </div>
+
+            {/* <div className="col-lg-6">
+              <div
+                style={{
+                  height: "500px",
+                }}
+              >
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+
+                  <img
+                    src="/images/blog.svg"
+                    alt="codestrike-blog"
+                    style={{
+                      maxWidth: "90%",
+                    }}
+                  />
+                </div>
+              </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -33,16 +33,16 @@ const Footer = (props) => {
                 "https://www.linkedin.com/company/codestrike2-0/?viewAsMember=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_top%3BVvILz4cwSe%2BJWynpw2%2BG9Q%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_search_srp_top-search_srp_result&lici=6o0FPz0%2BSgGxnzmCfVG1jg%3D%3D",
               text: "LinkedIn",
             },
-            { link: "#", text: "Telegram" },
+            { link: "https://www.instagram.com/codestrike/", text: "Instagram" },
           ]}
         />
         <FooterCol
           key={3}
           head="Our Location"
           linkarray={[
+            { text: "Pune," },
             { text: "Maharashtra," },
             { text: "India," },
-            { text: "Earth," },
             { text: "Milky Way." },
           ]}
         />
@@ -52,7 +52,7 @@ const Footer = (props) => {
             <div className="px-4 mt-3">
               <div className="px-5">
                 <div className="d-flex mx-5 justify-content-between">
-                  <a href="https://www.instagram.com/code_strike/" target="_blank">
+                  <a href="https://www.instagram.com/codestrike/" target="_blank">
                     <i
                       className="fa fa-instagram text-white"
                       style={{
