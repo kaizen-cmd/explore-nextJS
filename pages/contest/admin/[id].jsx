@@ -6,7 +6,7 @@ import URL from "../../../components/url";
 import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import parser from "html-react-parser";
+import { MDBDataTable } from "mdbreact";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -22,6 +22,7 @@ const ContestDetailAdmin = () => {
   const [lastURLSegment1, setLastURLSegment1] = useState("");
   const [elems, setElems] = useState([]);
   const [delPop, setDelPop] = useState(null);
+  const [rankarray, setRankarray] = useState([]);
   const router = useRouter();
   useEffect(() => {
     !localStorage.getItem("token") && router.push("/");
@@ -39,6 +40,7 @@ const ContestDetailAdmin = () => {
         if (res.data.res === "Create a custom contest.") {
           router.push("/contest/admin");
         } else {
+          console.log(res.data.ranks);
           setCSlug(res.data.title);
           setDesc(res.data.desc);
           setIsLive(res.data.is_live);
@@ -47,9 +49,44 @@ const ContestDetailAdmin = () => {
           setSubArr([...res.data.sub_list]);
           setCSlugUrl(res.data.url);
           setLastURLSegment1(res.data.pk);
+          setRankarray(res.data.ranks);
         }
       });
   }, []);
+
+  const data = {
+    columns: [
+      {
+        label: "Rank",
+        field: "rank",
+        sort: "asc",
+        width: 10,
+      },
+      {
+        label: "Username",
+        field: "username",
+        sort: "asc",
+        width: 70,
+      },
+      {
+        label: "Points",
+        field: "points",
+        sort: "asc",
+        width: 15,
+      },
+    ],
+    rows: rankarray.map((obj, index) => {
+      return {
+        rank: index,
+        username: obj.user,
+        points: obj.score,
+        clickEvent: () => {
+          router.push(`/profile/[profile]`, `/profile/${obj.user}`);
+        },
+      };
+    }),
+  };
+
   return (
     <BaseLayout>
       <Head>
@@ -112,6 +149,22 @@ const ContestDetailAdmin = () => {
                 }}
               >
                 Submissions
+              </h5>
+            </div>
+            <div className="px-5 pt-4 pb-2 admin-contest">
+              <h5
+                className="admin-contest-head my-0"
+                onClick={() => {
+                  setView("leaderboard");
+                  Array.prototype.forEach.call(elems, function (el) {
+                    el.style.borderBottom = "none";
+                  });
+                  document.getElementsByClassName(
+                    "admin-contest-head"
+                  )[3].style.borderBottom = "4px solid #0070f3";
+                }}
+              >
+                Leader Board
               </h5>
             </div>
           </div>
@@ -458,6 +511,14 @@ const ContestDetailAdmin = () => {
                   </table>
                 </div>
               </div>
+            </div>
+          </div>
+        )}
+
+        {view === "leaderboard" && (
+          <div className="row">
+            <div className="col-lg-9 px-5">
+              <MDBDataTable medium data={data} noBottomColumns={true} />
             </div>
           </div>
         )}
