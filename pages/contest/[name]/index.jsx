@@ -6,6 +6,7 @@ import BaseLayout from "../../../components/base_layout";
 import { loggedIn } from "../../_app";
 import Link from "next/link";
 import Head from "next/head";
+import parser from "html-react-parser";
 
 const PsIndex = () => {
   const [presentArray, setPresentArray] = useState([]);
@@ -66,7 +67,7 @@ const PsIndex = () => {
                   whiteSpace: "pre-wrap",
                 }}
               >
-                {desc}
+                {parser(desc)}
               </div>
             </div>
             <div className="col-lg-6 mb-5 pt-5 px-0">

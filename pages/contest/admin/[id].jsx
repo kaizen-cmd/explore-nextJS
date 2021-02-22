@@ -7,6 +7,7 @@ import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { MDBDataTable } from "mdbreact";
+import CKEditor from "ckeditor4-react";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -40,7 +41,6 @@ const ContestDetailAdmin = () => {
         if (res.data.res === "Create a custom contest.") {
           router.push("/contest/admin");
         } else {
-          console.log(res.data.ranks);
           setCSlug(res.data.title);
           setDesc(res.data.desc);
           setIsLive(res.data.is_live);
@@ -191,16 +191,12 @@ const ContestDetailAdmin = () => {
             </div>
             <div className="mb-3">
               <p>Description: </p>
-              <textarea
-                style={{
-                  width: "80%",
-                  height: "170px",
-                }}
-                value={desc}
+              <CKEditor
+                data={desc}
                 onChange={(e) => {
-                  setDesc(e.target.value);
+                  setDesc(e.editor.getData());
                 }}
-              ></textarea>
+              />
             </div>
             <div className="mb-3">
               <div className="d-flex flex-row align-items-center">
