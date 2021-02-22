@@ -77,7 +77,7 @@ const ContestDetailAdmin = () => {
     ],
     rows: rankarray.map((obj, index) => {
       return {
-        rank: index,
+        rank: index + 1,
         username: obj.user,
         points: obj.score,
         clickEvent: () => {
