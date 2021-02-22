@@ -99,9 +99,10 @@ const Profile = () => {
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <select value={collegename} onChange={(e) => setCollegename(e.currentTarget.value)}>
-                    <option value="MIT">MIT</option>
-                    <option value="IIT">IIT</option>
-                    <option value="VIT">VIT</option>
+                    <option value="select colege name">Select College Name</option>
+                    <option value="MIT SOE">MIT SOE</option>
+                    <option value="MIT COE">MIT COE</option> 
+                    <option value="MIT AOE">MIT AOE</option>
                   </select>
                 </span>
               </div>
@@ -111,6 +112,7 @@ const Profile = () => {
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <select value={branchname} onChange={(e) => setBranchname(e.currentTarget.value)}>
+                    <option value=" Select Branch">Select Branch</option>
                     <option value="CSE">CSE</option>
                     <option value="IT">IT</option>
                   </select>
@@ -123,9 +125,10 @@ const Profile = () => {
                   &nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
                   <select value={yearofstudy} onChange={(e) => setYearofStudy(e.currentTarget.value)}>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
+                    <option value="Year of Study">Select Year of Study</option>
+                    <option value="FY">FY</option>
+                    <option value="SY">SY</option>
+                    <option value="TY">TY</option>
                   </select>
               </div>
               <br />

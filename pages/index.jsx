@@ -119,6 +119,9 @@ const Index = (props) => {
                 }}
               >
                 <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                  {/* <div>
+                    <iframe src="https://discord.com/widget?id=725628554875895829&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                  </div> */}
                   <img
                     src="/images/blog.svg"
                     alt="codestrike-blog"
@@ -138,8 +141,8 @@ const Index = (props) => {
                 <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
                   <div>
                     <h3>
-                      Want to read about latest tech, industry news ? Got an
-                      article on mind and want to share it with the world ?
+                      Want to read about the latest trends in tech and more?<br/> Head over to CodeStrike Blogs!<br/>
+                        Contact us if you want to contribute.
                     </h3>
                   </div>
                   <div className="mt-2">
@@ -148,7 +151,7 @@ const Index = (props) => {
                       target="_blank"
                       className="btn btn-succes bnt-lg cc-btn font-weight-bold bg-success text-light"
                     >
-                      Head to our Blog
+                      CodeStrike Blogs
                     </a>
                   </div>
                 </div>
@@ -186,7 +189,7 @@ const Index = (props) => {
         </div>
       </div>
       <br />
-      <div className="mt-5 mb-3">
+      {/* <div className="mt-5 mb-3">
         <div className="container px-3">
           <div className="d-flex justify-content-start">
             <div className="mr-2">
@@ -195,7 +198,7 @@ const Index = (props) => {
             <hr style={{ width: "75%" }} />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="mid-container pb-5">
         <div className="container">
           <div className="row">

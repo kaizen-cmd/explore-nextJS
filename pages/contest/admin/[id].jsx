@@ -114,6 +114,7 @@ const ContestDetailAdmin = () => {
                 Submissions
               </h5>
             </div>
+
           </div>
         </div>
 

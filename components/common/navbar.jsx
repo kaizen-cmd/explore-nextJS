@@ -211,7 +211,7 @@ const NavBar = () => {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Enquiry
+                    Our Team
                   </a>
                   <div
                     className="dropdown-menu"
@@ -220,7 +220,7 @@ const NavBar = () => {
                     <a className="dropdown-item" href="#">
                       <Link href="/about-us">
                         <a className="nav-link" onClick={activator1}>
-                          Our Team
+                          About Us
                         </a>
                       </Link>
                     </a>
