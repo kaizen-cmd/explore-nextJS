@@ -84,6 +84,8 @@ const Re = (props) => {
               className="px-2 inner-prob-container"
               style={{
                 wordBreak: "break-word",
+                wordWrap: "break-word",
+                whiteSpace: "break-spaces",
               }}
             >
               <h1
