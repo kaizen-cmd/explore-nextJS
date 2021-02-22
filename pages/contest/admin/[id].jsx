@@ -6,7 +6,8 @@ import URL from "../../../components/url";
 import SmLoader from "../../../components/common/sm-loader";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import parser from "html-react-parser";
+import { MDBDataTable } from "mdbreact";
+import CKEditor from "ckeditor4-react";
 
 const ContestDetailAdmin = () => {
   const [view, setView] = useState("details");
@@ -22,6 +23,7 @@ const ContestDetailAdmin = () => {
   const [lastURLSegment1, setLastURLSegment1] = useState("");
   const [elems, setElems] = useState([]);
   const [delPop, setDelPop] = useState(null);
+  const [rankarray, setRankarray] = useState([]);
   const router = useRouter();
   useEffect(() => {
     !localStorage.getItem("token") && router.push("/");
@@ -47,9 +49,44 @@ const ContestDetailAdmin = () => {
           setSubArr([...res.data.sub_list]);
           setCSlugUrl(res.data.url);
           setLastURLSegment1(res.data.pk);
+          setRankarray(res.data.ranks);
         }
       });
   }, []);
+
+  const data = {
+    columns: [
+      {
+        label: "Rank",
+        field: "rank",
+        sort: "asc",
+        width: 10,
+      },
+      {
+        label: "Username",
+        field: "username",
+        sort: "asc",
+        width: 70,
+      },
+      {
+        label: "Points",
+        field: "points",
+        sort: "asc",
+        width: 15,
+      },
+    ],
+    rows: rankarray.map((obj, index) => {
+      return {
+        rank: index + 1,
+        username: obj.user,
+        points: obj.score,
+        clickEvent: () => {
+          router.push(`/profile/[profile]`, `/profile/${obj.user}`);
+        },
+      };
+    }),
+  };
+
   return (
     <BaseLayout>
       <Head>
@@ -114,7 +151,26 @@ const ContestDetailAdmin = () => {
                 Submissions
               </h5>
             </div>
+<<<<<<< HEAD
 
+=======
+            <div className="px-5 pt-4 pb-2 admin-contest">
+              <h5
+                className="admin-contest-head my-0"
+                onClick={() => {
+                  setView("leaderboard");
+                  Array.prototype.forEach.call(elems, function (el) {
+                    el.style.borderBottom = "none";
+                  });
+                  document.getElementsByClassName(
+                    "admin-contest-head"
+                  )[3].style.borderBottom = "4px solid #0070f3";
+                }}
+              >
+                Leader Board
+              </h5>
+            </div>
+>>>>>>> 6f96b7a26e8d7e6423f751ea5c604e58149e0ec6
           </div>
         </div>
 
@@ -139,16 +195,12 @@ const ContestDetailAdmin = () => {
             </div>
             <div className="mb-3">
               <p>Description: </p>
-              <textarea
-                style={{
-                  width: "80%",
-                  height: "170px",
-                }}
-                value={desc}
+              <CKEditor
+                data={desc}
                 onChange={(e) => {
-                  setDesc(e.target.value);
+                  setDesc(e.editor.getData());
                 }}
-              ></textarea>
+              />
             </div>
             <div className="mb-3">
               <div className="d-flex flex-row align-items-center">
@@ -459,6 +511,14 @@ const ContestDetailAdmin = () => {
                   </table>
                 </div>
               </div>
+            </div>
+          </div>
+        )}
+
+        {view === "leaderboard" && (
+          <div className="row">
+            <div className="col-lg-9 px-5">
+              <MDBDataTable medium data={data} noBottomColumns={true} />
             </div>
           </div>
         )}

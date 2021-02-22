@@ -83,9 +83,9 @@ const Re = (props) => {
             <div
               className="px-2 inner-prob-container"
               style={{
-                whiteSpace: "pre-line",
-                wordWrap: "break-word",
                 wordBreak: "break-word",
+                wordWrap: "break-word",
+                whiteSpace: "break-spaces",
               }}
             >
               <h1
