@@ -6,7 +6,9 @@ import { loggedIn } from "../_app";
 const GoogleForm = (props) => {
   useEffect(() => {
     if (!loggedIn) {
-      document.getElementById("login-btn").click();
+      setTimeout(() => {
+        document.getElementById("login-btn").click();
+      }, 1000);
     }
   });
   return (
