@@ -79,6 +79,7 @@ const Register = () => {
                 type="text"
                 placeholder="Username(> 4 chars)"
                 id="username"
+                maxLength="150"
                 onBlur={() => {
                   axios
                     .post(`${URL}/accounts/validate/`, {
@@ -108,6 +109,7 @@ const Register = () => {
               <input
                 type="email"
                 placeholder="Email"
+                maxLength="150"
                 id="email"
                 onBlur={() => {
                   axios
