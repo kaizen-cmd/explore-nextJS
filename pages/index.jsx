@@ -62,7 +62,6 @@ const Index = (props) => {
 
       <div className="container mb-2 mt-5">
         <div className="row mt-5">
-
         <div className="container">
           <div className="row mt-5">
             <div className="col-lg-6">
@@ -104,6 +103,51 @@ const Index = (props) => {
               </div>
             </div>
           </div>
+
+          {/* <div className="row mt-5">
+            <div className="col-lg-6">
+              <div
+                style={{
+                  height: "500px",
+                }}
+              >
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                  <div>
+                   <img
+                    src="/images/mcqimg.png"
+                    alt="codestrike-contest"
+                    className="mw-100"
+                  />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div
+                style={{
+                  height: "500px",
+                }}
+              >
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                  <div>
+                    <h3>
+                      Final Year MIT SOE Students Please Click Here for the MCQ Pretest
+                    </h3>
+
+                    <div className="mt-2">
+                       <a
+                        href="https://codestrike.in/googleform/pretestMCQ"
+                        target="_blank"
+                        className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
+                      >
+                        PreTest MCQ
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </div>
           {!loggedIn ? (
             <>

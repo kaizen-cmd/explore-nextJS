@@ -117,6 +117,22 @@ const Dashboard = (props) => {
                     <div>
                       <h3>CodeStrike weekly contest is over. Try practicing until the next one.</h3>
                     </div>
+
+                  </div>
+
+                    <div>
+                      <h3>
+                       Final Year MIT SOE Students Please Click Here for the MCQ Pretest
+                      </h3>
+                    <div className="mt-2">
+                       <a
+                        href="https://codestrike.in/googleform/pretestMCQ"
+                        target="_blank"
+                        className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
+                      >
+                        PreTest MCQ
+                      </a>
+                    </div>
                   </div>
                 </>
               )}
