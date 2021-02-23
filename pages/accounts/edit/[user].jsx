@@ -129,6 +129,7 @@ const Profile = () => {
                     <option value="FY">FY</option>
                     <option value="SY">SY</option>
                     <option value="TY">TY</option>
+                    <option value="Final Year">Final Year</option>
                   </select>
               </div>
               <br />
