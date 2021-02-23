@@ -134,6 +134,7 @@ const Register = () => {
               <input
                 type="password"
                 placeholder="Password (> 8 chars)"
+                maxLength="16"
                 id="password"
               />
             </div>
