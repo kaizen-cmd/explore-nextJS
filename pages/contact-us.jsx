@@ -74,6 +74,7 @@ const ContactUs = (props) => {
                   type="text"
                   id="name"
                   placeholder="Full Name"
+                  maxLength="150"
                   style={{
                     outline: "none",
                     padding: "7px 8px",
@@ -91,6 +92,7 @@ const ContactUs = (props) => {
                   type="text"
                   id="email"
                   placeholder="Email"
+                  maxLength="150"
                   style={{
                     outline: "none",
                     padding: "7px 8px",
@@ -109,6 +111,7 @@ const ContactUs = (props) => {
               <textarea
                 className="mb-3 shadow-sm font-weight-bold"
                 id="message"
+                maxLength="500"
                 style={{
                   outline: "none",
                   padding: "7px 8px",
