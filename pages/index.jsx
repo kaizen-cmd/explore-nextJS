@@ -149,7 +149,7 @@ const Index = (props) => {
             </div>
           </div> */}
         </div>
-          {!loggedIn ? (
+          {loggedIn ? (
             <>
               <div className="col-lg-6">
                 <div className="pt-5">
