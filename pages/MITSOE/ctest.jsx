@@ -4,13 +4,13 @@ import BaseLayout from "../../components/base_layout";
 import { loggedIn } from "../_app";
 
 const Cform = (props) => {
-  useEffect(() => {
-    if (!loggedIn) {
-      setTimeout(() => {
-        document.getElementById("login-btn").click();
-      }, 1000);
-    }
-  });
+//   useEffect(() => {
+//     if (!loggedIn) {
+//       setTimeout(() => {
+//         document.getElementById("login-btn").click();
+//       }, 1000);
+//     }
+//   });
   return (
     <BaseLayout>
       <Head>
