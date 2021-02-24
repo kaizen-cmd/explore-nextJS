@@ -2,5 +2,5 @@ const DEBUG = process.env.DEBUG === "false" ? false : true;
 
 var URL;
 
-!DEBUG ? (URL = "https://api.codestrike.in") : (URL = "http://localhost:8000");
+!DEBUG ? (URL = process.env.PROD_API) : (URL = process.env.TEST_API);
 export default URL;
