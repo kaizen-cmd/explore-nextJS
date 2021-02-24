@@ -130,7 +130,7 @@ const Dashboard = (props) => {
                         target="_blank"
                         className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
                       >
-                        PreTest MCQ
+                        C & C++ MCQ
                       </a>
                     </div>
                   </div>
