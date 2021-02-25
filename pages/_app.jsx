@@ -101,6 +101,18 @@ export default function MyApp({ Component, pageProps }) {
           integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
           crossOrigin="anonymous"
         ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSHM5W45FF"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-DSHM5W45FF');
+        </script>`,
+          }}
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -112,6 +124,7 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <NavBar />
       <Component {...pageProps} />
+
       <button
         id="discord-btn"
         className="animate__animated animate__pulse animate__slow animate__infinite"
