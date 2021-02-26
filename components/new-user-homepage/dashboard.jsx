@@ -126,7 +126,7 @@ const Dashboard = (props) => {
                       </h3>
                     <div className="mt-2">
                        <a
-                        href="https://codestrike.in/MITSOE/test"
+                        href="https://codestrike-git-testing-kaizen11.vercel.app/MITSOE/te"
                         target="_blank"
                         className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
                       >
