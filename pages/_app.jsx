@@ -102,15 +102,17 @@ export default function MyApp({ Component, pageProps }) {
           crossOrigin="anonymous"
         ></script>
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DSHM5W45FF"
+        ></script>
+        <script
           dangerouslySetInnerHTML={{
-            __html: `<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSHM5W45FF"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-DSHM5W45FF');
-        </script>`,
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-DSHM5W45FF');
+              `,
           }}
         />
         <link
