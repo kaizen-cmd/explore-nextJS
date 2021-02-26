@@ -16,7 +16,7 @@ const AboutUs = (props) => {
       },
       {
         name: "Suyash Muley",
-        linlink: "https://www.linkedin.com/in/suyash-muley",
+        linlink: "https://www.linkedin.com/in/suyash-muley-79a8441a5/",
       },
     ],
     team: [
