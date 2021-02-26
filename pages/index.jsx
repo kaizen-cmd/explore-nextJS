@@ -104,6 +104,9 @@ const Index = (props) => {
             </div>
           </div>
         </div>
+        <div>
+          <br/>
+        </div>
           {loggedIn ? (
             <>
               <div className="col-lg-6">
