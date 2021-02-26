@@ -122,15 +122,15 @@ const Dashboard = (props) => {
 
                     <div>
                       <h3>
-                       Final Year MIT SOE Students please Click Here for the C & C++ Quiz
+                       Final Year MIT SOE Students please Click Here for the MCQ Test 
                       </h3>
                     <div className="mt-2">
                        <a
-                        href="https://codestrike.in/MITSOE/ctest"
+                        href="https://codestrike.in/MITSOE/test"
                         target="_blank"
                         className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
                       >
-                        C & C++ MCQ
+                        MCQ Test
                       </a>
                     </div>
                   </div>
