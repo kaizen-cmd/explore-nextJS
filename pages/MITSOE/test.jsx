@@ -20,7 +20,7 @@ const ProblemIndex = () => {
                 link="https://codestrike.in/MITSOE/pretestMCQ"
               ></WinnerCard>
               <WinnerCard
-                name="C & C++"
+                name="Fundamentals of C & C++"
                 image="https://seeklogo.com/images/C/c-logo-672525892C-seeklogo.com.png"
                 bio="Start Solving"
                 link="https://codestrike.in/MITSOE/ctest"
