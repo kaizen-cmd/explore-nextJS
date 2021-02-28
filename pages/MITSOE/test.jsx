@@ -32,6 +32,12 @@ const ProblemIndex = () => {
                 link="http://codestrike.in/MITSOE/ooptest"
               ></WinnerCard>
               
+              <WinnerCard
+                name="OOP based CPP "
+                image="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/306px-ISO_C%2B%2B_Logo.svg.png"
+                bio="Start Solving"
+                link="http://codestrike.in/MITSOE/cpp-oop"
+              ></WinnerCard>
               {/* <WinnerCard
                 name="Python MCQs"
                 image="https://seeklogo.com/images/P/python-logo-A32636CAA3-seeklogo.com.png"
