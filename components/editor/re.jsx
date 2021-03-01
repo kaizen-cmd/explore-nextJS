@@ -70,6 +70,54 @@ const Re = (props) => {
       onDrag: logger,
     });
   }, []);
+
+  function handleCodeSubmit() {
+    var result = confirm("Confirm submission ? You can only submit once.");
+    if (result) {
+      if (localStorage.getItem("token")) {
+        setLoader(<Loader />);
+        setDisabled(true);
+        axios
+          .post(
+            props.psUrl,
+            {
+              lang: lang,
+              is_partial: false,
+              partial_sol: code,
+              cmd: "Submit Code",
+              code: code,
+            },
+            {
+              headers: {
+                Authorization: localStorage.getItem("token"),
+              },
+            }
+          )
+          .then((response) => {
+            var res = response["data"];
+            setLoader(<></>);
+            var tc_no = 0;
+            var tcs = res.map((tc) => {
+              tc_no++;
+              return (
+                <TestCase
+                  key={tc_no}
+                  is_correct={tc[1]}
+                  sr_no={tc_no}
+                  op={tc[0]}
+                  ip={tc[2]}
+                  exip={tc[3]}
+                ></TestCase>
+              );
+            });
+            setTc(tcs);
+          });
+      } else {
+        document.getElementById("login-btn").click();
+      }
+    }
+  }
+
   return (
     <div className="d-flex main-editpage-div p-3">
       <div className="d-flex flex-row">
@@ -238,49 +286,7 @@ const Re = (props) => {
               <h2 className="mb-0 py-2 mr-auto">Output</h2>
               <button
                 id="sub-btn"
-                onClick={() => {
-                  if (localStorage.getItem("token")) {
-                    setLoader(<Loader />);
-                    setDisabled(true);
-                    axios
-                      .post(
-                        props.psUrl,
-                        {
-                          lang: lang,
-                          is_partial: false,
-                          partial_sol: code,
-                          cmd: "Submit Code",
-                          code: code,
-                        },
-                        {
-                          headers: {
-                            Authorization: localStorage.getItem("token"),
-                          },
-                        }
-                      )
-                      .then((response) => {
-                        var res = response["data"];
-                        setLoader(<></>);
-                        var tc_no = 0;
-                        var tcs = res.map((tc) => {
-                          tc_no++;
-                          return (
-                            <TestCase
-                              key={tc_no}
-                              is_correct={tc[1]}
-                              sr_no={tc_no}
-                              op={tc[0]}
-                              ip={tc[2]}
-                              exip={tc[3]}
-                            ></TestCase>
-                          );
-                        });
-                        setTc(tcs);
-                      });
-                  } else {
-                    document.getElementById("login-btn").click();
-                  }
-                }}
+                onClick={() => handleCodeSubmit()}
                 disabled={disabled}
               >
                 Submit
