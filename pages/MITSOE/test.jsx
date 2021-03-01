@@ -38,12 +38,12 @@ const ProblemIndex = () => {
                 bio="Start Solving"
                 link="http://codestrike.in/MITSOE/cpp-oop"
               ></WinnerCard>
-              {/* <WinnerCard
-                name="Python MCQs"
-                image="https://seeklogo.com/images/P/python-logo-A32636CAA3-seeklogo.com.png"
+              <WinnerCard
+                name="Java & Python MCQs"
+                image="https://raygun.com/blog/images/java-vs-python/java-vs-python.png"
                 bio="Start Solving"
-                link="http://codestrike.in/MITSOE/pythontest"
-              ></WinnerCard> */}
+                link="http://codestrike.in/MITSOE/java-python"
+              ></WinnerCard>
         </div>
       </div>
     </BaseLayout>
