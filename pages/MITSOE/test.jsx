@@ -44,6 +44,12 @@ const ProblemIndex = () => {
                 bio="Start Solving"
                 link="http://codestrike.in/MITSOE/java-python"
               ></WinnerCard>
+              <WinnerCard
+                name="Java & Python MCQs"
+                image="https://miro.medium.com/max/5442/1*KpDOKMFAgDWaGTQHL0r70g.png"
+                bio="Start Solving"
+                link="http://codestrike.in/MITSOE/dstest"
+              ></WinnerCard>
         </div>
       </div>
     </BaseLayout>
