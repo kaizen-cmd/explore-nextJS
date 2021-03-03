@@ -115,6 +115,11 @@ export default function MyApp({ Component, pageProps }) {
               `,
           }}
         />
+        <script
+          data-ad-client="ca-pub-8760818264352491"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
