@@ -50,6 +50,12 @@ const ProblemIndex = () => {
                 bio="Start Solving"
                 link="http://codestrike.in/MITSOE/dstest"
               ></WinnerCard>
+              <WinnerCard
+                name="Advanced Data Structures MCQs"
+                image="https://miro.medium.com/max/5442/1*KpDOKMFAgDWaGTQHL0r70g.png"
+                bio="Start Solving"
+                link="http://codestrike.in/MITSOE/adstest"
+              ></WinnerCard>
         </div>
       </div>
     </BaseLayout>
