@@ -45,7 +45,7 @@ const ProblemIndex = () => {
                 link="http://codestrike.in/MITSOE/java-python"
               ></WinnerCard>
               <WinnerCard
-                name="Java & Python MCQs"
+                name="Basics of Data Structures MCQs"
                 image="https://miro.medium.com/max/5442/1*KpDOKMFAgDWaGTQHL0r70g.png"
                 bio="Start Solving"
                 link="http://codestrike.in/MITSOE/dstest"
