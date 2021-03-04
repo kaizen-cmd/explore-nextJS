@@ -753,7 +753,7 @@ input:focus {
   .discord_widget{
     display: flex;
     position: relative;
-    left: 5px;
+    left: 0px;
     /* right: 3%; */
     /* left: 600px; */
   }
@@ -762,20 +762,15 @@ input:focus {
     display: flex;
     position: relative;
     /* right: 50px; */
-    left: 20px;
+    left: 10px;
   }
   .discord_button {
     background: #738adb;
     position: absolute;
-    left: 40px;
+    left: 0px;
     /* right: 8%; */
   }
-  .discord_button:hover {
-    background: #627cd8;
-    position: absolute;
-    left:100px;
-    box-shadow: 1px 1px 5px #5369c4;
-  }
+
 }
 
 
@@ -810,6 +805,34 @@ input:focus {
   .discord_widget{
     display: flex;
     position: relative;
+    left: 0px;
+    /* right: 3%; */
+    /* left: 600px; */
+  }
+  
+  .discord_join_text{
+    display: flex;
+    position: relative;
+    /* right: 50px; */
+    left: 10px;
+  }
+  .discord_button {
+    background: #738adb;
+    position: absolute;
+    left: 30px;
+    /* right: 8%; */
+  }
+  
+}rgb(11, 11, 12)
+
+@media screen and (max-width: 475px) {
+  #l-selector-2,
+  #l-selector-1 {
+    display: none;
+  }
+  .discord_widget{
+    display: flex;
+    position: relative;
     left: 20px;
     /* right: 3%; */
     /* left: 600px; */
@@ -824,21 +847,8 @@ input:focus {
   .discord_button {
     background: #738adb;
     position: absolute;
-    left: 100px;
+    left: 0px;
     /* right: 8%; */
-  }
-  .discord_button:hover {
-    background: #627cd8;
-    position: absolute;
-    left:100px;
-    box-shadow: 1px 1px 5px #5369c4;
-  }
-}
-
-@media screen and (max-width: 475px) {
-  #l-selector-2,
-  #l-selector-1 {
-    display: none;
   }
 }
 
