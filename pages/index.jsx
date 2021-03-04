@@ -70,7 +70,7 @@ const Index = (props) => {
                   height: "500px",
                 }}
               >
-                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column discord_widget">
                   <div>
                     <iframe src="https://discord.com/widget?id=725628554875895829&theme=dark" width="350" height="500" allowtransparency="true" frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                   </div>
@@ -83,17 +83,17 @@ const Index = (props) => {
                   height: "500px",
                 }}
               >
-                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
+                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column discord_join_text">
                   <div>
                     <h3>
                       Join our Discord Server and be a part of our programming ecosystem!
                     </h3>
 
-                    <div className="mt-2">
+                    <div className="mt-2 ">
                        <a
                         href="https://discord.gg/uN6jXWqt3H"
                         target="_blank"
-                        className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
+                        className="btn bnt-lg cc-btn font-weight-bold text-light discord_button "
                       >
                         Discord Server
                       </a>

@@ -648,6 +648,22 @@ input:focus {
 .correct-option {
   background-color: rgba(17, 241, 36, 0.3);
 }
+/* Discord Widget css */
+.discord_widget{
+  display: flex;
+  position: relative;
+  right: 100px;
+  left: 600px;
+}
+
+.discord_join_text{
+  display: flex;
+  position: relative;
+  right: 500px;
+}
+.discord_button {
+  background: #738adb;
+}
 
 @media screen and (max-width: 900px) {
   .resp {
