@@ -663,6 +663,8 @@ input:focus {
 }
 .discord_button {
   background: #738adb;
+  position: absolute;
+  left:100px;
 }
 
 @media screen and (max-width: 900px) {
