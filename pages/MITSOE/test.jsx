@@ -57,7 +57,7 @@ const ProblemIndex = () => {
           />
           <WinnerCard
             name="Advanced Java Python C++ MCQs"
-            image="https://miro.medium.com/max/5442/1*KpDOKMFAgDWaGTQHL0r70g.png"
+            image="https://www.simplilearn.com/ice9/free_resources_article_thumb/Best-Programming-Languages-to-Start-Learning-Today.jpg"
             bio="Start Solving"
             link="http://codestrike.in/MITSOE/adv-java-py-cpp"
           />
