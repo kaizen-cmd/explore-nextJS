@@ -61,6 +61,12 @@ const ProblemIndex = () => {
             bio="Start Solving"
             link="http://codestrike.in/MITSOE/adv-java-py-cpp"
           />
+          <WinnerCard
+            name="Basics of DBMS"
+            image="https://s3-us-west-2.amazonaws.com/a.techdemand.io/wp-content/uploads/2020/07/07184901/dbms-1024x631.jpg"
+            bio="Start Solving"
+            link="http://codestrike.in/MITSOE/basics-dbms"
+          />
         </div>
       </div>
     </BaseLayout>
