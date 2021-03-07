@@ -62,96 +62,86 @@ const Index = (props) => {
 
       <div className="container mb-2 mt-5">
         <div className="row mt-5">
-        <div className="container">
-          <div className="row mt-5">
-            <div className="col-lg-6">
-              <div
-                style={{
-                  height: "500px",
-                }}
-              >
-                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column discord_widget">
-                  <div>
-                    <iframe src="https://discord.com/widget?id=725628554875895829&theme=dark" width="350" height="500" allowtransparency="true" frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          <div className="container">
+            <div className="row mt-5">
+              <div className="col-lg-6">
+                <div
+                  style={{
+                    height: "500px",
+                  }}
+                >
+                  <div
+                    className={`d-flex h-100 align-items-center w-100 justify-content-center flex-column`}
+                  >
+                    <div>
+                      <iframe
+                        src="https://discord.com/widget?id=725628554875895829&theme=dark"
+                        width="350"
+                        height="500"
+                        allowtransparency="true"
+                        frameBorder="0"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-6">
-              <div
-                style={{
-                  height: "500px",
-                }}
-              >
-                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column discord_join_text">
-                  <div>
-                    <h3>
-                      Join our Discord Server and be a part of our programming ecosystem!
-                    </h3>
-
-                    <div className="mt-2 ">
-                       <a
-                        href="https://discord.gg/uN6jXWqt3H"
-                        target="_blank"
-                        className="btn bnt-lg cc-btn font-weight-bold text-light discord_button "
-                      >
-                        Discord Server
-                      </a>
+              <div className="col-lg-6">
+                <div
+                  style={{
+                    height: "500px",
+                    marginBottom: "190px",
+                  }}
+                >
+                  <div
+                    className={`d-flex h-100 align-items-center w-100 justify-content-center flex-column`}
+                  >
+                    <div>
+                      <h3>
+                        Join our Discord Server and be a part of our programming
+                        ecosystem!
+                      </h3>
+                      <div className="mt-2 ">
+                        <a
+                          href="https://discord.gg/uN6jXWqt3H"
+                          target="_blank"
+                          className="btn bnt-lg cc-btn font-weight-bold text-light discord_button "
+                        >
+                          Discord Server
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <br/>
-        </div>
-          {loggedIn ? (
-            <>
-              <div className="col-lg-6">
-                <div className="pt-5">
-                  <h3>
-                    Use CodeStrike to host your own contests! Our platform is
-                    open for hiring purpose, creating personal contests and much
-                    more!
-                  </h3>
-                  <button
-                    className="btn btn-success mt-4 mb-2 cc-btn"
-                    onClick={() => {
-                      loggedIn
-                        ? router.push("/contest/admin")
-                        : document.getElementById("login-btn").click();
-                    }}
-                  >
-                    Create Contest Now!
-                  </button>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <img
-                  src="/images/contest.svg"
-                  alt="codestrike-contest"
-                  className="mw-100"
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              {/* <CourseCard6
-                key="1"
-                title="Problem Solving"
-                description="Try solving these problems to level up your problem-solving skills using anyone of the three languages C++, Java, Python. Make that you pass all the test cases. For discussions on problems join our Discord Server."
-                link="/codeportal/problem-solving"
-              />
-              <CourseCard6
-                key="2"
-                title="Java"
-                description="Basic java problems straight from the Java basics. Try solving these problems to learn control flow, conditional statements and the syntax of Java language. Be sure to select the java language from the drop-down."
-                link="/codeportal/java"
-              /> */}
-            </>
-          )}
+          <div></div>
+          <div className="col-lg-6">
+            <div className="pt-5">
+              <h3>
+                Use CodeStrike to host your own contests! Our platform is open
+                for hiring purpose, creating personal contests and much more!
+              </h3>
+              <button
+                className="btn btn-success mt-4 mb-2 cc-btn"
+                onClick={() => {
+                  loggedIn
+                    ? router.push("/contest/admin")
+                    : document.getElementById("login-btn").click();
+                }}
+              >
+                Create Contest Now!
+              </button>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <img
+              src="/images/contest.svg"
+              alt="codestrike-contest"
+              className="mw-100"
+            />
+          </div>
         </div>
       </div>
       <div>
@@ -183,8 +173,10 @@ const Index = (props) => {
                 <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
                   <div>
                     <h3>
-                      Want to read about the latest trends in tech and more?<br/> Head over to CodeStrike Blogs!<br/>
-                        Contact us if you want to contribute.
+                      Want to read about the latest trends in tech and more?
+                      <br /> Head over to CodeStrike Blogs!
+                      <br />
+                      Contact us if you want to contribute.
                     </h3>
                   </div>
                   <div className="mt-2">
@@ -199,24 +191,6 @@ const Index = (props) => {
                 </div>
               </div>
             </div>
-            {/* <div className="col-lg-6">
-              <div
-                style={{
-                  height: "500px",
-                }}
-              >
-                <div className="d-flex h-100 align-items-center w-100 justify-content-center flex-column">
-
-                  <img
-                    src="/images/blog.svg"
-                    alt="codestrike-blog"
-                    style={{
-                      maxWidth: "90%",
-                    }}
-                  />
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
@@ -249,16 +223,6 @@ const Index = (props) => {
         </div>
       </div>
       <br />
-      {/* <div className="mt-5 mb-3">
-        <div className="container px-3">
-          <div className="d-flex justify-content-start">
-            <div className="mr-2">
-              <h3>CodeStrike Projects</h3>
-            </div>
-            <hr style={{ width: "75%" }} />
-          </div>
-        </div>
-      </div> */}
       <div className="mid-container pb-5">
         <div className="container">
           <div className="row">
