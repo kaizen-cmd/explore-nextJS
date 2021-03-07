@@ -67,6 +67,12 @@ const ProblemIndex = () => {
             bio="Start Solving"
             link="http://codestrike.in/MITSOE/basics-dbms"
           />
+          <WinnerCard
+            name="Basics of OS and CN"
+            image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
+            bio="Start Solving"
+            link="http://codestrike.in/MITSOE/basics-os-cn"
+          />
         </div>
       </div>
     </BaseLayout>
