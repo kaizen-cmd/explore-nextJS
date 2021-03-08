@@ -73,6 +73,12 @@ const ProblemIndex = () => {
             bio="Start Solving"
             link="http://codestrike.in/MITSOE/basics-os-cn"
           />
+          <WinnerCard
+            name="Web Technology"
+            image="https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/technology-stack-for-web-application-main.jpg"
+            bio="Start Solving"
+            link="http://codestrike.in/MITSOE/web-tech"
+          />
         </div>
       </div>
     </BaseLayout>
