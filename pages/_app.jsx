@@ -116,7 +116,7 @@ export default function MyApp({ Component, pageProps }) {
           }}
         />
         <script
-          data-ad-client="ca-pub-8760818264352491"
+          data-ad-client="ca-pub-7061616100866138"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
