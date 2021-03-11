@@ -133,7 +133,6 @@ const Re = (props) => {
               style={{
                 wordBreak: "break-word",
                 wordWrap: "break-word",
-                whiteSpace: "break-spaces",
               }}
             >
               <h1
