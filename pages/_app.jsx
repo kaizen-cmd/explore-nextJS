@@ -116,6 +116,21 @@ export default function MyApp({ Component, pageProps }) {
           }}
         />
         <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/604ce556f7ce1827092fbfd1/1f0m5vn7i';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+              })();
+          `,
+          }}
+        />
+        <script
           data-ad-client="ca-pub-7061616100866138"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
@@ -131,29 +146,6 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <NavBar />
       <Component {...pageProps} />
-
-      <button
-        id="discord-btn"
-        className="animate__animated animate__pulse animate__slow animate__infinite"
-      >
-        <a href="https://discord.gg/aFrUQnJ" target="_blank">
-          <img src="/images/discord.png" alt="codestrike-discord" />
-          <div
-            style={{
-              width: "23px",
-              height: "23px",
-              backgroundColor: "orangered",
-              borderRadius: "50%",
-              display: "inline-block",
-              position: "absolute",
-              right: "0px",
-              color: "white",
-            }}
-          >
-            1
-          </div>
-        </a>
-      </button>
       <Footer />
     </>
   );
