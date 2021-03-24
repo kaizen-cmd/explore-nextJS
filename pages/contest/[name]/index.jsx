@@ -61,14 +61,7 @@ const PsIndex = () => {
                   borderBottom: "2px solid grey",
                 }}
               />
-              <div
-                style={{
-                  wordWrap: "break-word",
-                  whiteSpace: "pre-wrap",
-                }}
-              >
-                {parser(desc)}
-              </div>
+              <div>{parser(desc)}</div>
             </div>
             <div className="col-lg-6 mb-5 pt-5 px-0">
               <table className="table ps-table">

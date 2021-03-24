@@ -538,12 +538,18 @@ textarea {
 
 .prob-container {
   height: 598px;
+  background-color: white;
+  color: black;
 }
 
-.op-container,
-.prob-container {
+.prob-container hr {
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.op-container {
   background-color: #246c7a;
-  color: white;
+  color: white !important;
 }
 
 .op-container,
@@ -649,14 +655,14 @@ input:focus {
   background-color: rgba(17, 241, 36, 0.3);
 }
 /* Discord Widget css */
-.discord_widget{
+.discord_widget {
   display: flex;
   position: relative;
   right: 100px;
   left: 600px;
 }
 
-.discord_join_text{
+.discord_join_text {
   display: flex;
   position: relative;
   right: 500px;
@@ -664,13 +670,13 @@ input:focus {
 .discord_button {
   background: #738adb;
   position: absolute;
-  left:100px;
+  left: 100px;
   box-shadow: 0px 0px 5px #738dec;
 }
 .discord_button:hover {
   background: #627cd8;
   position: absolute;
-  left:100px;
+  left: 100px;
   box-shadow: 1px 1px 5px #5369c4;
 }
 
@@ -750,15 +756,15 @@ input:focus {
   .profile-container-edit input {
     width: 90%;
   }
-  .discord_widget{
+  .discord_widget {
     display: flex;
     position: relative;
     left: 0px;
     /* right: 3%; */
     /* left: 600px; */
   }
-  
-  .discord_join_text{
+
+  .discord_join_text {
     display: flex;
     position: relative;
     /* right: 50px; */
@@ -770,9 +776,7 @@ input:focus {
     left: 0px;
     /* right: 8%; */
   }
-
 }
-
 
 .team-card:hover {
   box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.15) !important;
@@ -783,7 +787,6 @@ input:focus {
   cursor: pointer;
 }
 
-
 @media screen and (max-width: 993px) {
   .active {
     background-color: white;
@@ -793,7 +796,7 @@ input:focus {
     flex-direction: column !important;
   }
   .top-contest-box .d-flex {
-    width: 100% !important
+    width: 100% !important;
   }
   .active a {
     color: #0070f3;
@@ -802,15 +805,15 @@ input:focus {
   #search-btn {
     display: inline !important;
   }
-  .discord_widget{
+  .discord_widget {
     display: flex;
     position: relative;
     left: 0px;
     /* right: 3%; */
     /* left: 600px; */
   }
-  
-  .discord_join_text{
+
+  .discord_join_text {
     display: flex;
     position: relative;
     /* right: 50px; */
@@ -822,23 +825,21 @@ input:focus {
     left: 30px;
     /* right: 8%; */
   }
-  
-}rgb(11, 11, 12)
-
-@media screen and (max-width: 475px) {
+}
+rgb(11, 11, 12) @media screen and (max-width: 475px) {
   #l-selector-2,
   #l-selector-1 {
     display: none;
   }
-  .discord_widget{
+  .discord_widget {
     display: flex;
     position: relative;
     left: 20px;
     /* right: 3%; */
     /* left: 600px; */
   }
-  
-  .discord_join_text{
+
+  .discord_join_text {
     display: flex;
     position: relative;
     /* right: 50px; */
