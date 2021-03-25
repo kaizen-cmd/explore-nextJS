@@ -13,7 +13,7 @@ const InPSindex = () => {
       <PaleBlueContainer text="MITSOE MCQ Test"></PaleBlueContainer>
       <div className="container">
         <div className="row mb-4">
-          <WinnerCard
+          {/* <WinnerCard
             name="InfyTQ Python Test 1"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
             bio="Start Solving"
@@ -24,7 +24,7 @@ const InPSindex = () => {
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
             bio="Start Solving"
             link="https://exam.codestrike.in/infytq-java-test-1"
-          ></WinnerCard>
+          ></WinnerCard> */}
           <WinnerCard
             name="InfyTQ Python Test 2"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
