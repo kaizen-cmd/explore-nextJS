@@ -120,7 +120,7 @@ const Dashboard = (props) => {
 
                   </div>
 
-                    <div>
+                    {/* <div>
                       <h3>
                        Final Year MIT SOE Students please Click Here for the MCQ Test 
                       </h3>
@@ -133,7 +133,7 @@ const Dashboard = (props) => {
                         MCQ Test
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </>
               )}
             </div>
