@@ -113,8 +113,12 @@ const Profile = () => {
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <select value={branchname} onChange={(e) => setBranchname(e.currentTarget.value)}>
                     <option value=" Select Branch">Select Branch</option>
-                    <option value="CSE">CSE</option>
+                    <option value="Computer">CSE</option>
                     <option value="IT">IT</option>
+                    <option value="ECE">ECE</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Aerospace">Aerospace</option>
                   </select>
                 </span>
               </div>

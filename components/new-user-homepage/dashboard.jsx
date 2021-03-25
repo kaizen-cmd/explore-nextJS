@@ -119,21 +119,20 @@ const Dashboard = (props) => {
                     </div>
 
                   </div>
-
-                    {/* <div>
+                    <div>
                       <h3>
-                       Final Year MIT SOE Students please Click Here for the MCQ Test 
+                       Third Year MIT SOE Students please Click Here for the MCQ Test 
                       </h3>
                     <div className="mt-2">
                        <a
-                        href="https://codestrike.in/MITSOE/test"
+                        href="https://codestrike.in/MITSOE/TY/ty-test"
                         target="_blank"
                         className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
                       >
                         MCQ Test
                       </a>
                     </div>
-                  </div> */}
+                  </div>
                 </>
               )}
             </div>

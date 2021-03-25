@@ -79,7 +79,7 @@ const Register = () => {
                 type="text"
                 placeholder="Username(> 4 chars)"
                 id="username"
-                maxLength="150"
+                maxLength="15"
                 onBlur={() => {
                   axios
                     .post(`${URL}/accounts/validate/`, {
