@@ -114,7 +114,7 @@ const Login = (props) => {
             }}
           >
             <div>
-              <input type="text" placeholder="Username" id="username" maxLength="30"/>
+              <input type="text" placeholder="Username 8 characters" id="username" maxLength="30"/>
             </div>
             <div>
               <input type="password" placeholder="Password" id="password" maxLength="16"/>
