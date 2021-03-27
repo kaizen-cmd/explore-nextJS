@@ -26,16 +26,16 @@ const InPSindex = () => {
             link="https://exam.codestrike.in/infytq-java-test-1"
           ></WinnerCard> */}
           <WinnerCard
-            name="InfyTQ Python Test 3"
+            name="InfyTQ Python Test 4"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
             bio="Start Solving"
-            link="https://exam.codestrike.in/infytq-python-test-3"
+            link="https://exam.codestrike.in/infytq-python-test-4"
           ></WinnerCard>
           <WinnerCard
-            name="InfyTQ Java Test 3"
+            name="InfyTQ Java Test 4"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
             bio="Start Solving"
-            link="https://exam.codestrike.in/infytq-java-test-day-3"
+            link="https://exam.codestrike.in/infytq-java-test-day-4"
           ></WinnerCard>
         </div>
       </div>
