@@ -4,6 +4,7 @@ import URL from "../components/url";
 import Footer from "../components/common/footer";
 import Head from "next/head";
 import NavBar from "../components/common/navbar";
+import Bill from "../components/bill";
 
 // This default export is required in a new `pages/_app.js` file.
 import { useState, useEffect } from "react";
@@ -54,6 +55,7 @@ export default function MyApp({ Component, pageProps }) {
       }
     }
   }, []);
+  return <Bill />;
   return (
     <>
       <Head>

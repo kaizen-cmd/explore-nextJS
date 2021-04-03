@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+#bill-exceed {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   font-family: "Lato", sans-serif;
   overflow-x: hidden;
@@ -826,7 +834,7 @@ input:focus {
     /* right: 8%; */
   }
 }
-rgb(11, 11, 12) @media screen and (max-width: 475px) {
+@media screen and (max-width: 475px) {
   #l-selector-2,
   #l-selector-1 {
     display: none;
