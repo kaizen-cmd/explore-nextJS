@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
-import BaseLayout from "../../../components/base_layout";
-import { loggedIn } from "../../_app";
+import BaseLayout from "../../components/base_layout";
+import { loggedIn } from "../_app";
 
-const Cform = (props) => {
+const GoogleForm = ({form_link}) => {
   useEffect(() => {
     if (!loggedIn) {
       setTimeout(() => {
@@ -24,7 +24,7 @@ const Cform = (props) => {
           <div className="d-flex justify-content-center">
             {loggedIn && (
               <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSd8MmfdfdIQk2ZC3z5WT26WXjJGkX8x5UU-M6Z9CKBFRz2Byw/viewform?embedded=true"
+                src={form_link}
                 width="1280"
                 height="960"
                 frameBorder="0"
@@ -41,4 +41,4 @@ const Cform = (props) => {
   );
 };
 
-export default Cform;
+export default GoogleForm;
