@@ -16,27 +16,27 @@ const InPSindex = () => {
           <WinnerCard
             name="MCQ Pretest - C language"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
-            bio="Start Solving"
+            bio="Click Here"
             link="https://exam.codestrike.in/mcq-pretest"
           ></WinnerCard>
           <WinnerCard
             name="DBMS Session 1 & 2 MCQ Test"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
-            bio="Start Solving"
+            bio="Click Here"
             link="https://exam.codestrike.in/dbms-session-1-and-2-mcq"
           ></WinnerCard>
-          {/* <WinnerCard
-            name="InfyTQ Python Test 6"
+          <WinnerCard
+            name="MCQ Test Session 1 & 2"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
-            bio="Start Solving"
-            link="https://exam.codestrike.in/infytq-python-test-6"
+            bio="Click Here"
+            link="https://exam.codestrike.in/mcq-test-session-1-2"
           ></WinnerCard>
           <WinnerCard
-            name="InfyTQ Java Test 6"
+            name="MCQ Test [April 12 Session]"
             image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
-            bio="Start Solving"
-            link="https://exam.codestrike.in/infytq-java-test-day-6"
-          ></WinnerCard> */}
+            bio="Click Here"
+            link="https://exam.codestrike.in/mcq-test-april-12-session"
+          ></WinnerCard>
         </div>
       </div>
     </BaseLayout>
