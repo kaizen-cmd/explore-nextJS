@@ -1,18 +1,9 @@
-import React, { useEffect } from "react";
-import Head from "next/head";
-import BaseLayout from "../../components/base_layout";
-import { loggedIn } from "../_app";
+
+import parser from "html-react-parser"
 
 const ExamSlug = (props) => {
   return (
-    <BaseLayout>
-      <Head>
-          <div>
-              Hello
-          </div>
-        
-      </Head>
-    </BaseLayout>
+   <h1>Hello</h1>
   );
 };
 
