@@ -4,7 +4,9 @@ import Head from "next/head";
 
 const examSlug = () => {
     return(
+        <div>
         <head>Hello</head>
+        </div>
     )
 }
 
