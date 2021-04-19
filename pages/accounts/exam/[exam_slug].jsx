@@ -1,66 +1,78 @@
 import axios from "axios";
-import parser from "html-react-parser"
+import parser from "html-react-parser";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import BaseLayout from "../../../components/base_layout";
+import URL from "../../../components/url";
 
-const ExamSlug = (props) => {
+const ExamSlug = () => {
+  const router = useRouter();
+  const [mcqObjs, setMcqObjs] = useState([]);
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      router.push("/");
+    } else {
+      var link = document.location.href.split("/");
+      getQuestions(link[5]);
+    }
+  }, []);
+
+  async function getQuestions(exam_slug) {
+    const res = await axios.get(
+      `${URL}/mcqexam/user/attempted-exams/${exam_slug}/`,
+      {
+        headers: { Authorization: localStorage.getItem("token") },
+      }
+    );
+    if (res.data !== "No exam found") {
+      setMcqObjs(convertObjectToArray(res.data));
+    } else {
+      router.push("/");
+    }
+  }
+
+  function convertObjectToArray(mcqObjs = {}) {
+    var arr = [];
+    if (mcqObjs !== {}) {
+      for (const obj in mcqObjs) {
+        var mcq = {};
+        mcq["question"] = obj;
+        mcq["answers"] = mcqObjs[obj];
+        arr.push(mcq);
+      }
+    }
+    return arr;
+  }
+
   return (
     <BaseLayout>
-
-    <div 
-      style={{
-        border: "1px solid black",
-        marginTop: "3%",
-        marginBottom: "3%",
-        marginLeft: "20%",
-        marginRight: "20%",
-        borderRadius: '5px',
-      }}>
-        {/* {props.mcq_objs.map((mcq) =>  */}
-          <div
-            style={{
-              border: "1px solid black",
-              margin: "5%",
-              borderRadius: '5px',
-              backgroundColor: "#f1f2f6"
-            }}>
-              <div 
-                style={{
-                  margin: "3%",
-                  marginBottom: "0%",
-                  fontSize: "105%",
-                  fontWeight: "600",
-                }}>
-                Q. Runtime polymorphism feature in java isQ. Runtime polymorphism feature in java is
+      <div style={{ margin: "50px auto", width: "50%" }}>
+        {mcqObjs.map((question, index) => {
+          return (
+            <div
+              key={index}
+              style={{
+                marginBottom: 50,
+                backgroundColor: "gray",
+                padding: 20,
+              }}
+            >
+              <div>
+                <strong>Q{index + 1}.</strong>
+                {parser(question.question)}
               </div>
-
-              <div 
-                style={{
-                  marginBottom: "3%",
-                  marginLeft: "3%",
-                  marginTop: "1%",
-                  fontSize: "100%",
-                  fontWeight: "500",
-                }}>
-                Ans: Hello World
+              <div>
+                <strong>Answer:</strong>
+                {question.answers.map((answer, index) => {
+                  return <div key={index}>{answer}</div>;
+                })}
               </div>
-          </div> 
-        {/* )} */}
-    </div>
-    
+            </div>
+          );
+        })}
+      </div>
     </BaseLayout>
   );
 };
 
 export default ExamSlug;
-
-ExamSlug.getInitialProps = async (ctx) => {
-  const auth = {
-    headers: {
-      'Authorization': "Token c386ea9c041d4ba6f070dc05fa82ec328c2b85ec"
-    }
-  }
-  const res = await axios.get('http://api.codestrike.in/mcqexam/user/attempted-exams/infytq-java-test-1/', auth);
-  return {
-    mcq_objs: res.data
-  };
-};

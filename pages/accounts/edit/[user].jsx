@@ -7,6 +7,7 @@ import FormData from "form-data";
 import { useRouter } from "next/router";
 import { setDot, setPp } from "../../_app";
 import SmLoader from "../../../components/common/sm-loader";
+import WinnerCard from "../../../components/new-user-homepage/winner-card";
 
 const Profile = () => {
   const [bio, setBio] = useState("");
@@ -22,6 +23,7 @@ const Profile = () => {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [points, setPoints] = useState({});
+  const [attemptedExams, setAttemptedExams] = useState([]);
   const router = useRouter();
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -44,8 +46,14 @@ const Profile = () => {
           setUsername(profile.username);
           setCollegename(profile.college_name);
           setBranchname(profile.branch_name);
-          setYearofStudy(profile.year_of_study)
+          setYearofStudy(profile.year_of_study);
         });
+
+      axios
+        .get(`${URL}//mcqexam/user/attempted-exams/`, {
+          headers: { Authorization: localStorage.getItem("token") },
+        })
+        .then((res) => setAttemptedExams(res.data));
     } else {
       router.push("/");
     }
@@ -57,15 +65,14 @@ const Profile = () => {
       </Head>
       <div className="container profile-container profile-container-edit">
         <div className="row">
-          <div className="col-lg-4 d-flex flex-column align-items-center mb-0">
-          </div>
+          <div className="col-lg-4 d-flex flex-column align-items-center mb-0"></div>
           <div className="col-lg-8">
             <div className="d-flex flex-column mt-4">
               <div>
                 <h5>Profile</h5>
               </div>
               <div>
-                First Name:{" "} 
+                First Name:{" "}
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <input
@@ -80,7 +87,7 @@ const Profile = () => {
               </div>
               <br />
               <div>
-                Last Name:{" "} 
+                Last Name:{" "}
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <input
@@ -95,13 +102,18 @@ const Profile = () => {
               </div>
               <br />
               <div>
-                College Name:{" "} 
+                College Name:{" "}
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  <select value={collegename} onChange={(e) => setCollegename(e.currentTarget.value)}>
-                    <option value="select colege name">Select College Name</option>
+                  <select
+                    value={collegename}
+                    onChange={(e) => setCollegename(e.currentTarget.value)}
+                  >
+                    <option value="select colege name">
+                      Select College Name
+                    </option>
                     <option value="MIT SOE">MIT SOE</option>
-                    <option value="MIT COE">MIT COE</option> 
+                    <option value="MIT COE">MIT COE</option>
                     <option value="MIT AOE">MIT AOE</option>
                   </select>
                 </span>
@@ -111,7 +123,10 @@ const Profile = () => {
                 Branch / Dept:{" "}
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  <select value={branchname} onChange={(e) => setBranchname(e.currentTarget.value)}>
+                  <select
+                    value={branchname}
+                    onChange={(e) => setBranchname(e.currentTarget.value)}
+                  >
                     <option value=" Select Branch">Select Branch</option>
                     <option value="Computer">CSE</option>
                     <option value="IT">IT</option>
@@ -124,21 +139,21 @@ const Profile = () => {
               </div>
               <br />
               <div>
-                Year of Study:{" "}
-                <span>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                </span>
-                  <select value={yearofstudy} onChange={(e) => setYearofStudy(e.currentTarget.value)}>
-                    <option value="Year of Study">Select Year of Study</option>
-                    <option value="FY">FY</option>
-                    <option value="SY">SY</option>
-                    <option value="TY">TY</option>
-                    <option value="Final Year">Final Year</option>
-                  </select>
+                Year of Study: <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <select
+                  value={yearofstudy}
+                  onChange={(e) => setYearofStudy(e.currentTarget.value)}
+                >
+                  <option value="Year of Study">Select Year of Study</option>
+                  <option value="FY">FY</option>
+                  <option value="SY">SY</option>
+                  <option value="TY">TY</option>
+                  <option value="Final Year">Final Year</option>
+                </select>
               </div>
               <br />
               <div>
-                Roll Number  :{"   "}
+                Roll Number :{"   "}
                 <span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <input
@@ -218,11 +233,11 @@ const Profile = () => {
                       collegename === ""
                         ? ""
                         : formData.append("college_name", collegename);
-                      
+
                       branchname === ""
                         ? ""
                         : formData.append("branch_name", branchname);
-                      
+
                       yearofstudy === ""
                         ? ""
                         : formData.append("year_of_study", yearofstudy);
@@ -235,10 +250,8 @@ const Profile = () => {
                         ? ""
                         : formData.append("github_link", ghlink);
 
-                      rollno === ""
-                        ? ""
-                        : formData.append("roll_no",rollno);
-                      
+                      rollno === "" ? "" : formData.append("roll_no", rollno);
+
                       linlink === "" && url.test(linlink) !== true
                         ? ""
                         : formData.append("linkedin_link", linlink);
@@ -278,6 +291,30 @@ const Profile = () => {
             </div>
           </div>
         </div>
+        <h5>MCQ Exam history</h5>
+        <div className="d-flex">
+          {attemptedExams.map((exam, index) => {
+            return (
+              <WinnerCard
+                key={index}
+                link={`/accounts/exam/${exam.slug}/`}
+                bio={
+                  <div>
+                    <p>{exam.title}</p>
+                    <p>
+                      Score: {exam.scored_marks} / {exam.max_score}
+                    </p>
+                    <p>View Solution</p>
+                  </div>
+                }
+                image={""}
+                newPage={false}
+              />
+            );
+          })}
+        </div>
+        <br />
+        <br />
       </div>
     </BaseLayout>
   );

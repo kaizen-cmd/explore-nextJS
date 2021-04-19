@@ -1,6 +1,14 @@
 import Link from "next/link";
 
-const WinnerCard = ({ name, image, bio, is_win, link, isCat }) => {
+const WinnerCard = ({
+  name,
+  image,
+  bio,
+  is_win,
+  link,
+  isCat,
+  newPage = true,
+}) => {
   return (
     <>
       {is_win ? (
@@ -35,7 +43,7 @@ const WinnerCard = ({ name, image, bio, is_win, link, isCat }) => {
               </div>
               <a
                 href={link}
-                target="_blank"
+                target={newPage && "_blank"}
                 style={{
                   textDecoration: "none",
                 }}
