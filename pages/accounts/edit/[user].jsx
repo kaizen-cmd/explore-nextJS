@@ -65,8 +65,7 @@ const Profile = () => {
       </Head>
       <div className="container profile-container profile-container-edit">
         <div className="row">
-          <div className="col-lg-4 d-flex flex-column align-items-center mb-0"></div>
-          <div className="col-lg-8">
+          <div className="col-lg-12">
             <div className="d-flex flex-column mt-4">
               <div>
                 <h5>Profile</h5>

@@ -513,7 +513,7 @@ textarea {
   box-shadow: inset 0px 0px 6px rgba(0, 118, 255, 0.3);
   outline: none;
   border: none;
-  color: blue;
+  color: rgb(2, 2, 12);
   font-weight: bold;
   height: 30px;
   width: 60%;

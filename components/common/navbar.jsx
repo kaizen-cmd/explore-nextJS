@@ -286,7 +286,7 @@ const NavBar = () => {
                             as={`/accounts/edit/${user}/`}
                           >
                             <a className="nav-link">
-                              Edit Profile{" "}
+                              My Profile{" "}
                               {dot ? (
                                 <div className="d-inline-block text-light bg-danger px-1 rounded">
                                   Pending
