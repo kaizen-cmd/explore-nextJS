@@ -37,6 +37,31 @@ const InPSindex = () => {
             bio="Click Here"
             link="https://exam.codestrike.in/mcq-test-april-12-session"
           ></WinnerCard>
+
+          <WinnerCard
+            name="DBMS Session 3"
+            image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
+            bio="Click Here"
+            link="https://exam.codestrike.in/dbms-session-3"
+          ></WinnerCard>
+          <WinnerCard
+            name="DBMS Session 4"
+            image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
+            bio="Click Here"
+            link="https://exam.codestrike.in/dbms-session-4"
+          ></WinnerCard>
+          <WinnerCard
+            name="DBMS Session 5"
+            image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
+            bio="Click Here"
+            link="https://exam.codestrike.in/dbms-session-5"
+          ></WinnerCard>
+          <WinnerCard
+            name="MCQ Test [April 19th Session]"
+            image="https://www.tutorialspoint.com/svg/images/questions_and_answers.png"
+            bio="Click Here"
+            link="https://exam.codestrike.in/mcq-test-19th-april-session"
+          ></WinnerCard>
         </div>
       </div>
     </BaseLayout>
