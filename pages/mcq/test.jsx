@@ -1,8 +1,8 @@
 import Head from "next/head";
-import PaleBlueContainer from "../../../components/miscellaneous/pale-blue-container";
+import PaleBlueContainer from "../../components/miscellaneous/pale-blue-container";
 // import URL from "../../components/url";
-import BaseLayout from "../../../components/base_layout";
-import WinnerCard from "../../../components/new-user-homepage/winner-card";
+import BaseLayout from "../../components/base_layout";
+import WinnerCard from "../../components/new-user-homepage/winner-card";
 import { useState,useEffect } from "react";
 import axios from "axios";
 

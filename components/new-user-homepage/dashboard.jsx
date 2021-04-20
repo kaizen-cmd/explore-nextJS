@@ -125,9 +125,10 @@ const Dashboard = (props) => {
                       </h3>
                     <div className="mt-2">
                        <a
-                        href="https://codestrike.in/MITSOE/TY/ty-test"
+                        href="https://codestrike.in/mcq/test"
                         target="_blank"
                         className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
+                        newPage={false}
                       >
                         MCQ Test
                       </a>

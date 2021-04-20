@@ -111,9 +111,9 @@ const Profile = () => {
                     <option value="select colege name">
                       Select College Name
                     </option>
-                    <option value="MITSOE">MITSOE</option>
-                    <option value="MITCOE">MITCOE</option>
-                    <option value="MITAOE">MITAOE</option>
+                    <option value="MITSOE">MIT SOE</option>
+                    <option value="MITCOE">MIT COE</option>
+                    <option value="MITAOE">MIT AOE</option>
                   </select>
                 </span>
               </div>
@@ -127,12 +127,12 @@ const Profile = () => {
                     onChange={(e) => setBranchname(e.currentTarget.value)}
                   >
                     <option value=" Select Branch">Select Branch</option>
-                    <option value="CSE">CSE</option>
+                    <option value="Computer">CSE</option>
                     <option value="IT">IT</option>
                     <option value="ECE">ECE</option>
-                    <option value="MECH">MECH</option>
+                    <option value="Mechanical">Mechanical</option>
                     <option value="Civil">Civil</option>
-                    <option value="AERO">AERO</option>
+                    <option value="Aerospace">Aerospace</option>
                   </select>
                 </span>
               </div>
@@ -144,10 +144,10 @@ const Profile = () => {
                   onChange={(e) => setYearofStudy(e.currentTarget.value)}
                 >
                   <option value="Year of Study">Select Year of Study</option>
-                  <option value="FIRST">FIRST</option>
-                  <option value="SECOND">SECOND</option>
-                  <option value="THIRD">THIRD</option>
-                  <option value="FOURTH">FOURTH</option>
+                  <option value="FY">FY</option>
+                  <option value="SY">SY</option>
+                  <option value="TY">TY</option>
+                  <option value="Final Year">Final Year</option>
                 </select>
               </div>
               <br />
