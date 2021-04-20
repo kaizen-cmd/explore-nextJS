@@ -111,9 +111,9 @@ const Profile = () => {
                     <option value="select colege name">
                       Select College Name
                     </option>
-                    <option value="MIT SOE">MIT SOE</option>
-                    <option value="MIT COE">MIT COE</option>
-                    <option value="MIT AOE">MIT AOE</option>
+                    <option value="MITSOE">MIT SOE</option>
+                    <option value="MITCOE">MIT COE</option>
+                    <option value="MITAOE">MIT AOE</option>
                   </select>
                 </span>
               </div>
@@ -127,12 +127,12 @@ const Profile = () => {
                     onChange={(e) => setBranchname(e.currentTarget.value)}
                   >
                     <option value=" Select Branch">Select Branch</option>
-                    <option value="Computer">CSE</option>
+                    <option value="CSE">CSE</option>
                     <option value="IT">IT</option>
                     <option value="ECE">ECE</option>
-                    <option value="Mechanical">Mechanical</option>
+                    <option value="MECH">Mechanical</option>
                     <option value="Civil">Civil</option>
-                    <option value="Aerospace">Aerospace</option>
+                    <option value="AERO">Aerospace</option>
                   </select>
                 </span>
               </div>
@@ -144,10 +144,10 @@ const Profile = () => {
                   onChange={(e) => setYearofStudy(e.currentTarget.value)}
                 >
                   <option value="Year of Study">Select Year of Study</option>
-                  <option value="FY">FY</option>
-                  <option value="SY">SY</option>
-                  <option value="TY">TY</option>
-                  <option value="Final Year">Final Year</option>
+                  <option value="FIRST">FIRST</option>
+                  <option value="SECOND">SECOND</option>
+                  <option value="THIRD">THIRD</option>
+                  <option value="FOURTH">FOURTH</option>
                 </select>
               </div>
               <br />
