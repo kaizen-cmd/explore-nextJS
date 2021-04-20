@@ -111,9 +111,9 @@ const Profile = () => {
                     <option value="select colege name">
                       Select College Name
                     </option>
-                    <option value="MITSOE">MIT SOE</option>
-                    <option value="MITCOE">MIT COE</option>
-                    <option value="MITAOE">MIT AOE</option>
+                    <option value="MITSOE">MITSOE</option>
+                    <option value="MITCOE">MITCOE</option>
+                    <option value="MITAOE">MITAOE</option>
                   </select>
                 </span>
               </div>
@@ -130,9 +130,9 @@ const Profile = () => {
                     <option value="CSE">CSE</option>
                     <option value="IT">IT</option>
                     <option value="ECE">ECE</option>
-                    <option value="MECH">Mechanical</option>
+                    <option value="MECH">MECH</option>
                     <option value="Civil">Civil</option>
-                    <option value="AERO">Aerospace</option>
+                    <option value="AERO">AERO</option>
                   </select>
                 </span>
               </div>

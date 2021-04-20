@@ -121,7 +121,7 @@ const Dashboard = (props) => {
                   </div>
                     <div>
                       <h3>
-                       Third Year MIT SOE Students please Click Here for MCQ Test 
+                        My MCQ Test 
                       </h3>
                     <div className="mt-2">
                        <a
