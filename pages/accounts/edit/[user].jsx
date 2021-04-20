@@ -44,13 +44,13 @@ const Profile = () => {
           setLinlink(profile.linkedin_link);
           //setProfilePic(profile.profile_pic);
           setUsername(profile.username);
-          setCollegename(profile.college_name);
-          setBranchname(profile.branch_name);
-          setYearofStudy(profile.year_of_study);
+          setCollegename(profile.college_name.college_name);
+          setBranchname(profile.branch_name.branch_name);
+          setYearofStudy(profile.year_of_study.year_of_study);
         });
 
       axios
-        .get(`${URL}//mcqexam/user/attempted-exams/`, {
+        .get(`${URL}/mcqexam/user/attempted-exams/`, {
           headers: { Authorization: localStorage.getItem("token") },
         })
         .then((res) => setAttemptedExams(res.data));
@@ -108,7 +108,7 @@ const Profile = () => {
                     value={collegename}
                     onChange={(e) => setCollegename(e.currentTarget.value)}
                   >
-                    <option value="select colege name">
+                    <option value="select colege name" disabled>
                       Select College Name
                     </option>
                     <option value="MITSOE">MIT SOE</option>
@@ -126,13 +126,13 @@ const Profile = () => {
                     value={branchname}
                     onChange={(e) => setBranchname(e.currentTarget.value)}
                   >
-                    <option value=" Select Branch">Select Branch</option>
-                    <option value="Computer">CSE</option>
+                    <option value=" Select Branch" disabled>Select Branch</option>
+                    <option value="CSE">CSE</option>
                     <option value="IT">IT</option>
                     <option value="ECE">ECE</option>
-                    <option value="Mechanical">Mechanical</option>
-                    <option value="Civil">Civil</option>
-                    <option value="Aerospace">Aerospace</option>
+                    <option value="MECH">Mechanical</option>
+                    <option value="CIVIL">Civil</option>
+                    <option value="AERO">Aerospace</option>
                   </select>
                 </span>
               </div>
@@ -143,11 +143,11 @@ const Profile = () => {
                   value={yearofstudy}
                   onChange={(e) => setYearofStudy(e.currentTarget.value)}
                 >
-                  <option value="Year of Study">Select Year of Study</option>
-                  <option value="FY">FY</option>
-                  <option value="SY">SY</option>
-                  <option value="TY">TY</option>
-                  <option value="Final Year">Final Year</option>
+                  <option value="Year of Study" disabled>Select Year of Study</option>
+                  <option value="FIRST">FIRST</option>
+                  <option value="SECOND">SECOND</option>
+                  <option value="THIRD">THIRD</option>
+                  <option value="FOURTH">FOURTH</option>
                 </select>
               </div>
               <br />

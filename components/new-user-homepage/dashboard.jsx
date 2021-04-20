@@ -121,16 +121,15 @@ const Dashboard = (props) => {
                   </div>
                     <div>
                       <h3>
-                        My MCQ Test 
+                        Available MCQ Tests
                       </h3>
                     <div className="mt-2">
                        <a
-                        href="https://codestrike.in/mcq/test"
-                        target="_blank"
+                        href="https://codestrike.in/mcq/test/"
                         className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
                         newPage={false}
                       >
-                        MCQ Test
+                        Click here
                       </a>
                     </div>
                   </div>
