@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { setDot, setPp } from "../../_app";
 import SmLoader from "../../../components/common/sm-loader";
 import WinnerCard from "../../../components/new-user-homepage/winner-card";
+import Link from "next/link";
 
 const Profile = () => {
   const [bio, setBio] = useState("");
@@ -306,17 +307,15 @@ const Profile = () => {
             </div>
           </div>
         </div>
-
-         <div className="mt-2">
-            <a
-              href="https://codestrike.in/mcq/test/"
-                className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
-                  newPage={false}
-                >
-                  MCQ Exam
-            </a>
-          </div>
-        <br/>  
+        <br />
+        <div className="mt-2">
+          <h5>Available MCQ Exams</h5>
+          <Link href="https://codestrike.in/mcq/test/">
+            <a className="btn btn-md btn-primary px-5">Click here</a>
+          </Link>
+        </div>
+        <br />
+        <br />
         <h5>MCQ Exam history</h5>
         <div className="d-flex attempted-exams">
           {attemptedExams.map((exam, index) => {
