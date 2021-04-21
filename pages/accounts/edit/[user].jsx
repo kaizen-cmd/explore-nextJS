@@ -310,10 +310,9 @@ const Profile = () => {
          <div className="mt-2">
             <a
               href="https://codestrike.in/mcq/test/"
-                className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
-                  newPage={false}
+                className="btn bg-success text-light"
                 >
-                  MCQ Exam
+                  Available MCQ Exam
             </a>
           </div>
         <br/>  
