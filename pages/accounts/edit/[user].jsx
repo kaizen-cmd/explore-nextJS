@@ -307,7 +307,7 @@ const Profile = () => {
           </div>
         </div>
         <h5>MCQ Exam history</h5>
-        <div className="d-flex">
+        <div className="d-flex attempted-exams">
           {attemptedExams.map((exam, index) => {
             return (
               <WinnerCard
