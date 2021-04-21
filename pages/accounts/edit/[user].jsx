@@ -44,9 +44,21 @@ const Profile = () => {
           setLinlink(profile.linkedin_link);
           //setProfilePic(profile.profile_pic);
           setUsername(profile.username);
-          setCollegename(profile.college_name.college_name);
-          setBranchname(profile.branch_name.branch_name);
-          setYearofStudy(profile.year_of_study.year_of_study);
+          setCollegename(
+            profile.college_name
+              ? profile.college_name.college_name
+              : "Select College"
+          );
+          setBranchname(
+            profile.branch_name
+              ? profile.branch_name.branch_name
+              : "Select Branch"
+          );
+          setYearofStudy(
+            profile.year_of_study
+              ? profile.year_of_study.year_of_study
+              : "Select Year"
+          );
         });
 
       axios
@@ -108,8 +120,8 @@ const Profile = () => {
                     value={collegename}
                     onChange={(e) => setCollegename(e.currentTarget.value)}
                   >
-                    <option value="select colege name" disabled>
-                      Select College Name
+                    <option value="Select College" disabled>
+                      Select College
                     </option>
                     <option value="MITSOE">MIT SOE</option>
                     <option value="MITCOE">MIT COE</option>
@@ -126,7 +138,9 @@ const Profile = () => {
                     value={branchname}
                     onChange={(e) => setBranchname(e.currentTarget.value)}
                   >
-                    <option value=" Select Branch" disabled>Select Branch</option>
+                    <option value=" Select Branch" disabled>
+                      Select Branch
+                    </option>
                     <option value="CSE">CSE</option>
                     <option value="IT">IT</option>
                     <option value="ECE">ECE</option>
@@ -143,7 +157,9 @@ const Profile = () => {
                   value={yearofstudy}
                   onChange={(e) => setYearofStudy(e.currentTarget.value)}
                 >
-                  <option value="Year of Study" disabled>Select Year of Study</option>
+                  <option value="Select Year" disabled>
+                    Select Year
+                  </option>
                   <option value="FIRST">FIRST</option>
                   <option value="SECOND">SECOND</option>
                   <option value="THIRD">THIRD</option>
