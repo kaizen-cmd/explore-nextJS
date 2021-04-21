@@ -24,6 +24,9 @@ const ExamSlug = () => {
         headers: { Authorization: localStorage.getItem("token") },
       }
     );
+    if (res.data.res) {
+      router.push("/");
+    }
     if (res.data !== "No exam found") {
       setMcqObjs(convertObjectToArray(res.data));
     } else {
