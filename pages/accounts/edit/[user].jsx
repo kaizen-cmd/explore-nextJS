@@ -312,14 +312,18 @@ const Profile = () => {
             return (
               <WinnerCard
                 key={index}
-                link={`/accounts/exam/${exam.slug}/`}
+                link={exam.show_solution ? `/accounts/exam/${exam.slug}/` : ""}
                 bio={
                   <div>
                     <p>{exam.title}</p>
                     <p>
                       Score: {exam.scored_marks} / {exam.max_score}
                     </p>
-                    <p>View Solution</p>
+                    {exam.show_solution ? (
+                      <p>View Solution</p>
+                    ) : (
+                      <p>Solution Unavailable</p>
+                    )}
                   </div>
                 }
                 image={""}
