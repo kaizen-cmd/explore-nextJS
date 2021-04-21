@@ -245,15 +245,15 @@ const Profile = () => {
                         ? ""
                         : formData.append("first_name", firstname);
 
-                      collegename === ""
+                      collegename === "" || collegename === "Select College"
                         ? ""
                         : formData.append("college_name", collegename);
 
-                      branchname === ""
+                      branchname === "" || branchname === "Select Branch"
                         ? ""
                         : formData.append("branch_name", branchname);
 
-                      yearofstudy === ""
+                      yearofstudy === "" || yearofstudy === "Select Year"
                         ? ""
                         : formData.append("year_of_study", yearofstudy);
 
