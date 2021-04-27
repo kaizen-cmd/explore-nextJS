@@ -25,6 +25,7 @@ const Profile = () => {
   const [message, setMessage] = useState("");
   const [points, setPoints] = useState({});
   const [attemptedExams, setAttemptedExams] = useState([]);
+  const [attemptedContests, setAttemptedContests] = useState([]);
   const router = useRouter();
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -67,9 +68,19 @@ const Profile = () => {
           headers: { Authorization: localStorage.getItem("token") },
         })
         .then((res) => setAttemptedExams(res.data));
+
+      axios 
+        .get(`${URL}/codeportal/user-attempted-contests/`, {
+          headers: { Authorization: localStorage.getItem("token") },
+        })
+        .then((res) => {
+          setAttemptedContests(res.data.res);
+        })
+
     } else {
       router.push("/");
     }
+
   }, []);
   return (
     <BaseLayout navbarprop="profile">
@@ -342,8 +353,47 @@ const Profile = () => {
             );
           })}
         </div>
+        
         <br />
         <br />
+
+        <div className="mt-2">
+          <h5>Available Contests</h5>
+          <Link href="https://codestrike.in/mcq/test/">
+            <a className="btn btn-md btn-primary px-5">Click here</a>
+          </Link>
+        </div>
+        <br />
+        <br />
+        <h5>Attempted Contests</h5>
+        <div className="d-flex attempted-exams">
+          {attemptedContests.map((exam, index) => {
+            return (
+              <WinnerCard
+                key={index}
+                // link={exam.show_solution ? `/contest/${exam.slug}/` : ""}
+                bio={
+                  <div>
+                    <p>{exam.title}</p>
+                    <p>
+                      Score: {exam.score}
+                    </p>
+                    {/* {exam.show_solution ? (
+                      <p>View Solution</p>
+                    ) : (
+                      <p>Solution Unavailable</p>
+                    )} */}
+                  </div>
+                }
+                image={""}
+                newPage={false}
+              />
+            );
+          })}
+        </div>
+        
+        <br/>
+        <br/>
       </div>
     </BaseLayout>
   );
