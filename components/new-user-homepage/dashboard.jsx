@@ -119,13 +119,27 @@ const Dashboard = (props) => {
                     </div>
 
                   </div>
-                    <div>
+                    <div >
                       <h3>
                         Available MCQ Tests
                       </h3>
                     <div className="mt-2">
                        <a
-                        href="https://codestrike.in/mcq/test/"
+                        href="https://codestrike.in/exam/mcq-test/"
+                        className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
+                        newPage={false}
+                      >
+                        Click here
+                      </a>
+                    </div>
+                  
+                  
+                      <h3>
+                        Available Coding Tests
+                      </h3>
+                    <div className="mt-2">
+                       <a
+                        href="https://codestrike.in/exam/coding-test/"
                         className="btn bnt-lg cc-btn font-weight-bold bg-success text-light"
                         newPage={false}
                       >
