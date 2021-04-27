@@ -321,7 +321,7 @@ const Profile = () => {
         <br />
         <div className="mt-2">
           <h5>Available MCQ Exams</h5>
-          <Link href="https://codestrike.in/mcq/test/">
+          <Link href="https://codestrike.in/exam/mcq-test/">
             <a className="btn btn-md btn-primary px-5">Click here</a>
           </Link>
         </div>
@@ -359,7 +359,7 @@ const Profile = () => {
 
         <div className="mt-2">
           <h5>Available Contests</h5>
-          <Link href="https://codestrike.in/mcq/test/">
+          <Link href="https://codestrike.in/exam/coding-test">
             <a className="btn btn-md btn-primary px-5">Click here</a>
           </Link>
         </div>
