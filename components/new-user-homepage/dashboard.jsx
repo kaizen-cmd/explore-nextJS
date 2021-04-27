@@ -119,7 +119,7 @@ const Dashboard = (props) => {
                     </div>
 
                   </div>
-                    <div >
+                    {/* <div >
                       <h3>
                         Available MCQ Tests
                       </h3>
@@ -146,7 +146,7 @@ const Dashboard = (props) => {
                         Click here
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </>
               )}
             </div>
