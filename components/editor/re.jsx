@@ -176,9 +176,10 @@ const Re = (props) => {
                     setCode(code);
                   }}
                 >
-                  <option value="python">Python</option>
-                  <option value="cpp">C++</option>
-                  <option value="java">Java</option>
+                  <option value="python">Python (3.7)</option>
+                  <option value="cpp">C++ (G++)</option>
+                  <option value="java">Java (JDK 8.0)</option>
+                  <option value="c">C (GCC)</option>
                 </select>
 
                 <select
