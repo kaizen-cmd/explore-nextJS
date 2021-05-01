@@ -325,6 +325,17 @@ const Profile = () => {
             <a className="btn btn-md btn-primary px-5">Click here</a>
           </Link>
         </div>
+
+        <br />
+        <br />
+
+        <div className="mt-2">
+          <h5>Available Contests</h5>
+          <Link href="https://codestrike.in/exam/coding-test">
+            <a className="btn btn-md btn-primary px-5">Click here</a>
+          </Link>
+        </div>
+
         <br />
         <br />
         <h5>MCQ Exam history</h5>
@@ -357,14 +368,6 @@ const Profile = () => {
         <br />
         <br />
 
-        <div className="mt-2">
-          <h5>Available Contests</h5>
-          <Link href="https://codestrike.in/exam/coding-test">
-            <a className="btn btn-md btn-primary px-5">Click here</a>
-          </Link>
-        </div>
-        <br />
-        <br />
         <h5>Attempted Contests</h5>
         <div className="d-flex attempted-exams">
           {attemptedContests.map((exam, index) => {
