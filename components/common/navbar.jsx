@@ -9,35 +9,6 @@ import { loggedIn, setLoggedIn, user, pp, dot } from "../../pages/_app";
 const NavBar = () => {
   const router = useRouter();
   const [search, setSearch] = useState("");
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      var st = window.pageYOffset || document.documentElement.scrollTop;
-      if (st > 300) {
-        document
-          .getElementsByClassName("nav-container")[0]
-          .classList.add("color-black");
-        document
-          .getElementsByClassName("navbar")[0]
-          .classList.add("color-black");
-        var elems = document.getElementsByClassName("dropdown-menu");
-        Array.prototype.forEach.call(elems, function (el) {
-          el.classList.add("color-black");
-        });
-      }
-      if (st < 300) {
-        document
-          .getElementsByClassName("nav-container")[0]
-          .classList.remove("color-black");
-        document
-          .getElementsByClassName("navbar")[0]
-          .classList.remove("color-black");
-        var elems1 = document.getElementsByClassName("dropdown-menu");
-        Array.prototype.forEach.call(elems1, function (el) {
-          el.classList.remove("color-black");
-        });
-      }
-    });
-  }, []);
 
   const activator = (id) => {
     var elems = document.getElementsByClassName("nav-item");
