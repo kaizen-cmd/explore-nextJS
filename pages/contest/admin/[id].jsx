@@ -485,7 +485,7 @@ const ContestDetailAdmin = () => {
                           <tr>
                             <td className="font-weight-bold">{p.ps_title}</td>
                             <td className="font-weight-bold">{p.user}</td>
-                            <a href={`${URL}${p.file_path}`} target="_blank">
+                            <a href={`${URL}/${p.file_path}`} target="_blank">
                               <td>Click to view</td>
                             </a>
                             <td className="font-weight-bold">{p.score}</td>
