@@ -268,16 +268,6 @@ const NavBar = () => {
                             </a>
                           </Link>
                         </a>
-                        <a className="dropdown-item" onClick={activator1}>
-                          <Link href="/contest/admin">
-                            <a className="nav-link">Coding contests</a>
-                          </Link>
-                        </a>
-                        {/* <a className="dropdown-item" onClick={activator1}>
-                          <Link href="/quiz/admin">
-                            <a className="nav-link">MCQ contests</a>
-                          </Link>
-                        </a> */}
                         <div className="dropdown-divider"></div>
                         <a
                           className="dropdown-item"
