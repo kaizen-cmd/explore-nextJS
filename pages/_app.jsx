@@ -102,7 +102,7 @@ export default function MyApp({ Component, pageProps }) {
         </div>
         <div>
           <img
-            src="https://www.wpbeginner.com/wp-content/uploads/2019/03/maintenancemodeerror.png"
+            src="/maintenancemodeerror.png"
             alt="maintainance"
             className="mw-100"
           />
