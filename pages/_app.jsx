@@ -1,60 +1,7 @@
 import "../styles/global.css";
-import axios from "axios";
-import URL from "../components/url";
-import Footer from "../components/common/footer";
 import Head from "next/head";
-import NavBar from "../components/common/navbar";
-
-
-// This default export is required in a new `pages/_app.js` file.
-import { useState, useEffect } from "react";
-
-var loggedIn, setLoggedIn;
-var user, setUser;
-var dot, setDot;
-var pp, setPp;
 
 export default function MyApp({ Component, pageProps }) {
-  [loggedIn, setLoggedIn] = useState(false);
-  [user, setUser] = useState("");
-  [pp, setPp] = useState("Profile");
-  [dot, setDot] = useState(false);
-
-  useEffect(() => {
-    if (user === "") {
-      if (localStorage.getItem("token")) {
-        axios
-          .post(`${URL}/accounts/validate-token/`, {
-            token: localStorage.getItem("token"),
-          })
-          .then((response) => {
-            if (response.data.res === true) {
-              setLoggedIn(true);
-              axios
-                .get(`${URL}/accounts/user/`, {
-                  headers: {
-                    Authorization: localStorage.getItem("token"),
-                  },
-                })
-                .then((response) => {
-                  const profile = response["data"];
-                  setUser(profile.username);
-                  profile.first_name !== "" &&
-                  profile.last_name !== "" &&
-                  profile.github_link !== "" &&
-                  profile.linkedin_link !== ""
-                    ? setDot(false)
-                    : setDot(true);
-                  setPp(profile.profile_pic);
-                });
-            } else {
-              setLoggedIn(false);
-              localStorage.removeItem("token");
-            }
-          });
-      }
-    }
-  }, []);
   return (
     <>
       <Head>
@@ -145,11 +92,22 @@ export default function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <NavBar />
-      <Component {...pageProps} />
-      <Footer />
+      <div
+        className="d-flex justify-content-center align-items-center w-100 flex-column"
+        style={{ height: "100vh" }}
+      >
+        <div className="text-center mb-5">
+          <h1>Site under maintenance, will be back up soon :)</h1>
+          <p>Chat with us for support in the bottom right corner</p>
+        </div>
+        <div>
+          <img
+            src="https://www.wpbeginner.com/wp-content/uploads/2019/03/maintenancemodeerror.png"
+            alt="maintainance"
+            className="mw-100"
+          />
+        </div>
+      </div>
     </>
   );
 }
-
-export { loggedIn, setLoggedIn, user, setUser, pp, setPp, dot, setDot };
