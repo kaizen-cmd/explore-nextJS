@@ -124,7 +124,7 @@ const PsIndex = () => {
                     return (
                       <tr>
                         <td className="font-weight-bold">
-                          <a className="text-primary">{index}</a>
+                          <a className="text-primary">{index + 1}</a>
                         </td>
                         <td className="font-weight-bold">{p.score}</td>
                         <Link
