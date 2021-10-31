@@ -14,6 +14,7 @@ const PsIndex = () => {
   const [title, setTitle] = useState("");
   const [owner, setOwner] = useState("");
   const [desc, setDesc] = useState("");
+  const [ranks, setRanks] = useState([]);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       var pageURL = window.location.href;
@@ -25,6 +26,7 @@ const PsIndex = () => {
         setOwner(res.data.owner);
         setPresentArray(res.data.ps_list);
         setDesc(res.data.desc);
+        setRanks(res.data.ranks);
       });
     } else {
       document.getElementById("login-btn").click();
@@ -64,6 +66,7 @@ const PsIndex = () => {
               <div>{parser(desc)}</div>
             </div>
             <div className="col-lg-6 mb-5 pt-5 px-0">
+              <h4>Problems</h4>
               <table className="table ps-table">
                 <thead className="black white-text">
                   <tr>
@@ -96,6 +99,40 @@ const PsIndex = () => {
                         >
                           <td className="font-weight-bold">
                             <a className="text-primary">{p.author}</a>
+                          </td>
+                        </Link>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <h4>Leaderboard</h4>
+          <div className="row">
+            <div className="col-8">
+              <table className="table ps-table">
+                <thead className="bg-secondary white-text">
+                  <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ranks.map((p, index) => {
+                    return (
+                      <tr>
+                        <td className="font-weight-bold">
+                          <a className="text-primary">{index}</a>
+                        </td>
+                        <td className="font-weight-bold">{p.score}</td>
+                        <Link
+                          href="/profile/[profile]"
+                          as={`/profile/${p.user}`}
+                        >
+                          <td className="font-weight-bold">
+                            <a className="text-primary">{p.user}</a>
                           </td>
                         </Link>
                       </tr>

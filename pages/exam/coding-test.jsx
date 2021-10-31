@@ -1,6 +1,6 @@
 import Head from "next/head";
 import PaleBlueContainer from "../../components/miscellaneous/pale-blue-container";
-import URL from "../../components/base_layout";
+import URL, { DEBUG } from "../../components/url";
 import BaseLayout from "../../components/base_layout";
 import WinnerCard from "../../components/new-user-homepage/winner-card";
 import { useState, useEffect } from "react";
@@ -11,7 +11,7 @@ const Codeindex = () => {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       axios
-        .get('https://api.codestrike.in/codeportal/available-contests/', {
+        .get(`${URL}/codeportal/available-contests/`, {
           headers: { Authorization: localStorage.getItem("token") },
         })
         .then((res) => {

@@ -1,10 +1,9 @@
 import "../styles/global.css";
 import axios from "axios";
-import URL from "../components/url";
+import URL, { DEBUG } from "../components/url";
 import Footer from "../components/common/footer";
 import Head from "next/head";
 import NavBar from "../components/common/navbar";
-
 
 // This default export is required in a new `pages/_app.js` file.
 import { useState, useEffect } from "react";
@@ -116,21 +115,23 @@ export default function MyApp({ Component, pageProps }) {
               `,
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        {!DEBUG && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
               (function(){
-              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
               s1.async=true;
               s1.src='https://embed.tawk.to/604ce556f7ce1827092fbfd1/1f0m5vn7i';
               s1.charset='UTF-8';
               s1.setAttribute('crossorigin','*');
               s0.parentNode.insertBefore(s1,s0);
               })();
-          `,
-          }}
-        />
+              `,
+            }}
+          />
+        )}
         <script
           data-ad-client="ca-pub-7061616100866138"
           async
